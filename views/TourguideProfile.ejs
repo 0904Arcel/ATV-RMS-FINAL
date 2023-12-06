@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile-ATV Rental</title>
+    <link rel="stylesheet" href="TourguideDashboard.css">
+    <link rel="icon" href="LOGOATV.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Baloo+Tamma+2&family=Black+Ops+One&family=Bungee+Inline&family=Fredericka+the+Great&family=Fredoka&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+
+    <div class="SideLeftMenu">
+        <div class="logo">
+            <img src="ATVLOGO.png">
+        </div>
+        <div class="menu">
+            <a href="TourguideDashboard" >
+                <span class="material-symbols-outlined" >dashboard</span>
+                <h3 >Dashboard</h3>
+            </a>
+            <a href="TourguideProfile"style="background-color: rgb(68, 68, 68);">
+                <span class="material-symbols-outlined"style="color: yellow;"> account_circle</span>
+                <h3 style="color: yellow;">Profile</h3>
+            </a>
+                
+            <a href="scheduleOfTour">
+                <span class="material-symbols-outlined">calendar_month</span>
+                <h3>Schedule of Tours</h3>
+            </a>
+            <a href="HistoryOfTours">
+                <span class="material-symbols-outlined">public</span>
+                <h3>ATV MAP</h3>
+            </a>
+            <a href="ListOfDemo">
+                <span class="material-symbols-outlined">description</span>
+                <h3>List of Demo</h3>
+            </a>
+            <a href="TGRulesAndRegulation">
+                <span class="material-symbols-outlined">rule</span>
+                <h3>Rules and Regulation</h3>
+            </a>
+            <a href="TourguideLogin.html">
+                <span class="material-symbols-outlined">logout</span>
+                <h3>Logout</h3>
+            </a>
+            <div class="date-time-container">
+                <div class="time" id="time"></div>
+                <div class="date" id="date"></div>
+              </div>
+        </div>
+        </div>
+    </div>
+    <div class="MainBody">
+        <div class="topOfbody">
+            <h1>Profile
+                <img class="ride" src="ATV BACKGROUND/ride-removebg-preview.png">
+                <button class="darks" onclick="toggleMode()" id="toggleBtn1" style=" cursor: pointer;"><span class="material-symbols-outlined">dark_mode</span></button>
+                <button class="lights" onclick="toggleMode()" id="toggleText2" style=" cursor: pointer;"><span class="material-symbols-outlined">light_mode</span></button>
+            </h1>
+            
+        </div>
+<form action="/TourguideProfile" method="post" id="profileForm" enctype="multipart/form-data">
+<div class="profiles">
+        <div class="profilePicture">
+            <div class="photo">
+                <img src="ATV BACKGROUND/Tourguide Profile.png"  class="picturemo" id="uploadedImage" alt="Uploaded Image">
+                   
+                    <span class="material-symbols-outlined" action="#" method="post" enctype="multipart/form-data">
+                        photo_camera 
+                         <input type="file" name="picture" id="picture" accept="image/*">
+                    </span>
+            </div>    
+            <div class="tourID">
+                <h1>Tour Guide ID No.</h1>
+                <input type="text" name="T_ID" id="TGID" value="<%= empTourGuide._id %>" readonly> 
+            </div>
+        </div>
+        <div class="profileDetails">
+            <div class="topPD">
+                <ul>
+                    <li>
+                        <h1>First Name:</h1>
+                        <input type="text" id="Firstname" value="<%= empTourGuide.Fname %>" name="Fname" placeholder="Insert Your First Name" >
+                    </li>
+                    <li> 
+                        <h1>Middle Name:</h1>
+                        <input type="text" id="MiddleName" value="<%= empTourGuide.Mname %>" name="Mname" placeholder="Insert Your Middle Name">
+                    </li>
+                    <li>  
+                        <h1>Last Name:</h1>
+                        <input type="text" id="Lastname" value="<%= empTourGuide.Lname %>" name="Lname" placeholder="Insert Your Surename">
+                    </li>
+                    <li>  
+                        <h1>Phone Number:</h1>
+                        <input type="text" id="PhoneNumber" value="<%= empTourGuide.Phone %>" name="Phone"  placeholder="Insert Your Mobile Number">
+                    </li>
+                    <li>  
+                        <h1>Email:</h1>
+                        <input type="text" id="Email" value="<%= empTourGuide.Email %>" name="Email" placeholder="Insert Your Gmail Account">
+                    </li>  
+                </ul>
+            </div>
+            <div class="bottomPD">
+                <div class="userPass">
+                    <h1>Username:<input type="text" id="Username" name="Username" value="<%= empTourGuide.Username %>" placeholder="Insert Your Username"></h1>
+                   
+                    <h1>Password:<input type="password" id="password" name="Password" value="<%= empTourGuide.Password %>" placeholder="Insert Your Password">
+                        <button onclick="togglePasswordVisibility()" type="button" class="Icon2" id="eye-off"> <ion-icon name="eye-off-outline"></ion-icon></button>
+                        <button onclick="togglePasswordVisibility()" type="button" class="Icon2" id="eye" style="display:none;"> <ion-icon name="eye-outline"></ion-icon></button>
+                    </h1>
+                    
+                </div>
+                <div class="saveButton">
+                    <button type="submit" onclick="showUpdateAlert()">Save</button>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+</form>
+<script>
+    function showUpdateAlert() {
+        alert('Your profile has been updated.');
+    }
+</script>
+    <script>
+        function togglePasswordVisibility() {
+          const passwordField = document.getElementById('password');
+          const eyeIcon = document.getElementById('eye');
+          const eyeOffIcon = document.getElementById('eye-off');
+          
+          if (passwordField.type === 'password') {
+            passwordField.type = 'text';
+            eyeIcon.style.display = 'block';
+            eyeOffIcon.style.display = 'none';
+          } else {
+            passwordField.type = 'password';
+            eyeIcon.style.display = 'none';
+            eyeOffIcon.style.display = 'block';
+          }
+        }
+        </script>
+
+
+
+
+
+
+        <script>
+            function updateDateTime() {
+        const dateElement = document.getElementById('date');
+        const timeElement = document.getElementById('time');
+    
+        const currentDate = new Date();
+    
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const dateString = currentDate.toLocaleDateString(undefined, options);
+    
+        const timeString = currentDate.toLocaleTimeString();
+    
+        dateElement.textContent = dateString;
+        timeElement.textContent = timeString;
+    }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    
+        </script>
+    
+    <script>
+        const toggleBtn1 = document.getElementById('toggleBtn1');
+        const toggleText2 = document.getElementById('toggleText2');
+        const MainBody = document.querySelector('.MainBody');
+        const rideImage = document.querySelector('.ride');
+        const ion = document.querySelector('.ion');
+        const darks = document.getElementById('.darks')
+
+        toggleBtn1.addEventListener('click', () => {
+        MainBody.classList.toggle('dark-mode');
+        rideImage.classList.toggle('dark-mode');
+        ion.classList.toggle('dark-mode');
+        
+    });
+    toggleText2.addEventListener('click', () => {
+        MainBody.classList.toggle('dark-mode');
+        rideImage.classList.toggle('dark-mode');
+        ion.classList.toggle('dark-mode');
+    });
+    </script>
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            const darkButton = document.querySelector('.darks');
+            const lightButton = document.querySelector('.lights');
+
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                darkButton.style.display = 'none';
+                lightButton.style.display = 'inline-block';
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                darkButton.style.display = 'inline-block';
+                lightButton.style.display = 'none';
+            }
+        }
+        
+    </script>
+    </body>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </html>

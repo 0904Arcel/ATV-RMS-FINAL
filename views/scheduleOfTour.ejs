@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Of Tours-ATV Rental</title>
+    <link rel="stylesheet" href="TourguideDashboard.css">
+    <link rel="icon" href="LOGOATV.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Baloo+Tamma+2&family=Black+Ops+One&family=Bungee+Inline&family=Fredericka+the+Great&family=Fredoka&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<style>
+    .topOfbody h1 img{
+    position: absolute;
+    top: 0;
+    right: 540px;
+    width: 15%;
+}
+</style>
+</head>
+<body>
+
+    <div class="SideLeftMenu">
+        <div class="logo">
+            <img src="ATVLOGO.png">
+        </div>
+        <div class="menu">
+            <a href="TourguideDashboard" >
+                <span class="material-symbols-outlined" >dashboard</span>
+                <h3 >Dashboard</h3>
+            </a>
+            <a href="TourguideProfile">
+                <span class="material-symbols-outlined"> account_circle</span>
+                <h3 >Profile</h3>
+            </a>
+                
+            <a href="scheduleOfTour"style="background-color: rgb(68, 68, 68);">
+                <span class="material-symbols-outlined"style="color: yellow;">calendar_month</span>
+                <h3 style="color: yellow;">Schedule of Tours</h3>
+            </a>
+            <a href="HistoryOfTours">
+                <span class="material-symbols-outlined">public</span>
+                <h3>ATV MAP</h3>
+            </a>
+            <a href="ListOfDemo">
+                <span class="material-symbols-outlined">description</span>
+                <h3>List of Demo</h3>
+            </a>
+            <a href="TGRulesAndRegulation">
+                <span class="material-symbols-outlined">rule</span>
+                <h3>Rules and Regulation</h3>
+            </a>
+            <a href="TourguideLogin.html">
+                <span class="material-symbols-outlined">logout</span>
+                <h3>Logout</h3>
+            </a>
+            <div class="date-time-container">
+                <div class="time" id="time"></div>
+                <div class="date" id="date"></div>
+              </div>
+        </div>
+        </div>
+    </div>
+    <div class="MainBody" style="overflow: auto; margin-bottom:20px; overflow-X:hidden;">
+        <div class="topOfbody">
+            <h1>Schedule Of Tour
+                <img class="ride" src="ATV BACKGROUND/ride-removebg-preview.png">
+                <button class="darks" onclick="toggleMode()" id="toggleBtn1" style=" cursor: pointer;"><span class="material-symbols-outlined">dark_mode</span></button>
+                <button class="lights" onclick="toggleMode()" id="toggleText2" style=" cursor: pointer;"><span class="material-symbols-outlined">light_mode</span></button>
+            </h1>
+            
+        </div>
+
+        <div class="scheduleOftourbody" style="margin-bottom:20px;">
+            <p></p>
+            <table class="ScheduleTable" style=" height: 100vh;" >
+                <thead class="thead">
+                  <tr>
+                    <th>Reservation ID</th>
+                    <th>Customer Name</th>
+                    <th>Name of Tour</th>
+                    <th>Tour Price</th>
+                    <th>Duration</th>
+                    <th>Total of Individual</th>
+                    <th>Date</th>
+                    <th>Time Slot</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% custReservations.forEach(reservation => { %>
+                        <tr>
+                          <td ><%= reservation._id %></td>
+                          <td><%= reservation.FName %> <%= reservation.MName %> <%= reservation.Sname %></td>
+                          <td><%= reservation.tourName %></td>
+                          <td><%= reservation.tourPrice %></td>
+                          <td><%= reservation.duration %></td>
+                          <td><%= reservation.totalPerson %></td>
+                          <td>
+                            <% if (reservation.reservDate instanceof Date) { %>
+                              <%= reservation.reservDate.toISOString().split('T')[0] %>
+                            <% } else if (reservation.reservDate) { %>
+                              <%= (new Date(reservation.reservDate)).toISOString().split('T')[0] %>
+                            <% } else { %>
+                              No Date Available
+                            <% } %>
+                          </td>
+                          <td><%= reservation.timeSlot %></td>
+                          <td><%= reservation.status %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+              </table >
+              
+
+        </div>
+
+<!-- Add this code to your EJS file -->
+<script>
+    console.log('Received reservations:', JSON.stringify(custReservationsI));
+  </script>
+  
+
+
+        <script>
+            function updateDateTime() {
+        const dateElement = document.getElementById('date');
+        const timeElement = document.getElementById('time');
+    
+        const currentDate = new Date();
+    
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const dateString = currentDate.toLocaleDateString(undefined, options);
+    
+        const timeString = currentDate.toLocaleTimeString();
+    
+        dateElement.textContent = dateString;
+        timeElement.textContent = timeString;
+    }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    
+        </script>
+    
+    <script>
+        const toggleBtn1 = document.getElementById('toggleBtn1');
+        const toggleText2 = document.getElementById('toggleText2');
+        const MainBody = document.querySelector('.MainBody');
+        const rideImage = document.querySelector('.ride');
+        const ion = document.querySelector('.ion');
+        const darks = document.getElementById('.darks')
+
+        toggleBtn1.addEventListener('click', () => {
+        MainBody.classList.toggle('dark-mode');
+        rideImage.classList.toggle('dark-mode');
+        ion.classList.toggle('dark-mode');
+        
+    });
+    toggleText2.addEventListener('click', () => {
+        MainBody.classList.toggle('dark-mode');
+        rideImage.classList.toggle('dark-mode');
+        ion.classList.toggle('dark-mode');
+    });
+    </script>
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            const darkButton = document.querySelector('.darks');
+            const lightButton = document.querySelector('.lights');
+
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                darkButton.style.display = 'none';
+                lightButton.style.display = 'inline-block';
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                darkButton.style.display = 'inline-block';
+                lightButton.style.display = 'none';
+            }
+        }
+    </script>
+    </body>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </html>

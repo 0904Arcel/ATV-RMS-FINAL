@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Demo-ATV Rental</title>
+    <link rel="stylesheet" href="TourguideDashboard.css">
+    <link rel="icon" href="LOGOATV.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Baloo+Tamma+2&family=Black+Ops+One&family=Bungee+Inline&family=Fredericka+the+Great&family=Fredoka&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<style>
+    .topOfbody h1 img{
+    position: absolute;
+    top: 0;
+    right: 540px;
+    width: 15%;
+}
+</style>
+</head>
+<body>
+
+    <div class="SideLeftMenu">
+        <div class="logo">
+            <img src="ATVLOGO.png">
+        </div>
+        <div class="menu">
+            <a href="TourguideDashboard" >
+                <span class="material-symbols-outlined" >dashboard</span>
+                <h3 >Dashboard</h3>
+            </a>
+            <a href="TourguideProfile">
+                <span class="material-symbols-outlined"> account_circle</span>
+                <h3 >Profile</h3>
+            </a>
+                
+            <a href="scheduleOfTour">
+                <span class="material-symbols-outlined" >calendar_month</span>
+                <h3 >Schedule of Tours</h3>
+            </a>
+            <a href="HistoryOfTours">
+                <span class="material-symbols-outlined">public</span>
+                <h3 >ATV MAP</h3>
+            </a>
+            <a href="ListOfDemo"style="background-color: rgb(68, 68, 68);">
+                <span class="material-symbols-outlined"style="color: yellow;">description</span>
+                <h3 style="color: yellow;">List of Demo</h3>
+            </a>
+            <a href="TGRulesAndRegulation">
+                <span class="material-symbols-outlined">rule</span>
+                <h3>Rules and Regulation</h3>
+            </a>
+            <a href="TourguideLogin.html">
+                <span class="material-symbols-outlined">logout</span>
+                <h3>Logout</h3>
+            </a>
+            <div class="date-time-container">
+                <div class="time" id="time"></div>
+                <div class="date" id="date"></div>
+              </div>
+        </div>
+        </div>
+    </div>
+    <div class="MainBody">
+        <div class="topOfbody">
+            <h1>List of Demo
+                <img class="ride" src="ATV BACKGROUND/ride-removebg-preview.png">
+                <button class="darks" onclick="toggleMode()" id="toggleBtn1" style=" cursor: pointer;"><span class="material-symbols-outlined">dark_mode</span></button>
+                <button class="lights" onclick="toggleMode()" id="toggleText2" style=" cursor: pointer;"><span class="material-symbols-outlined">light_mode</span></button>
+            </h1>
+            
+        </div>
+
+        <div class="atvListOfDemo">
+            <div class="demo1">
+                <ul>
+                    <li><b>1.	Virtual ATV Ride Through the Trails:</b> Offer a virtual tour of one of your popular ATV trails. Use video footage or interactive elements to simulate the experience of riding an ATV through various terrains, showcasing the stunning landscapes and exciting moments along the way.</li>
+                    <li><b>2.	Safety Briefing and Equipment Overview:</b> Create a demo video or presentation that outlines your safety protocols and provides an overview of the ATV equipment. Highlight the importance of safety gear, proper riding techniques, and any guidelines customers should follow during the tour.</li>
+                    <li><b>3.	Meet the Guides:</b> Introduce your team of experienced ATV guides. Provide background information about each guide, including their expertise, knowledge of the area, and commitment to customer satisfaction. This can help build a sense of trust and familiarity with potential customers.</li>
+                    <li><b>4.	Scenic Photo Gallery:</b> Showcase a collection of high-quality photos taken during your ATV tours. Highlight the diversity of landscapes, viewpoints, and attractions that customers will encounter on your tours. Consider categorizing the photos based on different trails or destinations.</li>
+                    <li><b>5.	Customer Testimonials and Reviews:</b> Feature video testimonials or written reviews from previous customers who have enjoyed your ATV tours. Sharing authentic feedback can build credibility and reassure potential customers about the quality of your services.</li>
+                    <li><b>6.	Interactive Route Map:</b> Create an interactive map that outlines the route of a typical ATV tour. Include points of interest, scenic viewpoints, and any historical or cultural information relevant to the area. Users can click on different markers to learn more about each location.</li>
+                    <li><b>7.	FAQ and Tour Information:</b> Design a section where users can explore frequently asked questions (FAQ) about your ATV tours. Address common concerns, such as age restrictions, group sizes, booking procedures, and what to wear.</li>
+                    <li><b>8.	Behind-the-Scenes:</b> Offer a glimpse behind the scenes by showcasing how you prepare for ATV tours. This could include footage of guide training, maintenance of the ATVs, or even a look at the planning that goes into creating a seamless customer experience.</li>
+                    <li><b>9.	Virtual Nature Walk:</b> Create a virtual nature walk that complements the ATV tour. Highlight the flora, fauna, and interesting facts about the natural surroundings that customers will encounter while on their adventure.</li>
+                    <li><b>10.	Booking and Reservation Process:</b> Walk users through the process of booking an ATV tour on your website. Provide step-by-step instructions, from selecting a tour package to making a reservation and completing payment.</li>
+                </ul>
+            </div>
+            <div class="demo2">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/y2cae_BtpfE?start=27" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div class="SocialMedia">
+                    <p>For more info visit our Social Media Account.</p>
+                    <ion-icon class="ion" name="logo-facebook"></ion-icon>
+                    <ion-icon class="ion" name="logo-youtube"></ion-icon>
+                    <ion-icon class="ion" name="logo-instagram"></ion-icon>
+                    <ion-icon class="ion" name="logo-tiktok"></ion-icon>
+            </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <script>
+            function updateDateTime() {
+        const dateElement = document.getElementById('date');
+        const timeElement = document.getElementById('time');
+    
+        const currentDate = new Date();
+    
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const dateString = currentDate.toLocaleDateString(undefined, options);
+    
+        const timeString = currentDate.toLocaleTimeString();
+    
+        dateElement.textContent = dateString;
+        timeElement.textContent = timeString;
+    }
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+    
+        </script>
+    
+    <script>
+        const toggleBtn1 = document.getElementById('toggleBtn1');
+        const toggleText2 = document.getElementById('toggleText2');
+        const MainBody = document.querySelector('.MainBody');
+        const rideImage = document.querySelector('.ride');
+        const ion = document.querySelector('.ion');
+        const darks = document.getElementById('.darks')
+
+        toggleBtn1.addEventListener('click', () => {
+        MainBody.classList.toggle('dark-mode');
+        rideImage.classList.toggle('dark-mode');
+        ion.classList.toggle('dark-mode');
+        
+    });
+    toggleText2.addEventListener('click', () => {
+        MainBody.classList.toggle('dark-mode');
+        rideImage.classList.toggle('dark-mode');
+        ion.classList.toggle('dark-mode');
+    });
+    </script>
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            const darkButton = document.querySelector('.darks');
+            const lightButton = document.querySelector('.lights');
+
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                darkButton.style.display = 'none';
+                lightButton.style.display = 'inline-block';
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                darkButton.style.display = 'inline-block';
+                lightButton.style.display = 'none';
+            }
+        }
+    </script>
+    </body>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </html>

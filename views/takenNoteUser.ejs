@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Note!-ATV Rental</title>
+    <link rel="stylesheet" href="userdashboard.css">
+    <link rel="icon" href="LOGOATV.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Baloo+Tamma+2&family=Black+Ops+One&family=Bungee+Inline&family=Fredericka+the+Great&family=Fredoka&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <style>
+  
+  
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="topsidebar">
+            <img src="ATVLOGO.png" class="logo">
+        </div>
+        <div class="close" id="close_btn" onclick="toggleSidebar()">
+            <a href="#">
+            <span class="material-symbols-outlined" >cancel</span>
+            </a>
+        </div>
+        <div class="menubar" id="menu_btn">
+            <a href="#">
+                <span class="material-symbols-rounded">menu</span>
+            </a>
+
+        </div>
+        <div class="menu">
+            <a href="userDashboard" >
+                <span class="material-symbols-outlined">dashboard</span>
+                <h3>Dashboard</h3>
+            </a>
+            <a href="MakeAreservation">
+                <span class="material-symbols-outlined">book_online</span>
+                <h3>Make a Reservation</h3>
+            </a>
+                
+            <a href="reservationHistory">
+                <span class="material-symbols-outlined">history</span>
+                <h3>Reservation History</h3>
+            </a>
+            <a href="takenNoteUser" style="background-color: rgb(68, 68, 68);" >
+                <span class="material-symbols-outlined" style="color: yellow;" >description</span>
+                <h3 style="color: yellow;">Takenote</h3>
+            </a>
+            <a href="rulesAndRegulation">
+                <span class="material-symbols-outlined">rule</span>
+                <h3>Rules and Regulation</h3>
+            </a>
+            <a href="/logout">
+                <span class="material-symbols-outlined">logout</span>
+                <h3>Logout</h3>
+              </a>
+        </div>
+        <div class="date-time-container">
+            <div class="time" id="time"></div>
+            <div class="date" id="date"></div>
+          </div>
+    </div>
+    <div class="mainbody">
+        <h1>Take Note! <img src="ATV BACKGROUND/tourGideMo.png"></h1>
+ 
+        <div class="notemo">
+            <h5> Are you excited to spend time with your family and friends on enjoyable ATV rides? If so, you need to take note of the following:</h5>
+            <ul>
+                <li>
+                    <p><b>Android App:</b> <br>If you already have an account, you can download the application to make reservations for the ATVs, and it is also required for the ATV rental website itself.</p>
+                    <div class="imgtakenote"><img src="ATV BACKGROUND/app.png"></div>
+                </li>
+                <li>
+                    <p><b>Things to Bring:</b> <br>Once you have made your reservation, make sure to bring the following items: a pair of trekking shoes, slippers, sunblock and insect repellent, a small backpack,hydration pack, swimming gear, camera, light snack, change of clothes, and the spirit of adventure!</p>
+                    <div class="imgtakenote"><img src="ATV BACKGROUND/Things to Bring.png"></div>
+                </li>
+                <li>
+                    <p><b>Follow the Rules and Regulations:</b> <br>While at our ATV Rental, it is essential to follow the rules and regulations for your safety. You will be assigned a tour guide to ensure a better understanding of the necessary guidelines.</p>
+                    <div class="imgtakenote"><img src="ATV BACKGROUND/Rules and Regulation.png"></div>
+                </li>
+                <li>
+                    <p><b>Location:</b><br>	Quick Escape Mountain Tours Parking, Q6C3+RW, Rodriguez, Rizal</p>
+                    <div class="imgtakenote"><img src="ATV BACKGROUND/Location.png"></div>
+                </li>
+                <li>
+                    <p><b>Payment Term:</b> <br>We require online payment for reservations, with a 50% to 100% down payment, and the remaining balance to be settled on-site on the day of the ATV rental. Please note that on-site payments must be made in cash.</p>
+                    <div class="imgtakenote"><img src="ATV BACKGROUND/Payment.png"></div>
+                </li>
+                <li>
+                    <p><b>Start time:</b><br> We offer morning (6am), afternoon (1pm) and Evening (6pm) tours . Monday to Saturday, Please confirm times upon booking.</p>
+                    <div class="imgtakenote"><img src="ATV BACKGROUND/Start Time.png"></div>
+                </li>
+                <li>
+                    <p><b>We Provide:</b><br> -Helmet<br>-Gloves<br>-Tourguide<br>-Safety Demo and Orientation</p>
+                    <div class="imgtakenote"><img src="ATV BACKGROUND/We Provide.png"></div>
+                </li>
+                <li>
+                    <p><b>Praying:</b> <br>Keep praying, seek guidance from the Lord, praise Him daily, and don't forget to be thankful for the new day and the blessings that made you happy today.</p>
+                    <div class="imgtakenote"><img src="ATV BACKGROUND/Praying.png"></div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="editprofile" id="editME">
+        <div class="profileme" style="left: 50%; right:0%;  width:75%; height:80%;">
+            <div class="closeEdit" id="editME" onclick="toggleEdit1()">
+                <span class="material-symbols-outlined">
+                    close
+                    </span>
+            </div>
+            <div class="backpicture" style="width:600px; position: relative;">
+                <img src="ATV BACKGROUND/app.png" >
+            </div>
+            <form action="/Customerprofile" method="post" id="profileForm" enctype="multipart/form-data"> 
+            <div class="profileko" style="width: 100%; position: relative; right:0%;">
+                <div class="head_profileko">
+                    <div class="pictureprofile">
+                        <img src="ATV BACKGROUND/Monster2.jpg" class="picturemo" id="uploadedImage" name="profileData" >
+                       
+                    </div>
+                    <div style="display: flex; float: left; width:100%; height:auto; ">
+                    <input style="width: 33%; border-bottom:2px solid rgb(4, 4, 4); Text-align:right;" class="nameko" placeholder="First Name" value="<%= Customer.Fname %>" name="Cust1Name" type="text" id="name" >
+                    <input style="width: 33%; border-bottom:2px solid rgb(4, 4, 4); Text-align:center;" class="nameko" placeholder="Mid Name" value="<%= Customer.Mname %>" name="Cust2Name" type="text" id="name" >
+                    <input style="width: 33%; border-bottom:2px solid rgb(4, 4, 4); Text-align:left;" class="nameko" placeholder="Last Name" value="<%= Customer.Lname %>" name="Cust3Name" type="text" id="name" >   
+                    </div>
+                </div>  
+                <div class="body_profileko">
+                    <h3>Cellphone No.</h3>
+                        <input class="bodydetails" value="<%= Customer.Phone %>" name="CpNum" type="text" id="cellphone" >
+                    <h3>Gender</h3>
+                        <input class="bodydetails" value="<%= Customer.gender %>" name="gender" type="text" id="cellphone" >
+                    <h3>Gmail Address</h3>
+                        <input class="bodydetails" value="<%= Customer.Email %>" name="Gmail" type="text" id="gmail" >
+                    <h3>Address</h3>
+                    <input class="bodydetails" value="<%= Customer.STREET %>" name="Address1street" type="text"id="address" placeholder="Street" style="border-bottom:2px solid rgb(4, 4, 4);">
+                    <input class="bodydetails" value="<%= Customer.BARANGAY %>" name="Address2brgy" type="text"id="address" placeholder="Barangay" style="border-bottom:2px solid rgb(4, 4, 4);">
+                    <input class="bodydetails" value="<%= Customer.PROVINCE %>" name="Address3pro" type="text"id="address" placeholder="Province" style="border-bottom:2px solid rgb(4, 4, 4);">
+                    <input class="bodydetails" value="<%= Customer.MUNICITY %>" name="Address5municity" type="text"id="address" placeholder="Municipality/City" style="border-bottom:2px solid rgb(4, 4, 4);">
+                    <input class="bodydetails" value="<%= Customer.COUNTRY %>" name="Address4country" type="text"id="address" placeholder="Country" style="border-bottom:2px solid rgb(4, 4, 4);">
+                    <h3>Username</h3>
+                        <input class="bodydetails" value="<%= Customer.Username %>" name="username" type="text" id="username" >
+                        <div class="inputbox_box">
+                            <h3>Password</h3>
+                            <input class="bodydetails" value="<%= Customer.Password %>" name="password" type="password" id="password" style="text-align: center;">
+                            <button onclick="togglePasswordVisibility()" type="button" class="Icon2" id="eye-off"> <ion-icon name="eye-off-outline"></ion-icon></button>
+                            <button onclick="togglePasswordVisibility()" type="button" class="Icon2" id="eye" style="display:none;"> <ion-icon name="eye-outline"></ion-icon></button>
+                        </div>
+                </div>
+                <div class="footer_profileko" onclick = "toggleEdit1()">
+                    <button type="submit">Save</button>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+        <div class="profiledetails">
+    
+            <div class="topprofile"onclick="toggleEdit1()" >
+            
+                <img src="ATV BACKGROUND/Monster2.jpg"  class="profilepic" >
+    
+                <h1 class="Name" name = "CustName"><%= Customer.name %></h1>
+                <a onclick="toggleEdit1()">
+                <span class="material-symbols-outlined" onclick="toggleEdit1()">edit</span>
+                </a>
+        </div>
+    </form>
+    <hr style="margin-top:10px;">
+        <div class="pictures" >
+            <img src="ATV BACKGROUND/TourGuideDashboard.png" class="tourpicdash">
+        </div>
+        <div class="Downloadapp">
+            <h3>Download The App</h3>
+            <p>As you have an account, you can also make a reservation through the mobile application. You will notice a QR-CODE, so all you need to do is scan it, and the link will appear. If you see the download button, click it, and the file app will start downloading.</p>
+        </div>
+        <div class="QRCODE">
+                <img src="ATV BACKGROUND/QRCODE.png" class="QRPIC">
+                <a id="downloadATVLogoLink" download="LOGOATV.png" onmouseenter="showWordFollower(event)" onmouseleave="hideWordFollower()">
+                    <img src="ATVLOGO.png" class="atvLogo" onclick="downloadATVLogo() "
+                    style="position: absolute;  bottom: 0px; 
+                    left: 0; padding-left: 400px; background-color: rgba(90, 90, 90, 0); width: 100%; height: auto;"
+                    >
+                </a>        
+        </div>
+    </div>
+    <script>
+        function togglePasswordVisibility() {
+          const passwordField = document.getElementById('password');
+          const eyeIcon = document.getElementById('eye');
+          const eyeOffIcon = document.getElementById('eye-off');
+          
+          if (passwordField.type === 'password') {
+            passwordField.type = 'text';
+            eyeIcon.style.display = 'block';
+            eyeOffIcon.style.display = 'none';
+          } else {
+            passwordField.type = 'password';
+            eyeIcon.style.display = 'none';
+            eyeOffIcon.style.display = 'block';
+          }
+        }
+    </script>
+    <script>
+        function updateDateTime() {
+    const dateElement = document.getElementById('date');
+    const timeElement = document.getElementById('time');
+
+    const currentDate = new Date();
+
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateString = currentDate.toLocaleDateString(undefined, options);
+
+    const timeString = currentDate.toLocaleTimeString();
+
+    dateElement.textContent = dateString;
+    timeElement.textContent = timeString;
+}
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+
+    </script>
+<script>
+
+    function toggleEdit1() {
+          var editME= document.getElementById("editME");
+          if (editME.style.display === "none") {
+            editME.style.display = "block";
+          } else {
+            editME.style.display = "none";
+          }
+        }
+    
+    </script>
+<script>
+            // Get the word follower element
+const wordFollower = document.createElement('div');
+wordFollower.id = 'word-follower';
+wordFollower.textContent = 'Edit me!';
+document.body.appendChild(wordFollower);
+
+// Function to show the word follower and position it at the cursor
+function showWordFollower(event) {
+wordFollower.style.display = 'block';
+wordFollower.style.left = event.clientX + 'px';
+wordFollower.style.top = event.clientY + 'px';
+}
+
+// Function to hide the word follower
+function hideWordFollower() {
+wordFollower.style.display = 'none';
+}
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const input = document.getElementById("picture");
+  const img = document.getElementById("uploadedImage");
+  const img2 = document.getElementById("picturekopo");
+
+  input.addEventListener("change", function(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function() {
+      img.src = reader.result;
+      img2.src = reader.result;
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  });
+});
+
+</script>
+<script>
+function saveProfile() {
+const name = document.getElementById("name").value;
+const cellphone = document.getElementById("cellphone").value;
+const gmail = document.getElementById("gmail").value;
+const address = document.getElementById("address").value;
+const username = document.getElementById("username").value;
+
+document.querySelector(".Name").innerText = name;
+
+
+
+
+// Here you can update other parts of the profile as well if needed, such as the image or other details.
+
+// Toggle back to the original view after saving
+toggleEdit();
+}
+
+function toggleEdit() {
+// Code to toggle between the profile view and the edit view (your existing implementation)
+}
+
+</script>
+       <script>
+        // Get the word follower element
+    const wordFollower = document.createElement('div');
+    wordFollower.id = 'word-follower';
+    wordFollower.textContent = 'Click to Download';
+    document.body.appendChild(wordFollower);
+    
+    // Function to show the word follower and position it at the cursor
+    function showWordFollower(event) {
+    wordFollower.style.display = 'block';
+    wordFollower.style.left = event.clientX + 'px';
+    wordFollower.style.top = event.clientY + 'px';
+    }
+    
+    // Function to hide the word follower
+    function hideWordFollower() {
+    wordFollower.style.display = 'none';
+    }
+    </script>
+    <script>
+    function downloadATVLogo() {
+    const atvLogoImage = document.querySelector(".atvLogo");
+    const atvLogoDataURL = atvLogoImage.src;
+    
+    const downloadATVLogoLink = document.getElementById("downloadATVLogoLink");
+    downloadATVLogoLink.href = atvLogoDataURL;
+    }
+    
+    </script>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

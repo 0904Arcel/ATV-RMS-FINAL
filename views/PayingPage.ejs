@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paying Process</title>
+    <link rel="icon" href="LOGOATV.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Baloo+Tamma+2&family=Black+Ops+One&family=Bungee+Inline&family=Fredericka+the+Great&family=Fredoka&family=Lora&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Baloo+Tamma+2&family=Black+Ops+One&family=Bungee+Inline&family=Fredericka+the+Great&family=Fredoka&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <style>
+        body{
+            width: 100%;
+            height: auto;
+            margin: 0%;
+            padding: 0%;
+            background-color: yellow;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+        .mainbody{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            background-color: white;
+            margin: 0%;
+        }
+        .mainbody .totalValue{
+            position: relative;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            width: 100%;
+            height: 200px;
+            margin-top: 40px;
+            display: flex;
+            
+        }
+        .totalValue .Total{
+            margin-right: 20px;
+            position: relative;
+            width: 20%;
+            height: 100%;
+            font-family: 'Fredoka', sans-serif;
+            border-radius: 10px;
+            padding: 0%;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgb(96, 96, 96);
+        }
+        .Total h1{
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 40%;
+            background-color: rgb(47, 47, 47) ;
+            color: white;
+            padding: 0%;
+            margin: 0%;
+        }
+        .Total h2{
+            width: 100%;
+            height: 60%;
+            background-color: white;
+            padding: 0%;
+            margin: 0%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            position: relative;
+            
+        }
+        .Total2{
+            width: 30%;
+            margin-right: 20px;
+            
+
+        }
+        .Total2 p{
+            font-family: 'Fredoka', sans-serif;
+            text-align: left;
+        }
+        .Total2 label{
+            padding: 10px;
+           font-family: 'Fredoka', sans-serif;
+           font-size: 20px;
+           background-color: rgb(52, 52, 52);
+           border-radius: 20px;
+           margin: 10px;
+           color: white;
+           overflow: hidden;
+           position: relative;
+        }
+        .Total2 input{
+            font-family: 'Fredoka', sans-serif;
+            appearance: none; /* Hide the default radio button style */
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            border: 2px solid #333; /* Set the border style */
+            border-radius: 50%; /* Make it round */
+            width: 20px; /* Set the width and height of the radio button */
+            height: 20px;
+            background-color: #000000; /* Background color of the unselected radio button */ /* Add some spacing between the radio button and the label */
+            vertical-align: middle;
+            cursor: pointer;
+            position: relative;
+        }
+        .Total2 input[type="radio"]:checked {
+            background-color: #ffffff; /* Background color when the radio button is checked */
+            border-color: #6c6c6c; /* Border color when checked */
+            
+        }
+        .Total2 input[type="radio"]:checked:hover{
+            box-shadow: 0 0 10px yellow;
+        }
+        .mainbody .header{
+            width: 100%;
+            height: auto;
+            background-color: white;
+            padding-bottom: 10px;
+            overflow: hidden;
+        }
+        
+        .header .top{
+            width: 100%;
+            height: auto;
+            display: flex;
+            overflow: hidden;
+            padding-left: 100px;
+            background: rgb(0,39,255);
+            background: linear-gradient(0deg, rgba(0,39,255,0) 0%, rgba(255,252,0,1) 49%, rgba(255,239,0,1) 100%);
+            
+        }
+        .header .Name{
+            font-family: 'Fredoka', sans-serif;
+            text-align: left;
+            padding-top: 15px;
+            text-indent: 20px;
+        }
+        .header .reservation{
+            position: relative;
+            width: 100%;
+            height: 50px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0%;
+            padding: 0%;
+            overflow: hidden;
+            border: none;
+            border-bottom: 3px solid rgb(177, 177, 177);
+        }
+        .reservation .Name2{
+            margin: 0%;
+            color: rgba(39, 39, 39, 0.789);
+            padding-top: 20px;
+            position: relative;
+            height: 100%;
+            font-family: 'Fredoka', sans-serif;
+            width: auto;
+            margin-left: 10px;
+            height: 100%;
+            transition: 0.4s ease;
+            border: none;
+            border-right: 2px solid rgba(54, 54, 54, 0.603);
+            padding-right:10px ;
+            border-radius: 50px;
+            font-size: 16px;
+        }
+        .reservation .Name2:hover{
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 50px;
+        }
+        .Name2 b{
+            color: rgb(0, 40, 114);
+        }
+        .header .logopayment{
+            width: 10%;
+            height: auto;
+            padding-top: 10px;
+        }
+        .mainbody .inbody{
+            width: 100%;
+            height: auto;
+            display: block;
+            background-color: white;
+            padding-top: 5px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(53, 53, 53, 0.804);
+            padding-bottom: 50px;
+        }
+        .inbody h2{
+            font-family: 'Fredoka', sans-serif;
+            width: 100%;
+            text-align: left;
+            text-indent: 90px;
+        }
+        .inbody .pax{
+            position: relative;
+            width: 100%;
+            height: auto;
+            background-color: white;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .inbody p{
+
+            width: 80%;
+            text-align: left;
+            padding-left: 100px;
+            font-size: 18px;
+            color: rgba(0, 0, 0, 0.792);
+            font-family: 'Fredoka', sans-serif;
+        }
+        .pax h3{
+            margin: 0;
+            color: rgb(50, 50, 50);
+            margin-top: 10px;
+        }
+        .pax input{
+            height: 30px;
+            width: 13%;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            text-indent: 10px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 0 5px rgba(84, 84, 84, 0.507);
+            margin-left: 10px;
+        }
+        .mainbody .footer{
+            font-family: 'Fredoka', sans-serif;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 200px;
+            position: relative;
+            background-color: rgb(45, 45, 45);
+            padding-top: 30px;
+            margin-top: 30px;
+            color: white;
+        }
+        .footer button{
+            width: 17%;
+            height: 40px;
+            margin: 10px;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 15px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.5s ease;
+        }
+        .footer button:hover{
+            transform: scale(1.1);
+            letter-spacing: 5px;
+        }
+        .Total .amount{
+            width: 100%;
+            height: 60%;
+            font-family: 'Fredoka', sans-serif;
+            outline: none;
+            border: none;
+            font-size: 25px;
+            text-align: center;
+            justify-content: center;
+
+        }
+    </style>
+</head>
+<body>
+    <form action="/PayingPage" method="post">
+    <div class="mainbody">
+        <div class="header">
+            <div class="top">
+                <img src="ATVLOGO.png" class="logopayment">
+                <h1 class="Name" name = "CustName"><%= Customer.name %></h1>
+            </div>
+
+    <div class="reservation">
+            <h3 class="Name2" name="TourName"  class="h1MCR"><b>TRAILS:&nbsp;&nbsp;&nbsp;</b><%= custReservationsI.tourName %></h3>
+            <h3 class="Name2" name="TourPrice"><b>Tour Price:&nbsp;&nbsp;&nbsp;</b><%= custReservationsI.tourPrice %></h3>
+            <h3 class="Name2" name="Duration"><b>Duration:&nbsp;&nbsp;&nbsp;</b><%= custReservationsI.duration %></h3>
+            <h3 class="Name2" name="TotalPerson"> <b>Number of Guests:&nbsp;&nbsp;&nbsp;</b><%= custReservationsI.totalPerson %></h3>
+            <h3 class="Name2" name="TimeSlot"> <b>TimeSlot:&nbsp;&nbsp;&nbsp;</b><%= custReservationsI.timeSlot %></h3>
+            <% let inputValue = ''; %>
+
+            <% if (custReservationsI.reservDate) { %>
+                <% let date = new Date(custReservationsI.reservDate); %>
+                <% inputValue = date.toISOString().split('T')[0]; %>
+                <% console.log("inputValue: ", inputValue); %>
+            <% } %>
+            
+
+            <h3 class="Name2">  <b>Your Booking Date: &nbsp;&nbsp;&nbsp;</b> <%= inputValue %></h3>   
+
+    </div>
+        </div>
+        
+        <div class="inbody">
+            <h2>PAX DETAILS</h2>
+            <p>Please enter the names of those who will join the tour. Input their information in the textbox on the same site for confirmation. Make sure the names and contact numbers are accurate to avoid any issues on the day of the tour.</p>
+
+
+            <div class="pax">
+                <input type="hidden" name="Cust1Name" value="<%= Customer.Fname %>">
+                <input type="hidden" name="Cust2Name" value="<%= Customer.Mname %>">
+                <input type="hidden" name="Cust3Name" value="<%= Customer.Lname %>">
+                <input type="hidden" name="Gender" value="<%= Customer.Gender %>">
+                <input type="hidden" name="Status" value="<%= Customer.status %>">
+                <input type="hidden" name="customerId" value="<%= Customer.customer %>">
+                <input type="hidden" name="ReservDate" value="<%= inputValue %>">
+                <input type="hidden" name="TotalAmount" id="totalAmountInput">
+                <input type="hidden" name="TourName" value="<%= custReservationsI.tourName %>">
+                <input type="hidden" name="TourPrice" value="<%= custReservationsI.tourPrice %>">
+                <input type="hidden" name="Duration" value="<%= custReservationsI.duration %>">
+                <input type="hidden" name="TotalPerson" value="<%= custReservationsI.totalPerson %>">
+                <input type="hidden" name="TimeSlot" value="<%= custReservationsI.timeSlot %>">
+
+                <% for (let i = 1; i <= custReservationsI.totalPerson; i++) { %>
+                    <!-- Show the input fields for all persons -->
+                    <h3 class="Pax<%= i %>">
+                        <%= i %>.
+                        <input type="text" name="PaxFnamea[]" placeholder="First Name" required value="<%= i === 1 ? Customer.Fname : '' %>">
+                        <input type="text" name="PaxMnamea[]" placeholder="Middle Name" value="<%= i === 1 ? Customer.Mname : '' %>">
+                        <input type="text" name="PaxSnamea[]" placeholder="Lastname" required value="<%= i === 1 ? Customer.Lname : '' %>">
+                        <input type="text" name="PaxPhoneNoa[]" placeholder="Phone No." required value="<%= i === 1 ? Customer.Phone : '' %>">
+                        <input type="text" name="PaxAgea[]" placeholder="Age">
+                        <input type="text" name="PaxEmaila[]" placeholder="Gmail Address" required value="<%= i === 1 ? Customer.Email : '' %>">
+                    </h3>
+                <% } %>
+               
+            </div>
+
+        </div>
+        <div class="totalValue">
+            <div class="Total2">
+                <p><b>Note:</b>You don't need to pay the full amount online; it's up to you how much you want to put down. We offer a 50%, 75%, and 100% down payment option to reserve a slot for our ATV Tour. Just make sure to have your Gcash account ready to make the down payment. You can complete the payment on the day of your tour. Keep safe, everyone! See you!</p>
+                <label>
+                    <input type="radio" name="downPayment" value="0.50" onchange="updateTotalAmount()"> 50%
+                </label>
+                <label>
+                    <input type="radio" name="downPayment" value="0.75" onchange="updateTotalAmount()"> 75%
+                </label>
+                <label>
+                    <input type="radio" name="downPayment" value="1.00" onchange="updateTotalAmount()"> 100%
+                </label>
+            </div>
+            <div class="Total">
+                <h1>Initial Payment</h1>
+                    <input class="amount" type="text" id="totalAmountDisplay" name="TotalAmounta" readonly>
+            </div>
+            <div class="Total">
+                <h1>Balance</h1>
+                
+                <input class="amount" type="text" id="balanceDisplay" name="Balancea" readonly>
+            </div>
+            <div class="Total">
+                <h1>Total Amount</h1>
+                
+                <input class="amount" type="text" id="initialPaymentDisplay" name="TotalPaymenta" readonly>
+            </div>
+            
+        </div>
+        
+        
+        <div class="footer">
+            <p>By clicking 'Next,' you will proceed to the payment process. Please have your GCash account ready. Thank you!</p>
+            <a href="/cancelReservation"><button type="button">Cancel</button></a>
+            <button type="submit" onclick="handleNextButtonClick()">Next</button>
+        </div>
+    </div>
+    </form>
+    <!-- ... Your existing HTML code ... -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const tourPriceElement = document.querySelector('[name="TourPrice"]');
+        const totalPersonElement = document.querySelector('[name="TotalPerson"]');
+        const tourPrice = parseFloat(tourPriceElement.textContent.trim().replace(/[^\d.]/g, ''));
+        const totalAmountDisplay = document.getElementById("totalAmountDisplay");
+        const balanceDisplay = document.getElementById("balanceDisplay");
+        const initialPaymentDisplay = document.getElementById("initialPaymentDisplay");
+        const totalAmountInput = document.getElementById("totalAmountInput");
+        const paxDetailsSection = document.querySelector(".inbody .pax");
+
+        // Get all h3 elements
+        const allPaxDivs = paxDetailsSection.querySelectorAll("h3");
+
+        // Hide all h3 elements
+        allPaxDivs.forEach((paxDiv) => {
+            paxDiv.style.display = "none";
+        });
+
+        // Show all h3 elements based on totalPerson
+        const totalPerson = parseInt(totalPersonElement.textContent.trim().replace(/[^\d]/g, ''));
+
+        for (let i = 0; i < totalPerson; i++) {
+            allPaxDivs[i].style.display = "block";
+        }
+
+        // Set the initial total amount and balance
+        const initialTotalAmount = tourPrice * totalPerson;
+        initialPaymentDisplay.value = initialTotalAmount.toFixed(2);
+        totalAmountDisplay.value = initialTotalAmount.toFixed(2);
+        totalAmountInput.value = initialTotalAmount.toFixed(2);
+        updateBalance();
+
+        // Event listener for radio button changes
+        document.querySelectorAll('[name="downPayment"]').forEach((radio) => {
+            radio.addEventListener("change", updateTotalAmount);
+        });
+
+        function updateTotalAmount() {
+            const downPaymentPercentage = parseFloat(document.querySelector('[name="downPayment"]:checked').value);
+            const totalAmount = tourPrice * totalPerson * downPaymentPercentage;
+
+            totalAmountDisplay.value = totalAmount.toFixed(2);
+            totalAmountInput.value = totalAmount.toFixed(2);
+            updateBalance();
+        }
+
+        function updateBalance() {
+            const totalAmount = parseFloat(totalAmountDisplay.value);
+            const balance = initialTotalAmount - totalAmount;
+
+            balanceDisplay.value = balance.toFixed(2);
+
+            // Optionally, you can add logic to handle "all paid" condition
+            if (balance === 0) {
+                balanceDisplay.value = "All Paid";
+            }
+        }
+    });
+
+    function handleNextButtonClick() {
+        // Add any additional logic or validation here
+        // For example, you might want to validate user inputs
+
+        // If everything is okay, submit the form
+        document.querySelector('form').submit();
+    }
+</script>
+
+<!-- ... Your existing HTML code ... -->
+
+    
+    
+    
+  
+    
+    
+    
+    
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

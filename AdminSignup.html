@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp-ATV Rental</title>
+    <link rel="stylesheet" href="LoginPage.css">
+    <link rel="icon" href="LOGOATV.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Baloo+Tamma+2&family=Black+Ops+One&family=Bungee+Inline&family=Fredericka+the+Great&family=Fredoka&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <style>
+        body{
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        @media only screen and (max-width: 1200px){
+            .main_signup .signupna{
+                width: 100%;
+            }
+            .logomosignup{
+                display: none;
+            }
+        }
+        @media only screen and (max-width: 500px){
+            .main_signup .bottomsignup{
+                overflow: hidden;
+                display: block;
+            }
+            .userpass input{
+                top: -50px;
+                position: relative;
+            }
+            .bottomsignup .userpass{
+                height: 60px;
+            }
+            .bottomsignup .buttonsignup{
+                height: 60px;
+                
+            }
+            .buttonsignup .btnsignup{
+                top: 4px;
+                left: 70px;
+                right: 50px;
+                position: absolute;   
+            }
+            .inputbox_boxSignup h4{
+
+            }
+
+        }
+        @media only screen and (max-width: 800px),(max-height: 600px){
+            body{
+                margin: 0;
+                padding: 0;
+            }
+            .signupna .midsignup{
+                display: block;
+                overflow: scroll;
+                position: absolute;
+                z-index: 3;
+            }
+            .midsignup .inputs{
+                position: relative;
+                overflow: auto;
+                height: 1000px;
+                position: absolute;
+                z-index: 3;
+                padding-bottom: 50px;
+            }
+            .inputs .inputbox_boxSignup{
+               align-content: center;
+               text-align: center;
+               align-content: center;
+               justify-content: center;
+            }
+            .inputbox_boxSignup h4{
+                text-align: left;
+                width: 200px;
+                position: relative;
+                text-indent: 20%;
+            }
+            .main_signup .bottomsignup{
+                z-index: 3;
+                height: 200px;
+            }
+            .bottomsignup .userpass{
+                padding-top: 50px;
+            }
+            .bottomsignup .buttonsignup{
+                padding-top: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="MALABO"></div>
+    
+    
+    <div class="main_signup">
+        <div class="Background-signup">
+            <img src="ATV BACKGROUND/Sign up-cuate.png" class="logomosignup">
+        </div>
+
+        <div class="signupna">
+            <h1>Admin Sign Up</h1>
+            <hr>
+        <div class="midsignup">
+            <div class="picprofile">
+                <div>
+                    <img class="picturemo"src="ATV BACKGROUND/Profile.png" id="uploadedImage" src="#" alt="Uploaded Image">
+                </div>
+                <form action="#" method="post" enctype="multipart/form-data">
+                    <button type="button" class="btn_img">
+                        <ion-icon name="camera"></ion-icon>
+                            <input type="file" name="picture" id="picture" accept="image/*">
+                    </button>
+                </form>
+            </div>
+        <div class="inputs">
+            <div class="inputbox_boxSignup">
+                <h4>Full Name:</h4>
+                <input type="text" placeholder="ex. Juan D. Delacruz" required>
+                
+                </input>
+            </div>
+            <div class="inputbox_boxSignup">
+                <h4>Cellphone No.:</h4>
+                <input type="text" placeholder="ex. 09123456789" required>
+                </input>
+            </div>
+            <div class="inputbox_boxSignup">
+                <h4>Gmail Address:</h4>
+                <input type="text" placeholder="ex. juandelacruz04@gmail.com" required>
+                </input>
+            </div>
+            <div class="inputbox_boxSignup">
+                <h4>Address:</h4>
+                <input type="text" placeholder="ex. SanIsidro Montalban Ridruguez Rizal" required>
+                </input>
+            </div>
+        </div>
+        </div>
+        <div class="bottomsignup" style="height: 170px;">
+            <div class="userpass">
+                <input type="text" placeholder="User Name" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="RFID" required>
+            </div>
+            <div class="buttonsignup" style="padding-top:40px;">
+                <a href="AdminLogin.html">
+                    <button type="submit" class="btnsignup" >
+                        SignUp
+                    </button>
+                </a>
+            </div>
+        </div>
+        </div>
+    </div>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+      const input = document.getElementById("picture");
+      const img = document.getElementById("uploadedImage");
+
+      input.addEventListener("change", function(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function() {
+          img.src = reader.result;
+        };
+
+        if (file) {
+          reader.readAsDataURL(file);
+        }
+      });
+    });
+
+</script>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

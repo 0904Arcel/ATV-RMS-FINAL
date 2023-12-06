@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard-ATV Rental</title>
+    <link rel="stylesheet" href="TourguideDashboard.css">
+    <link rel="icon" href="LOGOATV.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Baloo+Tamma+2&family=Black+Ops+One&family=Bungee+Inline&family=Fredericka+the+Great&family=Fredoka&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<style>
+    .MainBody{
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+</style>
+</head>
+<body>
+
+    <div class="SideLeftMenu">
+        <div class="logo">
+            <img src="ATVLOGO.png">
+        </div>
+        <div class="menu">
+            <a href="TourguideDashboard" style="background-color: rgb(68, 68, 68);">
+                <span class="material-symbols-outlined" style="color: yellow;">dashboard</span>
+                <h3 style="color: yellow;">Dashboard</h3>
+            </a>
+            <a href="TourguideProfile">
+                <span class="material-symbols-outlined"> account_circle</span>
+                <h3>Profile</h3>
+            </a>
+                
+            <a href="scheduleOfTour">
+                <span class="material-symbols-outlined">calendar_month</span>
+                <h3>Schedule of Tours</h3>
+            </a>
+            <a href="HistoryOfTours">
+                <span class="material-symbols-outlined">public</span>
+                <h3>ATV MAP</h3>
+            </a>
+            <a href="ListOfDemo">
+                <span class="material-symbols-outlined">description</span>
+                <h3>List of Demo</h3>
+            </a>
+            <a href="TGRulesAndRegulation">
+                <span class="material-symbols-outlined">rule</span>
+                <h3>Rules and Regulation</h3>
+            </a>
+            <a href="TourguideLogin.html">
+                <span class="material-symbols-outlined">logout</span>
+                <h3>Logout</h3>
+            </a>
+            <div class="date-time-container">
+                <div class="time" id="time"></div>
+                <div class="date" id="date"></div>
+              </div>
+        </div>
+        </div>
+    </div>
+    <div class="MainBody">
+        <div class="topOfbody">
+            <h1>Dashboard
+                <img class="ride" src="ATV BACKGROUND/ride-removebg-preview.png">
+                <button class="darks" onclick="toggleMode()" id="toggleBtn1" style=" cursor: pointer;"><span class="material-symbols-outlined">dark_mode</span></button>
+                <button class="lights" onclick="toggleMode()" id="toggleText2" style=" cursor: pointer;"><span class="material-symbols-outlined">light_mode</span></button>
+            </h1>
+        </div>
+        <div class="Announcement">
+            <h1><span class="material-symbols-outlined">
+                campaign
+                </span>Announcement:</h1>
+            <div class="announce">
+                <p>For all employee! we have a general meeting on tuesday, don't forget to bring your own notes and pen. We discuss the posible outcome of the unificient materials of ATV to our Customer, make sure to attend our meeting to solve this issue we encouter.<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque praesentium suscipit fugiat inventore eos deserunt, commodi cumque ab officiis amet!</p>
+                
+                <img src="ATV BACKGROUND/Things to Bring.png">
+            </div>
+        </div>
+        <div class="midOfbody">
+            <div class="contentOfbody">
+                <img src="ATV BACKGROUND/Schedule.png">
+                <a href="scheduleOfTour.html">
+                    <h1>Schedule of Tours</h1>
+                </a>
+            </div>
+            <div class="contentOfbody">
+                <img src="ATV BACKGROUND/TourGuideDashboard.png">
+                <a href="ListOfDemo.html">
+                    <h1>List of Demo</h1>
+                </a>
+            </div>
+            <div class="contentOfbody">
+                <img src="ATV BACKGROUND/Rules and Regulation.png">
+                <a href="TGRulesAndRegulation.html">
+                    <h1>Rules and Regulation</h1>
+                </a>
+            </div>
+        </div>
+        <div class="bottomOfbody">
+                <ion-icon class="ion" name="logo-facebook"></ion-icon>
+                <ion-icon class="ion" name="logo-youtube"></ion-icon>
+                <ion-icon class="ion" name="logo-instagram"></ion-icon>
+                <ion-icon class="ion" name="logo-tiktok"></ion-icon>
+        </div>
+        
+    </div>
+    <script>
+        function updateDateTime() {
+    const dateElement = document.getElementById('date');
+    const timeElement = document.getElementById('time');
+
+    const currentDate = new Date();
+
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateString = currentDate.toLocaleDateString(undefined, options);
+
+    const timeString = currentDate.toLocaleTimeString();
+
+    dateElement.textContent = dateString;
+    timeElement.textContent = timeString;
+}
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+
+    </script>
+
+    <script>
+        const toggleBtn1 = document.getElementById('toggleBtn1');
+        const toggleText2 = document.getElementById('toggleText2');
+        const MainBody = document.querySelector('.MainBody');
+        const rideImage = document.querySelector('.ride');
+        const ion = document.querySelector('.ion');
+        const darks = document.getElementById('.darks')
+
+        toggleBtn1.addEventListener('click', () => {
+        MainBody.classList.toggle('dark-mode');
+        rideImage.classList.toggle('dark-mode');
+        ion.classList.toggle('dark-mode');
+        
+    });
+
+    </script>
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            const darkButton = document.querySelector('.darks');
+            const lightButton = document.querySelector('.lights');
+
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                MainBody.classList.toggle('light-mode');
+                rideImage.classList.toggle('dark-mode');
+                ion.classList.toggle('dark-mode');
+                darkButton.style.display = 'none';
+                lightButton.style.display = 'inline-block';
+                
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                MainBody.classList.toggle('dark-mode');
+                rideImage.classList.toggle('light-mode');
+                darkButton.style.display = 'inline-block';
+                ion.classList.toggle('light-mode');
+                lightButton.style.display = 'none';
+                
+            }
+        }
+    </script>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

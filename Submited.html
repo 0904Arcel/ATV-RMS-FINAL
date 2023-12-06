@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply-ATV Rental</title>
+    <link rel="stylesheet" href="LoginPage.css">
+    <link rel="icon" href="LOGOATV.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Baloo+Tamma+2&family=Black+Ops+One&family=Bungee+Inline&family=Fredericka+the+Great&family=Fredoka&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(255,105,17);
+            background: linear-gradient(90deg, rgba(255,105,17,1) 0%, rgba(244,250,0,1) 50%, rgba(252,201,69,1) 100%);
+            color: rgb(0, 0, 0);
+            margin: 0;
+            padding: 20px;
+            overflow: auto;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+          }
+          .mainbody{
+            transform: translateX(50%);
+            transform: translateY(35%);
+            text-align: center;
+            width:50%;
+            height: 280px;
+            z-index: 1;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+          }
+          .mainbody h1{
+            font-family: 'Fredoka', sans-serif;
+            font-size: 50px;
+            width: 100%;
+            height: auto;
+          }
+          .mainbody p{
+            font-family: 'Fredoka', sans-serif;
+            width: 100%;
+            height: auto;
+          }
+
+          .btn{
+            margin-top: 20px;
+            width: 50%;
+            cursor: pointer;
+            position: relative;
+            padding: 10px 20px;
+            border-radius: 7px;
+            border: 1px solid rgb(0, 0, 0);
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 2px;
+            background: transparent;
+            color: #000000;
+            overflow: hidden;
+            box-shadow: 0 0 0 0 transparent;
+            -webkit-transition: all 0.2s ease-in;
+            -moz-transition: all 0.2s ease-in;
+            transition: all 0.2s ease-in;
+          }
+          
+          .btn:hover {
+        
+            background: rgba(86, 71, 0, 0.613);
+            box-shadow: 0 0 20px 5px rgba(167, 122, 0, 0.881);
+            -webkit-transition: all 0.2s ease-out;
+            -moz-transition: all 0.2s ease-out;
+            transition: all 0.2s ease-out;
+            border: 1px solid yellow;
+            color: #fffb00;
+            letter-spacing: 5px;
+            
+          }
+          
+          .btn:hover::before {
+            -webkit-animation: sh02 0.5s 0s linear;
+            -moz-animation: sh02 0.5s 0s linear;
+            animation: sh02 0.5s 0s linear;
+          }
+          
+          .btn::before {
+            content: '';
+            display: block;
+            width: 0px;
+            height: 86%;
+            position: absolute;
+            top: 7%;
+            left: 0%;
+            opacity: 0;
+            background: #fff;
+            box-shadow: 0 0 50px 30px #fff;
+            -webkit-transform: skewX(-20deg);
+            -moz-transform: skewX(-20deg);
+            -ms-transform: skewX(-20deg);
+            -o-transform: skewX(-20deg);
+            transform: skewX(-20deg);
+          }
+          
+          @keyframes sh02 {
+            from {
+              opacity: 0;
+              left: 0%;
+            }
+          
+            50% {
+              opacity: 1;
+            }
+          
+            to {
+              opacity: 0;
+              left: 100%;
+            }
+          }
+          
+          .btn:active {
+            box-shadow: 0 0 0 0 transparent;
+            -webkit-transition: box-shadow 0.2s ease-in;
+            -moz-transition: box-shadow 0.2s ease-in;
+            transition: box-shadow 0.2s ease-in;
+          }
+          img{
+            position: absolute;
+            top: 40px;
+            z-index: 2;
+            
+          }
+          
+            /* Your existing styles */
+    
+            @keyframes moveLogo {
+              0% {
+                transform: translate(-20%, -90%); /* Start at the center */
+                width: 50%;
+                opacity: 0%;
+              }
+              100% {
+                transform: translate(0, 0); /* Move to the top left */
+              }
+            }
+            
+            img {
+              position: absolute;
+              width: 15%;
+              height: auto;
+              top: 10%;
+              
+              animation: moveLogo 1s forwards; /* Use the defined animation */
+            }
+
+
+            @keyframes moveH {
+                0% {
+                  transform: scale(1.1); /* Start at the center */
+                    opacity: 0%;
+                }
+                100% {
+                  transform: translate(0, 0); /* Move to the top left */
+                }
+              }
+              
+              h1 {
+ 
+                
+                animation: moveH 1.4s ease forwards; /* Use the defined animation */
+              }
+              @keyframes moveBTN {
+                0% {
+                  transform: scale(1.1); /* Start at the center */
+                    opacity: 0%;
+                    width: 10px;
+                }
+                100% {
+                  transform: translate(0, 0); /* Move to the top left */
+                }
+              }
+              
+              .btn {
+ 
+                
+                animation: moveBTN 1s ease forwards; /* Use the defined animation */
+              }
+
+    </style>
+</head>
+<body>
+    <div class="mainbody">
+        <h1>Application Complete!</h1>
+        <p>Please wait for our response. You will receive our response via Gmail and SMS notification. Kindly follow the guidelines if you are scheduled for an online interview. Thank you very much for your cooperation! Stay updated on our response! Keep Safe, Godbless!</p>
+        <a href="TourguideApply.html">
+            <button class="btn">Back</button>
+        </a>
+    </div>
+    <img src="ATVLOGO.png">
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to apply?-ATV Rental</title>
+    <link rel="stylesheet" href="mainhomepage.css">
+    <link rel="icon" href="LOGOATV.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Baloo+Tamma+2&family=Black+Ops+One&family=Bungee+Inline&family=Fredericka+the+Great&family=Fredoka&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<style>
+
+    body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+    }
+    .card {
+        z-index: 3;
+        bottom: 30px;
+        right: 30px;
+        position: fixed;
+        width: 300px;
+        height: 220px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 30px;
+        gap: 13px;
+        overflow: hidden;
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
+      }
+      
+      #cookieSvg {
+        width: 50px;
+      }
+      
+      #cookieSvg g path {
+        fill: rgb(97, 81, 81);
+      }
+      
+      .cookieHeading {
+        font-size: 1.2em;
+        font-weight: 800;
+        color: rgb(26, 26, 26);
+      }
+      
+      .cookieDescription {
+        text-align: center;
+        font-size: 0.7em;
+        font-weight: 600;
+        color: rgb(99, 99, 99);
+      }
+      
+      .cookieDescription a {
+        --tw-text-opacity: 1;
+        color: rgb(59 130 246);
+      }
+      
+      .cookieDescription a:hover {
+        -webkit-text-decoration-line: underline;
+        text-decoration-line: underline;
+      }
+      
+      .buttonContainer {
+        display: flex;
+        gap: 20px;
+        flex-direction: row;
+      }
+      
+      .acceptButton {
+        width: 80px;
+        height: 30px;
+        background-color: #ffd000;
+        transition-duration: .2s;
+        border: none;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        font-weight: 600;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px -1px #977ef3, 0 2px 4px -1px #977ef3;
+        transition: all .6s ease;
+      }
+      
+      .declineButton {
+        width: 80px;
+        height: 30px;
+        background-color: #dadada;
+        transition-duration: .2s;
+        color: rgb(46, 46, 46);
+        border: none;
+        cursor: not-allowed;
+        font-weight: 600;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px -1px #bebdbd, 0 2px 4px -1px #bebdbd;
+        transition: all .6s ease;
+      }
+      
+      .declineButton:hover {
+        background-color: #ebebeb;
+        box-shadow: 0 10px 15px -3px #bebdbd, 0 4px 6px -2px #bebdbd;
+        transition-duration: .2s;
+      }
+      
+      .acceptButton:hover {
+        background-color: #fff700;
+        box-shadow: 0 10px 15px -3px #977ef3, 0 4px 6px -2px #977ef3;
+        transition-duration: .2s;
+      }
+
+    /* Animation for sliding in and fading in the cookie notification */
+    @keyframes slideFadeIn {
+        0% {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .card {
+        /* Apply the animation to the cookie notification */
+        animation: slideFadeIn 0.5s forwards; /* forwards keeps the final state after the animation */
+    }
+    .slide-out {
+        animation: slideOut 0.5s forwards;
+    }
+
+    @keyframes slideOut {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+    .container-header2 {    
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.381);
+    }
+
+    .logo2{
+        background-color: transparent;
+    }
+    .mainatourbody{
+        width: auto;
+        height: 100%;
+    
+        display: block;
+        padding: 80px;
+        overflow: hidden;
+        
+    }
+    .howtoapply{
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: block;
+        justify-content: center;
+        position: relative;
+    }
+    .howtoapply .paanomagapply{
+        position: relative;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        display: flex;
+        border: none;
+        border-bottom: 2px solid rgba(109, 108, 108, 0.712);
+    }
+    .paanomagapply img{
+        height: auto;
+        width: 40%;
+        font-family: 'Aclonica', sans-serif;
+    }
+    .paanomagapply p b{
+        font-size: 40px;
+        font-family: 'Fredericka the Great', cursive;
+    }
+    .paanomagapply p{
+        position: relative;
+        width: auto;
+        font-family: 'Fredoka', sans-serif;
+        font-size: 18px;
+        text-align: justify;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 100px;
+        
+    }
+    .howtoapply .requirements{
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: flex;
+        font-family: 'Fredoka', sans-serif;
+        border: none;
+        border-bottom: 2px solid rgba(109, 108, 108, 0.712);
+    }
+    .requirements ul{
+        position: relative;
+        overflow: hidden;
+        margin:50px;
+    }
+    .requirements li{
+        width: 100%;
+        height: auto;
+        margin:15px;
+        font-size: 17px;
+        list-style-type: none;
+
+    }
+    .requirements h2{
+        color: coral;
+    }
+    .Thingstoknow{
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: block;
+        font-family: 'Fredoka', sans-serif; 
+        position: relative;
+        border: none;
+        border-bottom: 2px solid rgba(109, 108, 108, 0.712);
+    }
+    .Thingstoknow h1{
+        width: 100%;
+        color: coral;
+        text-indent: 40px;
+    }
+    .Thingstoknow ul{
+        width: auto;
+        height: auto;
+        margin: 10px;
+        padding-right: 600px;
+    }
+    .Thingstoknow li{
+        text-align: justify;
+        list-style-type: none   ;
+        width: auto;
+        height: auto;
+        padding-left: 30px;
+    }
+    .Thingstoknow p{
+        width: auto;
+        height: auto;
+        font-weight: bold;
+    }
+    .Thingstoknow img{
+        width: 50%;
+        height: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .applynow{  
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        justify-content: center;
+    }
+    .applynow .apply1{
+        width: 50%;
+        height: auto;
+    }
+    .apply1 img{
+        width: 100%;
+        height: auto;
+    }
+    .apply1 h1{
+        font-family: 'Bungee Inline', cursive;
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+    .applynow .apply2{
+        width: 50%;
+        height: auto;
+    }
+    .apply2 button{
+        width: auto;
+        margin-top: 250px;
+        height: 20%;
+        font-size: 30px;
+        font-family: 'Black Ops One', cursive;
+        cursor: pointer;
+        border: none;
+        background-color: yellow;
+        border-radius: 10px;
+        margin-left: 80px;
+        padding-left: 10px;
+        padding-right: 10px;
+        transition: 0.4s ease;
+    }
+    .apply2 button:hover{
+        transform: scale(1.1);
+        background-color: rgb(255, 208, 0);
+        color: tomato;
+    }
+</style>
+</head>
+<body>
+    <div class="container-header2">
+        <a  href="index.html">
+            <img src="ATVLOGO.png" class="logo2">
+        </a>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="mainhomepageReservation.html">RESERVATION</a></li>
+                <li><a href="mainhomepageGallery.html">GALLERY</a></li> 
+                <li><a href="beAmember.html">BE A MEMBER?</a></li>
+                <li><a href="contactUs.html">ABOUT US</a></li>
+                <li><a href="LoginPage.html">LOGIN</a></li>
+            </ul>
+            <div class="toggle_btn">
+                <i class="fa-sharp fa-regular fa-bars-progress"></i>
+            </div>
+       </div>
+
+<div class="mainatourbody">
+<!--How to apply-->  <!--How to apply--> <!--How to apply--> <!--How to apply-->   
+            <div class="howtoapply">
+                <div class="paanomagapply">
+                    <p> <b>How to Apply?</b><br> <br>Welcome! We are currently seeking individuals with the potential to become a tour guide for our ATV tour company. Do you have any prior experience as a tour guide? Alternatively, if you lack experience but aspire to be a member of our company, we have two application options available. You can either submit your resume online or apply in person at our company location (Sapinit Road Barangay San Juan, Antipolo, Rizal).Kindly review the requirements and skills necessary for this role. We also provide training for new employees who are just starting out as tour guides. Please take a moment to read the details below for more information.</p>
+                    <img src="ATV BACKGROUND/TourGuideDashboard.png">
+                </div>
+                <div class="requirements">
+                    <ul>
+                        <h2>Requirements:</h2>
+                        <li><b>1.	Proficient Communication Skills:</b> Tour guides need to effectively communicate with tourists, provide clear instructions, and share interesting information about the ATV tours.</li>
+                        <li><b>2.	In-Depth Knowledge:</b> A strong understanding of the local area, attractions, trails, and landmarks is essential for providing informative and engaging tours.</li>
+                        <li><b>3.	Physical Fitness:</b> Tour guiding often involves physical activities like leading hikes or outdoor adventures. A certain level of physical fitness is important.</li>
+                        <li><b>4.	Safety Consciousness:</b> Safety is a top priority. Guides should be well-trained in safety protocols, first aid, and emergency procedures.</li>
+                        <li><b>5.	Customer Service Skills: </b>Tour guides should be friendly, approachable, and capable of creating a positive and enjoyable experience for tourists.</li>
+                        <li><b>6.	Adaptability:</b> Tours may encounter unexpected situations. Guides should be able to adapt and make decisions on the spot.</li>
+                        <li><b>7.	Language Proficiency: </b>Depending on the region, fluency in multiple languages can be a significant advantage for serving a diverse range of tourists.</li>
+                        <li><b>8.	Cultural Awareness: </b>Respect for different cultures, customs, and sensitivities is crucial when interacting with a diverse group of tourists.</li>
+                        <li><b>9.	Problem-Solving:</b> Guides should be resourceful and capable of resolving unexpected issues or challenges that may arise during a tour.</li>
+                    </ul>
+                    <ul>
+                        <h2>Skills:</h2>
+                        <li><b>1.	Navigation Skills: </b>Tour guides need to know the trails, routes, and geography of the area to lead tourists safely.</li>
+                        <li><b>2.	Storytelling:</b> The ability to tell engaging stories and convey historical or cultural information in an interesting manner enhances the tour experience.</li>
+                        <li><b>3.	Time Management: </b>Guides must keep tours on schedule to ensure that all planned activities are covered.</li>
+                        <li><b>4.	Interpersonal Skills:</b> Building rapport with tourists, answering questions, and fostering a positive atmosphere is essential.</li>
+                        <li><b>5.	Public Speaking: </b>Confidence in speaking to groups, projecting voice, and maintaining enthusiasm is crucial for leading engaging tours.</li>
+                        <li><b>6.	Environmental Awareness:</b> Promoting responsible tourism and educating tourists about the importance of protecting the environment is valuable.</li>
+                        <li><b>7.	Mechanical Skills: </b>Basic knowledge of ATV mechanics and troubleshooting can be helpful in addressing minor technical issues during tours.</li>
+                        <li><b>8.	Basic First Aid:</b> Being trained in basic first aid techniques allows guides to provide initial assistance in case of injuries.</li>
+                        <li><b>9.	Orientation Skills: </b>Guides should be able to guide tourists and keep track of their location, especially in outdoor settings.</li>
+                        <li><b>10.	Sales and Marketing:</b> While not essential, having the ability to upsell additional services or provide information about the ATV rental business can be advantageous.</li>
+                    </ul>
+                </div>
+            </div>
+<!--Things to know--> <!--Things to know--> <!--Things to know--> <!--Things to know--> 
+            <div class="Thingstoknow">
+                <h1>Things to Know!</h1>
+                <ul>
+                    <p>A. Things to know when you are applying:</p>
+                    <li>-Visit our ATV Rental website where you can upload your resume.</li>
+                    <li>-Upload your resume and provide a contact email for communication.</li>
+                    <li>-Submit your resume.</li>
+                </ul>
+                <ul>
+                    <p>B. Things to know if you have already submitted your resume:</p>
+                    <li>-Please await a response from our admin. You will receive a call and email regarding the interview schedule.</li>
+                    <li>-As part of the interview process, be prepared to present how you handle situations when a customer violates the company's rules and regulations.</li>
+                    <li>-You can visit our social media accounts for more information and ideas.</li>
+                </ul>
+                <ul>
+                    <p>C. Things to know if you are in the interview stage:</p>
+                    <li>-The interview will be conducted via Zoom. You will receive an email containing the Zoom link to join the interview.</li>
+                    <li>-Ensure a stable internet connection and have your camera turned on during the interview.</li>
+                    <li>-Have confidence in yourself and demonstrate the requirements and skills provided on our website.</li>
+                </ul>
+                <ul>
+                    <p>D. Things to know if you have been accepted as a Tourguide in the Company:</p>
+                    <li>-Await a schedule to visit the company for tour guide training.</li>
+                    <li>-Study the provided document files from the employer.</li>
+                    <li>-Prepare for training by learning about the announcements the admin will send through email and SMS.</li>
+                </ul>
+                <ul>
+                    <p>E. Things to know if you are undergoing training:</p>
+                    <li>-Pay close attention to the instructions.</li>
+                    <li>-Take note of important details that need to be remembered.</li>
+                    <li>-Always keep a positive attitude and remember to pray.</li>
+                </ul>
+                <img src="ATV BACKGROUND/Things to Bring.png">
+            </div>
+<!--Apply Now--> <!--Apply Now--> <!--Apply Now--> <!--Apply Now--> <!--Apply Now--> 
+            <div class="applynow">
+                <div class="apply1">
+                    <h1>Apply Now!</h1>
+                    <img src="ATV BACKGROUND/Sign up-cuate.png">    
+                </div>
+                <div class="apply2">
+                    <a href="TourguideSignup.html">
+                        <button>Submit your Resume Here!</button>
+                    </a>
+                </div>
+            </div>
+</div>            
+
+
+
+
+            <div class="container-mid4" id="4">
+                <h1>SOCIAL MEDIA ACCOUNT</h1>
+                <p>Visit our social media account to see how its extream the ATV rizal achuachu</p>
+                <ion-icon name="logo-facebook" class="icon1"></ion-icon>
+                <ion-icon name="logo-youtube"class="icon2"></ion-icon>
+                <ion-icon name="logo-instagram"class="icon3"></ion-icon>
+                <ion-icon name="logo-tiktok"class="icon4"></ion-icon>
+            </div>
+            <div class="container-footer">
+                <p>© 2023 All rights reserved. ATV Rental, Philippines - The best ATV ride in the Philippines!
+                  <br> Rules and Regulations | Booking and Reservation | Terms and Conditions</p>
+            </div>
+            <div class="card" id="cookieCard">
+                <svg xml:space="preserve" viewBox="0 0 122.88 122.25" y="0px" x="0px" id="cookieSvg" version="1.1"><g><path d="M101.77,49.38c2.09,3.1,4.37,5.11,6.86,5.78c2.45,0.66,5.32,0.06,8.7-2.01c1.36-0.84,3.14-0.41,3.97,0.95 c0.28,0.46,0.42,0.96,0.43,1.47c0.13,1.4,0.21,2.82,0.24,4.26c0.03,1.46,0.02,2.91-0.05,4.35h0v0c0,0.13-0.01,0.26-0.03,0.38 c-0.91,16.72-8.47,31.51-20,41.93c-11.55,10.44-27.06,16.49-43.82,15.69v0.01h0c-0.13,0-0.26-0.01-0.38-0.03 c-16.72-0.91-31.51-8.47-41.93-20C5.31,90.61-0.73,75.1,0.07,58.34H0.07v0c0-0.13,0.01-0.26,0.03-0.38 C1,41.22,8.81,26.35,20.57,15.87C32.34,5.37,48.09-0.73,64.85,0.07V0.07h0c1.6,0,2.89,1.29,2.89,2.89c0,0.4-0.08,0.78-0.23,1.12 c-1.17,3.81-1.25,7.34-0.27,10.14c0.89,2.54,2.7,4.51,5.41,5.52c1.44,0.54,2.2,2.1,1.74,3.55l0.01,0 c-1.83,5.89-1.87,11.08-0.52,15.26c0.82,2.53,2.14,4.69,3.88,6.4c1.74,1.72,3.9,3,6.39,3.78c4.04,1.26,8.94,1.18,14.31-0.55 C99.73,47.78,101.08,48.3,101.77,49.38L101.77,49.38z M59.28,57.86c2.77,0,5.01,2.24,5.01,5.01c0,2.77-2.24,5.01-5.01,5.01 c-2.77,0-5.01-2.24-5.01-5.01C54.27,60.1,56.52,57.86,59.28,57.86L59.28,57.86z M37.56,78.49c3.37,0,6.11,2.73,6.11,6.11 s-2.73,6.11-6.11,6.11s-6.11-2.73-6.11-6.11S34.18,78.49,37.56,78.49L37.56,78.49z M50.72,31.75c2.65,0,4.79,2.14,4.79,4.79 c0,2.65-2.14,4.79-4.79,4.79c-2.65,0-4.79-2.14-4.79-4.79C45.93,33.89,48.08,31.75,50.72,31.75L50.72,31.75z M119.3,32.4 c1.98,0,3.58,1.6,3.58,3.58c0,1.98-1.6,3.58-3.58,3.58s-3.58-1.6-3.58-3.58C115.71,34.01,117.32,32.4,119.3,32.4L119.3,32.4z M93.62,22.91c2.98,0,5.39,2.41,5.39,5.39c0,2.98-2.41,5.39-5.39,5.39c-2.98,0-5.39-2.41-5.39-5.39 C88.23,25.33,90.64,22.91,93.62,22.91L93.62,22.91z M97.79,0.59c3.19,0,5.78,2.59,5.78,5.78c0,3.19-2.59,5.78-5.78,5.78 c-3.19,0-5.78-2.59-5.78-5.78C92.02,3.17,94.6,0.59,97.79,0.59L97.79,0.59z M76.73,80.63c4.43,0,8.03,3.59,8.03,8.03 c0,4.43-3.59,8.03-8.03,8.03s-8.03-3.59-8.03-8.03C68.7,84.22,72.29,80.63,76.73,80.63L76.73,80.63z M31.91,46.78 c4.8,0,8.69,3.89,8.69,8.69c0,4.8-3.89,8.69-8.69,8.69s-8.69-3.89-8.69-8.69C23.22,50.68,27.11,46.78,31.91,46.78L31.91,46.78z M107.13,60.74c-3.39-0.91-6.35-3.14-8.95-6.48c-5.78,1.52-11.16,1.41-15.76-0.02c-3.37-1.05-6.32-2.81-8.71-5.18 c-2.39-2.37-4.21-5.32-5.32-8.75c-1.51-4.66-1.69-10.2-0.18-16.32c-3.1-1.8-5.25-4.53-6.42-7.88c-1.06-3.05-1.28-6.59-0.61-10.35 C47.27,5.95,34.3,11.36,24.41,20.18C13.74,29.69,6.66,43.15,5.84,58.29l0,0.05v0h0l-0.01,0.13v0C5.07,73.72,10.55,87.82,20.02,98.3 c9.44,10.44,22.84,17.29,38,18.1l0.05,0h0v0l0.13,0.01h0c15.24,0.77,29.35-4.71,39.83-14.19c10.44-9.44,17.29-22.84,18.1-38l0-0.05 v0h0l0.01-0.13v0c0.07-1.34,0.09-2.64,0.06-3.91C112.98,61.34,109.96,61.51,107.13,60.74L107.13,60.74z M116.15,64.04L116.15,64.04 L116.15,64.04L116.15,64.04z M58.21,116.42L58.21,116.42L58.21,116.42L58.21,116.42z"></path></g></svg>
+                 <p class="cookieHeading">We use cookies.</p>
+                 <p class="cookieDescription">We use cookies to ensure that we give you the best experience on our website. <br><a href="CookiePage.html">Read cookies policies</a>.</p>
+               
+                 <div class="buttonContainer">
+                    <button class="acceptButton" onclick="allowCookies()">Allow</button>
+                    <button class="declineButton" onclick="declineCookies()">Decline</button>
+                 </div>
+                 
+               
+               </div>
+               <script>
+                // Function to set a cookie
+                function setCookie(cname, cvalue, exdays) {
+                    const d = new Date();
+                    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                    const expires = "expires=" + d.toUTCString();
+                    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+                }
+            
+                // Function to check if the user has already accepted cookies
+                function checkCookieConsent() {
+                    const cookies = document.cookie;
+                    if (cookies.includes('cookieConsent=allowed')) {
+                        // User has accepted cookies, hide the cookie notification
+                        const cookieDiv = document.querySelector('.card');
+                        cookieDiv.style.display = 'none';
+                    }
+                }
+            
+                // Function to hide the cookie notification with sliding animation
+                function hideCookieNotification() {
+                    const cookieDiv = document.querySelector('.card');
+                    cookieDiv.classList.add('slide-out');
+            
+                    // Remove the cookie notification after the animation
+                    cookieDiv.addEventListener('animationend', () => {
+                        cookieDiv.style.display = 'none';
+                    });
+                }
+            
+                // Event listener for the "Allow" button
+                document.querySelector('.acceptButton').addEventListener('click', () => {
+                    // Set a cookie named 'cookieConsent' with value 'allowed' for 30 days
+                    setCookie('cookieConsent', 'allowed', 30);
+                    // You can add additional actions when the user allows cookies
+                    console.log('Cookies allowed.');
+                    hideCookieNotification(); // Hide the cookie notification with sliding animation
+                });
+            
+                // Event listener for the "Decline" button
+                document.querySelector('.declineButton').addEventListener('click', () => {
+                    // You can add additional actions when the user declines cookies
+                    console.log('Cookies declined.');
+                    hideCookieNotification(); // Hide the cookie notification with sliding animation
+                });
+            
+                // Check for cookie consent when the page loads
+                window.addEventListener('load', checkCookieConsent);
+            </script>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

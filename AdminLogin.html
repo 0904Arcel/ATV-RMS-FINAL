@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-ATV Rental</title>
+    <link rel="stylesheet" href="LoginPage.css">
+    <link rel="icon" href="LOGOATV.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Baloo+Tamma+2&family=Black+Ops+One&family=Bungee+Inline&family=Fredericka+the+Great&family=Fredoka&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<style>
+    body{
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+    .hidden {
+        display: none;
+     width: 100%;
+     height: 100%;
+}
+    .loginWithRFID{
+        cursor: pointer;
+    }
+    .hidden .back_btn{
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: none;
+        color: rgb(255, 145, 0);
+        background-color: transparent;
+    }
+    .hidden .back_btn:hover{
+        color: rgb(255, 71, 38);
+        border-radius: 20px;
+    }
+#rfidLoginBox {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  transition: top 0.5s ease;
+}
+
+#rfidLoginBox.show {
+  top: 50px;
+}
+
+#rfidLoginForm {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+#rfidLoginForm input{
+    height: 50px;
+    font-size: 17px;
+    outline: none;
+    border:none;
+    margin: 20px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border-bottom: 3px solid rgb(255, 238, 0);
+}
+#rfidLoginForm .RFIDLOGINBTN {
+    margin: 40px;
+    margin-top: 10px;
+    height: 40px;
+    border: none;
+    transition: 0.4s ease;
+    border-radius: 10px;
+    font-family: 'Black Ops One', cursive;
+    font-size: 17px;
+}
+#rfidLoginForm .RFIDLOGINBTN:hover{
+    background-color: yellow;
+    letter-spacing: 2px;
+    
+}
+    @media only screen and (max-width: 759px){
+        .main_login .ATVLOGO{
+        display: none;
+    }
+    }
+    @media only screen and (max-width: 790px){
+        .main_login .LOGIN{
+            width: 100%;
+        }
+    }
+    
+</style>
+</head>
+<body>
+    <video autoplay loop muted plays-inline class="back-video">
+        <source src="ATV_VID.mp4" type="video/mp4">
+    </video>
+    <div class="shadow">
+
+    </div>
+    <div class="main_login">
+        <div class="ATVLOGO">
+            <a href="mainhomepage.html">
+                <img src="ATVLOGO.png">
+            </a>
+        </div>
+        <div class="LOGIN">
+            <div class="toplogin">
+                    <img src="ATV BACKGROUND/loginpicturebackground.png" class="logologin">
+                <h1>Admin Login</h1>
+                <hr>
+            </div>
+
+        <div class="mid-login">
+            <div class="inputbox_box">
+                <input type="text" placeholder="Username" required>
+                <ion-icon name="person-circle-outline" class="Icon"></ion-icon>
+            </div>
+            <div class="inputbox_box">
+                <input type="password" placeholder="Password" required>
+                <ion-icon name="lock-closed" class="Icon"></ion-icon>
+            </div>
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+
+
+                <a class="loginWithRFID" id="loginWithRFID" onclick="toggleRFID()">LOGIN WITH RFID</a>
+                <div id="rfidLoginBox" class="hidden">
+                    <button class="back_btn" onclick="toggleRFID()" id="backButton"><span class="material-symbols-outlined">
+                        close
+                        </span></button>
+                    <form id="rfidLoginForm">
+                      <input type="text" placeholder="RFID Credential" >
+                      <button class="RFIDLOGINBTN" type="submit">Login</button>
+                    </form>
+                </div>
+
+            </div>
+            <a href="userDashboard.html">
+            <button type="submit" class="btn">
+                Login
+            </button>
+        </a>
+            <div class="Signup">
+                <p>Don't have an account?<a href="AdminSignup.html">Register</a></p>
+            </div>
+        </div>
+            <div class="loginofadmin_tourguide">
+                <div class="admin_signup">
+                    <a href="TourguideLogin.html">
+                        <p><span class="material-symbols-outlined">tour</span>Tourguide?</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<script>
+
+function toggleRFID() {
+      var rfidLoginBox= document.getElementById("rfidLoginBox");
+      if (rfidLoginBox.style.display === "none") {
+        rfidLoginBox.style.display = "block";
+      } else {
+        rfidLoginBox.style.display = "none";
+      }
+    }
+
+</script>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>
