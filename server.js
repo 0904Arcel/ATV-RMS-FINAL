@@ -331,12 +331,12 @@ app.get('/logout', (req, res) => {
 /* Make A Reservation*//* Make A Reservation*//* Make A Reservation*//* Make A Reservation*//* Make A Reservation*//* Make A Reservation*/
 app.get('/MakeAreservation', async (req, res) => {
   // Check if the user is authenticated and has a valid session
-  if (req.session.customerData && req.session.customerData._id) {
+  if (req.session.customerData && req.session.customerData._id && req.session.custReservationData  ) {
     try {
       const customerData = req.session.customerData;
-
+      const custReservationData = req.session.custReservationData;  
       // Render the MakeAreservation page using the customerData
-      res.render('MakeAreservation', { Customer: customerData });
+      res.render('MakeAreservation', { Customer: customerData, custReservationsI: custReservationData  });
     } catch (error) {
       console.error('Error rendering MakeAreservation page:', error);
       res.status(500).send('Error rendering MakeAreservation page');
@@ -877,12 +877,12 @@ app.delete('/deleteReservation/:reservationId', async (req, res) => {
 
 app.get('/takenNoteUser', (req, res) => {
  // Check if the user is authenticated and has a valid session
- if (req.session.customerData && req.session.customerData._id) {
+ if (req.session.customerData && req.session.customerData._id && req.session.custReservationData ) {
   try {
     const customerData = req.session.customerData;
-
+    const custReservationData = req.session.custReservationData;  
     // Render the takenNoteUser page using the customerData
-    res.render('takenNoteUser', { Customer: customerData });
+    res.render('takenNoteUser', { Customer: customerData, custReservationsI: custReservationData  });
   } catch (error) {
     console.error('Error rendering takenNoteUser page:', error);
     res.status(500).send('Error rendering takenNoteUser page');
@@ -897,12 +897,12 @@ app.get('/takenNoteUser', (req, res) => {
 
 app.get('/rulesAndRegulation', (req, res) => {
  // Check if the user is authenticated and has a valid session
- if (req.session.customerData && req.session.customerData._id) {
+ if (req.session.customerData && req.session.customerData._id && req.session.custReservationData ) {
   try {
     const customerData = req.session.customerData;
-
+    const custReservationData = req.session.custReservationData; 
     // Render the rulesAndRegulation page using the customerData
-    res.render('rulesAndRegulation', { Customer: customerData });
+    res.render('rulesAndRegulation', { Customer: customerData, custReservationsI: custReservationData   });
   } catch (error) {
     console.error('Error rendering rulesAndRegulation page:', error);
     res.status(500).send('Error rendering rulesAndRegulation page');
@@ -1341,7 +1341,7 @@ app.post('/TourguideProfile', upload.single('picture'), async (req, res) => {
 /*Displaying Schedule of Tours*//*Displaying Schedule of Tours*//*Displaying Schedule of Tours*//*Displaying Schedule of Tours*//*Displaying Schedule of Tours*//*Displaying Schedule of Tours*/
 
 
-
+/* SHA256:gO18cRt+lTUXcuCIIFgoPxaLfn0tBdk7I+6VSyS8+Yc  */ 
 
 
 /*Test*//*Test*//*Test*//*Test*//*Test*//*Test*//*Test*//*Test*//*Test*//*Test*//*Test*//*Test*//*Test*//*Test*//*Test*//*Test*//*Test*//*Test*//*Test*//*Test*/
