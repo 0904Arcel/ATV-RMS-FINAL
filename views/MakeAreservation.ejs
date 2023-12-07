@@ -966,9 +966,9 @@
                             </a>
                         </div> 
                     </div>
-                    <div class="Tours" value="Tour2" >
+                    <div class="Tours" value="Tour2" style="background-color:white;">
  
-                            <h3 style="Padding-top:150px;">Tours Comming Soon!</h3>
+                            <h3 style="Padding-top:150px; color:black; ">Tours Comming Soon!</h3>
 
                         </div> 
                     </div>
@@ -1043,23 +1043,51 @@
                 <span class="material-symbols-outlined" onclick="toggleEdit1()">edit</span>
                 </a>
         </div>
+        <hr style="margin-top:5px; margin-bottom:5px;">
+        <div class="bookdate">
+          <h5  style="width: 100%; color:rgb(14, 14, 14); text-align:right;">Booking Date</h5>
+          <h3 style="width: 100%; color:rgb(14, 14, 14); margin-bottom:10px; text-align:right;">
+            <% if (custReservationsI.reservDate instanceof Date) { %>
+              <%= custReservationsI.reservDate.toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %>
+            <% } else if (custReservationsI.reservDate) { %>
+              <%= (new Date(custReservationsI.reservDate)).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %>
+            <% } else { %>
+              No Date Available
+            <% } %>
+          </h3>
+        </div>
     </form>
-        <% console.log(Customer); %>
         <hr style="margin-top:10px;">
             <div class="pictures" >
-                <img src="ATV BACKGROUND/TourGuideDashboard.png" class="tourpicdash">
+              <iframe class="tourpicdash" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3857.9667751189445!2d121.20353104476537!3d14.770901632670313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397a3c031723469%3A0x816773649a9319d5!2sQuick%20Escape%20Mountain%20Tours%20Parking!5e0!3m2!1sen!2sph!4v1701775347273!5m2!1sen!2sph"
+              style="border: 0; height:140px;margin-top:70px; box-shadow: 0 0 5px rgba(30, 30, 30, 0.756); border-radius: 10px; "
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+          
             </div>
-            <div class="Downloadapp">
-                <h3>Download The App</h3>
-                <p>As you have an account, you can also make a reservation through the mobile application. You will notice a QR-CODE, so all you need to do is scan it, and the link will appear. If you see the download button, click it, and the file app will start downloading.</p>
+            <hr style="margin-bottom:10px;">
+            <div class="GA">
+              <a href="userGallery.html"><h3><span class="material-symbols-outlined" >gallery_thumbnail </span>Gallery</h3></a>
+              <a href="userAboutUs.html"><h3><span class="material-symbols-outlined" >group</span>About Us</h3></a>
             </div>
+            <hr>
+    
+            <div class="VisitMainHomepage">
+              <a href="index.html"> <button type="button">Visit Our Website</button></a>
+            </div>
+            <hr style="margin-top:10px;">
+    
             <div class="QRCODE">
                     <img src="ATV BACKGROUND/QRCODE.png" class="QRPIC">
                     <a id="downloadATVLogoLink" download="LOGOATV.png" onmouseenter="showWordFollower(event)" onmouseleave="hideWordFollower()">
                         <img src="ATVLOGO.png" class="atvLogo" onclick="downloadATVLogo() "
                         style="position: absolute;  bottom: 0px; 
                         left: 0; padding-left: 400px; background-color: rgba(90, 90, 90, 0); width: 100%; height: auto;">
-                    </a>        
+                    </a>
+                    
             </div>
         </div>
    

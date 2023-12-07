@@ -337,7 +337,7 @@
                         <input type="text" name="PaxMnamea[]" placeholder="Middle Name" value="<%= i === 1 ? Customer.Mname : '' %>">
                         <input type="text" name="PaxSnamea[]" placeholder="Lastname" required value="<%= i === 1 ? Customer.Lname : '' %>">
                         <input type="text" name="PaxPhoneNoa[]" placeholder="Phone No." required value="<%= i === 1 ? Customer.Phone : '' %>">
-                        <input type="text" name="PaxAgea[]" placeholder="Age">
+                        <input type="text" name="PaxAgea[]" placeholder="Age" value="<%= i === 1 ? Customer.age : '' %>">
                         <input type="text" name="PaxEmaila[]" placeholder="Gmail Address" required value="<%= i === 1 ? Customer.Email : '' %>">
                     </h3>
                 <% } %>

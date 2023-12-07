@@ -16,12 +16,13 @@ body{
 }
 .sidebar{
     position: relative;
-    background-color: rgb(56, 56, 56);
-    width: 18%;
+    background-color: rgb(32, 32, 32);
+    width: 16.5%;
     height: 100%;
     text-align: center;
     font-size: 0.88rem;
     font-family: 'Baloo Tamma 2', cursive;
+    
 }
 .sidebar .topsidebar{
     width: 100%;
@@ -111,7 +112,7 @@ body{
     color: white;
   }
 .mainbody{
-    background-color: rgb(105, 105, 105);
+    background-color: rgb(238, 238, 238);
     width: 60%;
     margin: 0;
     padding: 0;
@@ -213,16 +214,19 @@ body{
     left: 0px;
     height: 100px;
     font-size: 35px;
-    color: rgb(255, 217, 0);
+    color: rgb(0, 84, 167);
     font-family: 'Black Ops One', cursive;
     letter-spacing: 2px;
-    background-color: rgb(119, 119, 119);
+    background-image: url(https://img.freepik.com/premium-vector/sky-background-video-conferencing_23-2148616500.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index: 0;
     padding-top: 60px;
     bottom: 0;
     padding-left: 30px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    margin-bottom: 100px;
 }
 .mainbody h1 img{
     position: absolute;
@@ -233,52 +237,56 @@ body{
 }
 .mainbody .welcome{
     width: 98%;
-    height: auto;
+    height: 44vh;
     font-family: 'Fredoka', sans-serif;
     position: relative;
-    padding-top: 10px;
+    padding-top:0;
     padding-bottom: 20px;
     padding-left: 10px;
     padding-right:10px ;
-    background-color: gray;
+    background-color: rgb(238, 238, 238);
     margin-top: 40px;
     border-radius: 10px;
+    color: rgb(26, 26, 26);
 }
 .welcome h2{
     position: relative;
-    color: white;
+    color: rgb(0, 106, 255);
     width: 100%;
     
 }
 .welcome p{
     position: relative;
-    color: rgb(224, 224, 224);
     text-indent: 30px;
 }
 .totalamounts{
     width: 100%;
     height: 200px;
     display: flex;
-    
-    margin-top: 30px;
+    margin-top: 20px;
+    text-align: center;
 }
 .totalamounts .Total{
-    background-color: #e6e6e6;
-    width: 33%;
-    margin-left: 10px;
+    background-color: #ffffff;
+    width: 27%;
+    margin-left: 23px;
     border-radius: 10px;
     padding: 10px;
     text-align: center;
     overflow: hidden;
-    box-shadow:0 0 10px rgba(30, 30, 30, 0.756);
+    box-shadow:0 0 10px rgba(51, 51, 51, 0.539);
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+.totalamounts .Total:hover{
+    background-color: #fbff00c8;
 }
 .Total h4{
     font-family: 'Fredoka', sans-serif;
     font-size: 25px;
     border-bottom: 1px solid rgba(57, 57, 57, 0.408);
     padding: 10px;
-    color:rgb(42, 42, 42);
-   
+    color:rgb(2, 2, 2);
 }
 .Total input{
     position: relative;
@@ -289,8 +297,33 @@ body{
     text-align: center;
     font-size: 25px;
     background-color: transparent;
+    font-family: 'Fredoka', sans-serif;
+    cursor: pointer;
 }
 
+.VisitMainHomepage{
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+
+}
+.VisitMainHomepage button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'Fredoka', sans-serif;
+    background: rgb(0,185,255);
+background: radial-gradient(circle, rgba(0,185,255,1) 0%, rgba(0,121,255,1) 69%, rgba(0,129,255,1) 100%);
+transition: 0.4s ease;
+}
+.VisitMainHomepage button:hover{
+   letter-spacing: 2px;
+}
 
 /* PROFILE PAGE *//* PROFILE PAGE *//* PROFILE PAGE *//* PROFILE PAGE *//* PROFILE PAGE *//* PROFILE PAGE *//* PROFILE PAGE *//* PROFILE PAGE */
 .editprofile{
@@ -394,8 +427,42 @@ body{
     height: auto;
     border-radius: 100px;
 }
+.GA{
+    display: block;
+    width:100%;
+    text-align:center;
+    color:rgb(0, 110, 255);
+    font-family: 'Fredoka', sans-serif;
+   padding-left: 50px;
+   position: relative;
+}
+.GA a{
+    margin-left: 10px;
+    position: relative;
+    font-size:17px; 
+    cursor: pointer;
+    text-align: left;
+    margin: 0px;
+   
+}
+.GA h3{
+    padding-bottom: 10px;
+    margin: 0px;
+}
+.GA h3:hover{
+    color: rgb(0, 140, 255);
+}
+.GA span{
+    position: absolute;
+    left: 0px;
+    bottom: 10px;
+    margin-right: 10px;
+    font-size: 30px;
+    color: rgb(0, 128, 255);
+}
 .profileko .nameko{
     position: relative;
+    
     font-family: 'Black Ops One', cursive;
     font-size: 30px;
     padding-left: 20px;
@@ -551,7 +618,7 @@ border-color: white;
     padding: 0;
     font-size: 30px;
     font-family: 'Bungee Inline', cursive;
-    color: rgb(224, 224, 224);
+    color: rgb(40, 40, 40);
     letter-spacing: 1px;
     z-index: 2;
 }
@@ -569,8 +636,8 @@ border-color: white;
     height: auto;
 }
 .myCurrentReservation .MCR_DETAILS{
-    
-    width: 100%;
+   margin-left: 10px;
+    width: 98%;
     height: 100%;
     z-index: 2;
 }
@@ -589,84 +656,8 @@ border-color: white;
     height: 100%;
     z-index: 2;
 }
-.headMCR_DETAILS .h1MCR{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(73, 73, 73, 0.603);
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    z-index: 2;
-}
-.MCR_DETAILS .bodyMCR_DETAILS{
-    top: 100px;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(133, 133, 133);
-    display: flex;
-    z-index: 2;
-}
-.bodyMCR_DETAILS .detailsbook{
-    width: 50%;
-    height: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: rgb(34, 34, 34);
-    z-index: 2;
-}
-.bodyMCR_DETAILS .detailsbook h5{
-    color: rgb(255, 238, 5);
-    z-index: 2;
-}
-.bodyMCR_DETAILS .pickAdate{
-    overflow: hidden;
-    width: 50%;
-    height: 100%;
-    text-align: center;
-    padding-top: 100px;
-    padding-left: 50px;
-    display: block;
-    z-index: 2;
-}
-.pickAdate .canceldivbtn{
-    width: 100%;
-    height: 100px;
-    margin-top: 40px;
 
 
-}
-.canceldivbtn .cancel-btn{
-    width: 180px;
-    height: 50px;
-    border-radius: 10px;
-    outline: none;
-    border: none;
-    font-family: 'Fredoka', sans-serif;
-    font-size: 16px;
-    box-shadow: 0 0 10px rgb(68, 68, 68);
-    cursor: pointer;
-    transition: 0.4s ease;
-    font-weight: bold;
-    background-color: rgb(255, 208, 0);
-}
-.canceldivbtn .cancel-btn:hover{
-    background-color: yellow;
-    letter-spacing: 1px;
-}
-.bodyMCR_DETAILS .pickAdate h5{
-    position: relative;
-    color: rgb(255, 217, 0);
-    bottom: 50px;
-    z-index: 2;
-}
-
-.bodyMCR_DETAILS .pickAdate .bookingdate{
-    position: relative;
-    bottom: 50px;
-    width: 200px;
-    border-radius: 20px;
-    z-index: 2;
-}
 .MCR_DETAILS .footerMCR_DETAILS{
     position: relative;
     width: 100%;
@@ -685,34 +676,75 @@ border-color: white;
     padding: 0;
     font-family: 'Fredoka', sans-serif;
     font-size: 14px;
-    color: white;
+    color: rgb(23, 23, 23);
     z-index: 2;
 }
 .notemo1 p{
     padding-left: 30px;
     padding-right: 20px;
     z-index: 2;
+    font-size: 15px;
 }
 .notemo1 b{
-    color: rgb(255, 217, 0);
+    color: rgb(49, 49, 49);
     z-index: 2;
+    font-size: 20px;
 }
 
 
 /* DASHBOARD CURRENT RESERVATION *//* DASHBOARD CURRENT RESERVATION *//* DASHBOARD CURRENT RESERVATION *//* DASHBOARD CURRENT RESERVATION *//* DASHBOARD CURRENT RESERVATION *//* DASHBOARD CURRENT RESERVATION *//* DASHBOARD CURRENT RESERVATION */
 
+.reservationdetail{
+    width: 100%;
+    height: 100%;
+}
+.reservationdetail .ScheduleTable{
+    width: 100%;
+    height: 100%;
+}
+.ScheduleTable .thead{
+    width: 100%;
+    height: 100%;
+  border-radius: 10px;  
+  color: #ffffff;
+}
+.thead tr{
+    background-color: aliceblue;
+    border-radius: 10px;
+    color: #ffffff;
+}
+.thead th{
+    background-color: #595959;
+    
+}
+.ScheduleTable .tbody{
+    width: 100%;
+    height: 100%;
+
+}
+.tbody tr{
+    background-color: aliceblue;
+    border-radius: 10px;
+    color: #000000;
+    text-align: center;
+}
+ .tbody td{
+
+ }
 
 
 .mainbody .myreservations{
     width: 97%;
     padding: 20px;
     position: relative;
-    margin-top: 20px;
-    background-color: rgb(66, 66, 66);
+    background-color: rgb(255, 255, 255);
     font-family: 'Fredoka', sans-serif;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(118, 118, 118, 0.39);
+    border-radius: 10px;
 }
 .myreservations h2{
-    color: white;
+    color: rgb(0, 0, 0);
     width: 100%;
     padding-bottom: 10px;
     font-family: 'Fredoka', sans-serif;
@@ -724,26 +756,35 @@ table {
     color: whitesmoke;
     position: relative;
     overflow-y: auto;
+    border-radius: 10px;
   }
   
   th, td {
-    border: 1px solid rgb(128, 128, 128);
+    
     padding: 10px;
     position: relative;
     overflow-y: auto;
+  
+  }
+  td{
+ 
+    border:1px solid rgb(209, 209, 209);
   }
   td span{
     text-align: center;
     cursor: pointer;
   }
   td span:hover{
-    color: rgb(255, 208, 0);
+    color: rgb(0, 136, 255);
   }
   th {
     background-color: rgb(255, 217, 0);
-    color: black;
+    color: rgb(255, 255, 255);
     position: relative;
     overflow-y: auto;
+  }
+  tr{
+    text-align: center;
   }
   
 .mainbody .contactus{
@@ -758,7 +799,7 @@ table {
     width: 100%;
     height: 20px;
     padding-top: 20px;
-    color: yellow;
+    color: rgb(0, 123, 255);
     font-size: 25px;
     padding-bottom: 5px;
     letter-spacing: 1px;
@@ -768,7 +809,7 @@ table {
     width:200px;
     height: 100px;
     bottom: -90px;
-    color: white;
+    color: rgb(38, 38, 38);
     font-size: 14px;
     padding-top: 20px;
     left: 70px;
@@ -779,7 +820,7 @@ table {
     text-align: left;
     width: 120%;
     padding-top: 70px;
-    color: white;
+    color: rgb(44, 44, 44);
     font-family: 'Fredoka', sans-serif;
 }
 .contactus .ul1 li{
@@ -789,7 +830,7 @@ table {
     padding-left: 10px;
 }
 .contactus .ul1 li:hover{
-    color: yellow;
+    color: rgb(0, 123, 255);
 }
 .ul1 li ion-icon{
     width: 18px;
@@ -798,13 +839,13 @@ table {
     margin-right: 10px;
 }
 .ul1 li ion-icon:hover{
-    color: yellow;
+    color: rgb(0, 123, 255);
 }
 .contactus .ul2{
     padding-top: 80px;
     width: 100%;
     display: flex;
-    color: white;
+    color: rgb(44, 44, 44);
     text-align: center;
     justify-content: center;
 }
@@ -819,7 +860,7 @@ table {
     height: 40px;
 }
 .ul2 li ion-icon:hover{
-    color: yellow;
+    color: rgb(0, 123, 255);
 }
 
 /*slide choosetours*/
@@ -829,7 +870,7 @@ table {
 }
 
 .choosetours::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 217, 1, 0.911); 
+    background-color: rgba(1, 132, 255, 0.911); 
     border-radius: 5px; 
 }
 
@@ -839,7 +880,7 @@ table {
     width: 30%;
 }
 .choosetours::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(255, 123, 0); 
+    background-color: rgb(0, 98, 255); 
     border-radius: 5px;
     border-color: white; 
 }
@@ -850,7 +891,7 @@ table {
 }
 
   .mainbody::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 217, 1, 0.911); 
+    background-color: rgba(1, 158, 255, 0.911); 
     border-radius: 5px; 
 }
 
@@ -860,7 +901,7 @@ table {
     width: 30%;
 }
   .mainbody::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(255, 123, 0); 
+    background-color: rgb(0, 123, 255); 
     border-radius: 5px;
     border-color: white; 
 }
@@ -927,16 +968,23 @@ table {
     width: 70%;
     height: 160px;
     left: 25px;
-    padding-top: 20px;
+
 }
+
 .profiledetails .Downloadapp{
     font-family: 'Fredoka', sans-serif;
     width: 100%;
     font-size: 15px;
     
 }
+.QRCODE{
+    font-family: 'Fredoka', sans-serif;
+    font-size: 13px;
+}
 .Downloadapp h3{
-    margin-bottom: 5px;
+    width: 100%;
+    text-align: center;
+   margin-top: 10px;
 }
 /* MAKE A RESERVATION*//* MAKE A RESERVATION*//* MAKE A RESERVATION*//* MAKE A RESERVATION*//* MAKE A RESERVATION*/
 
@@ -949,8 +997,8 @@ table {
     padding-bottom: 40px;
     width: 100%;
     height: 100%;
-    background-color: rgb(82, 82, 82);
-    
+    background-color: rgb(238, 238, 238);
+    color:#fcb100
 }
 
 /* BOOKINGS */ /* BOOKINGS */  /* BOOKINGS */ /* BOOKINGS */ /* BOOKINGS */ /* BOOKINGS */ /* BOOKINGS */
@@ -1430,7 +1478,7 @@ table {
     height: 40px;
     text-align: center;
     font-size: 30px;
-    color: white;
+    color: rgb(37, 37, 37);
     font-family: 'Aclonica', sans-serif;
 }
 .choosetours .yourtours{
@@ -1540,19 +1588,19 @@ table {
 /* TAKE NOTE! *//* TAKE NOTE! *//* TAKE NOTE! *//* TAKE NOTE! *//* TAKE NOTE! *//* TAKE NOTE! *//* TAKE NOTE! *//* TAKE NOTE! *//* TAKE NOTE! *//* TAKE NOTE! *//* TAKE NOTE! *//* TAKE NOTE! *//* TAKE NOTE! *//* TAKE NOTE! *//* TAKE NOTE! *//* TAKE NOTE! */
 
 .mainbody .notemo{
-    margin-top: 50px;
-    margin-bottom: 20px;
+    padding: 0%;
     width: 100%;
     height: 100%;
-    background-color: rgb(61, 61, 61);
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(28, 28, 28);
+    border-radius: 10px;
 }
 .notemo h5{
     text-align: center;
     width: 70%;
     height: 70px;
     margin-left: 115px;
-    padding-top: 30px;
+   
     padding-bottom: 20px;
     text-align: center;
     border: none;
@@ -1567,22 +1615,24 @@ table {
     display: block;
     padding-top:20px ;
     padding-bottom: 20px;
-    
-
+    border-radius: 10px;
+    background-color: rgb(238, 238, 238);
 }
 .notemo ul li{
     width: 100%;
     height: 40%;
     padding-top: 20px;
-    background-color: rgb(80, 80, 80);
+    background-color: rgb(255, 255, 255);
     display: flex;
     float: left;
     border: none;
-    border-bottom: 3px solid rgb(88, 88, 88);
+    border-bottom: 3px solid rgb(238, 238, 238);
     transition: 0.4s ease;
+    
 }
 .notemo ul li:hover{
-    background-color: rgb(54, 54, 54);
+    background-color: rgb(0, 179, 255);
+    border-radius: 10px;
 }
 .notemo ul li p{
     padding-top: 60px;
@@ -1597,7 +1647,7 @@ table {
 
 .notemo ul li p b{
     font-size:25px;
-    color: yellow;
+    color: rgb(33, 33, 33);
 }
 .notemo ul li .imgtakenote{
     height: 100%;
@@ -1618,17 +1668,18 @@ table {
 .mainbody .Rulesmo{
     width: 100%;
     height: 100%;
-    background-color: rgb(77, 77, 77);
+    background-color: rgb(238, 238, 238);
     margin-top: 50px;
     padding-top: 20px;
     font-family: 'Fredoka', sans-serif;
+   
 }
 .Rulesmo .headerngrules{
     width: 100%;
     height: 65%;
     display: flex;
     border: none;
-    border-bottom: 5px solid rgb(107, 107, 107);
+    background-color: rgb(238, 238, 238);
 }
 .headerngrules h5{
     width: 55%;
@@ -1636,13 +1687,15 @@ table {
     padding-left: 40px;
     padding-top: 100px;
     text-align: justify;
-    color: rgb(231, 231, 231);
+    color: rgb(28, 28, 28);
     font-size: 17px;
 }
 .Rulesmo ul{
-    margin-top: 0px;
+    
+    margin-top: 10px;
     width: 100%;
     height: 100%;
+    border-radius:10px;
 
 }
 .Rulesmo ul li{
@@ -1650,21 +1703,24 @@ table {
     height: 20%;
     list-style-type: upper-roman;
     border: none;
-    border-bottom: 3px solid rgb(107, 107, 107);
+    background-color: rgb(238, 238, 238);
     display: flex;
     overflow: hidden;
-    background-color: rgb(77, 77, 77);
+    background-color: rgb(255, 255, 255);
     transition: 0.2s ease;
+    margin-top: 10px;
+    border-radius:4px;
+    box-shadow: 0 0 10px rgba(121, 121, 121, 0.278);
 }
 .Rulesmo ul li:hover{
-    background-color: rgb(54, 54, 54);
+    background-color: rgb(0, 140, 255);
 }
 .Rulesmo ul li b{
     height: 100%;
     width: 55%;
     font-family: 'Black Ops One', cursive;
     font-size: 30px;
-    color: rgb(255, 208, 53);
+    color: rgb(30, 30, 30);
     letter-spacing: 3px;
     padding-top: 40px;
     padding-left: 30px;
@@ -1675,6 +1731,6 @@ table {
     height: 100%;
     width: 40%;
     font-family: 'Fredoka', sans-serif;
-    color: rgb(223, 223, 223);
+    color: rgb(0, 0, 0);
     
 }

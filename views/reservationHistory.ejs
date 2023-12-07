@@ -13,59 +13,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
     <style>
-      .ScheduleTable{
-        position: relative;
-        width: 100%;
-        height: 10vh;
-        background-color: rgb(30, 30, 30);
-        margin-top: 10px;
-        padding-top: 10px;
-        border: 2px solid rgb(161, 161, 161);
-        text-align: center;
-        margin: 0;
-       
-    }
-    .ScheduleTable .thead{
-        margin: 0;
-    }
-    .ScheduleTable th{
-        background-color: rgb(105, 105, 105);
-        height: 30px;
-        color: white;
-        margin: 0;
-        border-right: 2px solid rgb(95, 95, 95); 
-    }
-    .ScheduleTable tr{
-        border-bottom: 1px solid rgb(97, 97, 97); 
-        margin: 0;
-        height: auto;
-    }
-    .tbody{
-        height: 0vh;
-        
-    }
-    .ScheduleTable td{
-        border-bottom: 2px solid rgb(168, 168, 168); 
-        border-right: 2px solid rgb(168, 168, 168); 
-        margin: 0;
-        width: auto;
-        height: auto;
-    }
-    .ScheduleTable span{
-        color: rgb(255, 255, 255);
-        cursor: pointer;
-        font-weight: bold;
-    }
-    .ScheduleTable span:hover{
-        color: rgb(255, 208, 0);
-    }
+   
     .mainbody{
       width: 100%;
 
     }
-    .myreservations{
-      border-radius: 10px;
-    }
+   
 
   </style>
   </head>
@@ -122,7 +75,7 @@
         <div class="myreservations" style="margin-top: 40px; margin-bottom: 20px;">
           <div class="tophis" style="display: flex;">
             <h2 style="width: 85%;">My Reservations</h2>
-            <h3 style="width: 15%; color:white;">
+            <h3 style="width: 15%; color:rgb(0, 0, 0);">
               <% if (custReservationsI.reservDate instanceof Date) { %>
                 <%= custReservationsI.reservDate.toISOString().split('T')[0] %>
               <% } else if (custReservationsI.reservDate) { %>
@@ -137,22 +90,22 @@
                   <table class="ScheduleTable"  >
                     <thead class="thead">
                       <tr>
-                        <th>Name of Tour</th>
-                        <th>Tour Price</th>
+                        <th style="border-top-left-radius: 10px;">Name of Tour</th>
+                        <th >Tour Price</th>
                         <th>Duration</th>
                         <th>Total of Individual</th>
                         <th>Time Slot</th>
                         <th>Balance</th>
                         <th>InitialPayment</th>
                         <th>TotalPayment</th>
-                        <th>Status</th>
+                        <th  style="border-top-right-radius:10px ;">Status</th>
 
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody class="tbody">
                   
                             <tr>
-                              <td><%= custReservationsI.tourName %></td>
+                              <td style="border-bottom-left-radius: 10px;"><%= custReservationsI.tourName %></td>
                               <td><%= custReservationsI.tourPrice %></td>
                               <td><%= custReservationsI.duration %></td>
                               <td><%= custReservationsI.totalPerson %></td>
@@ -160,7 +113,7 @@
                               <td><%= custReservationsI.Balance %></td>
                               <td><%= custReservationsI.InitialPayment %></td>
                               <td><%= custReservationsI.TotalPayment %></td>
-                              <td><%= custReservationsI.status %></td>
+                              <td style="border-bottom-right-radius: 10px;"><%= custReservationsI.status %></td>
                              
                             </tr>
                  
@@ -175,7 +128,7 @@
           <div class="myreservations" style="margin-top: 10px; margin-bottom: 50px;">
             <div class="tophis" style="display: flex;">
               <h2 style="width: 85%;">Pax Info</h2>
-              <h3 style="width: 15%; color:white;">
+              <h3 style="width: 15%; color:rgb(12, 12, 12);">
                 <% if (custReservationsI.reservDate instanceof Date) { %>
                   <%= custReservationsI.reservDate.toISOString().split('T')[0] %>
                 <% } else if (custReservationsI.reservDate) { %>
@@ -190,26 +143,26 @@
                     <table class="ScheduleTable"  >
                       <thead class="thead">
                         <tr>
-                          <th>Pax Name</th>
+                          <th style="border-top-left-radius: 10px;">Pax Name</th>
                           <th>Age</th>
                           <th>Contact No.</th>
-                          <th>Gmail</th>
+                          <th style="border-top-right-radius:10px ;">Gmail</th>
                         </tr>
                       </thead>
                       <tbody>
                     
-                        <% if (custReservationsI.PaxInfo && Array.isArray(custReservationsI.PaxInfo) && custReservationsI.PaxInfo.length > 0) { %>
+                        <% if  (custReservationsI.PaxInfo && Array.isArray(custReservationsI.PaxInfo) && custReservationsI.PaxInfo.length > 0) { %>
                           <% custReservationsI.PaxInfo.forEach(function(pax) { %>
                               <tr>
-                                  <td><%= pax.PaxFname %> <%= pax.PaxMname %> <%= pax.PaxSname %></td>
-                                  <td><%= pax.PaxAge %></td>
-                                  <td><%= pax.PaxPhoneNo %></td>
-                                  <td><%= pax.PaxEmail %></td>
+                                  <td style="color:black;"><%= pax.PaxFname %> <%= pax.PaxMname %> <%= pax.PaxSname %></td>
+                                  <td style="color:black;"><%= pax.PaxAge %></td>
+                                  <td style="color:black;"><%= pax.PaxPhoneNo %></td>
+                                  <td style="color:black;"><%= pax.PaxEmail %></td>
                               </tr>
                           <% }); %>
                       <% } else { %>
                           <tr>
-                              <td colspan="4">No Pax Information Available</td>
+                              <td style="color:black;" colspan="4">No Pax Information Available</td>
                           </tr>
                       <% } %>
                    
