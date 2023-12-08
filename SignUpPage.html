@@ -149,7 +149,7 @@
             
         <div class="midsignup">
         <div class="inputs" >
-            <form action="/CustomerSignup" method="post">         
+            <form onsubmit="return validateEmail()" action="/CustomerSignup" method="post">         
             <div class="inputbox_boxSignup" >
                 <h4>Full Name:</h4>
                 <div style="display:flex;">
@@ -184,7 +184,7 @@
                 <span class="material-symbols-outlined" style="margin-right:10px; padding-top:5px; color:rgb(159, 96, 2);">
                     mail
                     </span>
-                <input type="text" name="gmailAddress" placeholder="ex. juandelacruz04@gmail.com" required>
+                    <input type="text" id="gmailAddress" name="gmailAddress" placeholder="ex. juandelacruz04@gmail.com"  pattern=".+@gmail\.com$" required>
   
                 
             </div>
@@ -209,7 +209,23 @@
     </form> 
         </div>
     </div>
-   
+    <script>
+      function validateEmail() {
+          var emailInput = document.getElementById('gmailAddress');
+          var email = emailInput.value;
+
+          if (!email.endsWith('@gmail.com')) {
+              alert('Invalid email address. Please enter a valid email address because we use it to communicate with you. Thank you for understanding.');
+              emailInput.style.borderColor = 'red';  // Add this line to highlight the input field
+              return false;
+          } else {
+              // Reset the border color if the email is valid
+              emailInput.style.borderColor = '';
+          }
+
+          return true;
+      }
+  </script>
 <script>
         document.addEventListener("DOMContentLoaded", function() {
       const input = document.getElementById("picture");

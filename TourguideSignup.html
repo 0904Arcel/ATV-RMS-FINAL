@@ -194,21 +194,21 @@
     </style>
 </head>
 <body>
-  <form action="/SubmitResume" method="post" >
+  <form action="/your_form_action" method="post" id="yourFormId" enctype="multipart/form-data">
     <div class="container">
         <h1>Tour Guide Application Form</h1>
         
           <label for="firstname">First Name:</label>
-          <input type="text" id="firstname" name="firstname" placeholder="ex. Juan" required>
+          <input type="text" id="firstname" name="firstname" placeholder="ex. Juan" style=" text-transform: uppercase;"  required>
     
           <label for="middlename">Middle Name:</label>
-          <input type="text" id="middlename" name="middlename" placeholder="ex. Delosantos" >
+          <input type="text" id="middlename" name="middlename" placeholder="ex. Delosantos" style=" text-transform: uppercase;" >
     
           <label for="surname">Surname:</label>
-          <input type="text" id="surname" name="surename" required placeholder="ex. Delacruz" >
+          <input type="text" id="surname" name="surename" required placeholder="ex. Delacruz" style=" text-transform: uppercase;" >
     
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required placeholder="ex. juandelacruz0904@gmail.com" >
+          <input type="email" id="email" name="email" required placeholder="ex. juandelacruz0904@gmail.com" pattern=".+@gmail\.com$">
     
           <label for="phone">Phone No.:</label>
           <input type="tel" id="phone" name="phone" required placeholder="Ex. 09232234+++" >
