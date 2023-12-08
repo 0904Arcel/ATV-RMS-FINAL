@@ -792,9 +792,9 @@ app.post('/Customerprofile', upload.single('picture'), async (req, res) => {
 
     const updateData = {
       $set: {
-        FName: req.body.Cust1Name,
-        MName: req.body.Cust2Name,
-        Sname: req.body.Cust3Name,
+        FName: req.body.Cust1Name.toUpperCase(),
+        MName: req.body.Cust2Name.toUpperCase(),
+        Sname: req.body.Cust3Name.toUpperCase(),
         Gender: req.body.gender,
         Address: {
           Street: req.body.Address1street,
@@ -1262,9 +1262,9 @@ app.post('/changePassword', async (req, res) => {
 
 app.post("/SubmitResume", (req, res) => {
 
-  var firstname = req.body.firstname;
-  var middlename = req.body.middlename;
-  var surename = req.body.surename;
+  var firstname = req.body.firstname.toUpperCase();
+  var middlename = req.body.middlename.toUpperCase();
+  var surename = req.body.surename.toUpperCase();
   var email = req.body.email;
   var phone = req.body.phone;
   var Address = req.body.Address;
@@ -1307,9 +1307,9 @@ app.post('/TourguideProfile', upload.single('picture'), async (req, res) => {
 
     const TGupdateData = {
       $set: {
-        FName: req.body.Fname,
-        MName: req.body.Mname,
-        Sname: req.body.Lname,
+        FName: req.body.Fname.toUpperCase(),
+        MName: req.body.Mname.toUpperCase(),
+        Sname: req.body.Lname.toUpperCase(),
         phone: req.body.Phone,
         email: req.body.Email,
         username: req.body.Username,

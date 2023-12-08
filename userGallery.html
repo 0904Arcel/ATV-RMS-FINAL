@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery-ATV Rental</title>
+    <link rel="stylesheet" href="mainhomepage.css">
+    <link rel="icon" href="LOGOATV.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Baloo+Tamma+2&family=Black+Ops+One&family=Bungee+Inline&family=Fredericka+the+Great&family=Fredoka&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: rgb(255, 255, 255);
+        }
+      button{
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        height: 70px;
+        width: 10%;
+        border-radius: 20px;
+        border: none;
+        outline: none;
+        color: white;
+        font-size: 20px;
+        font-family: 'Black Ops One', cursive;
+        background-color: rgb(255, 170, 0);
+        transition: 0.4s ease;
+        cursor: pointer;
+      }
+      button:hover{
+        letter-spacing: 5px;
+        background-color: rgb(0, 136, 255);
+      }
+    </style>
+</head>
+<body>
+<div class="full-img" id="fullimgbox">
+    <img src="ATV BACKGROUND/moto1.jpg" id="fullimg" >
+    <span onclick="closeFullImg()">x</span>
+</div>
+    <div class="Gallery">
+        <h1>GALLERY</h1>
+        <div class="box">
+            <div class="column1">
+                <img src="ATV BACKGROUND/ATV1.jpg" onclick="openfullimg(this.src)">
+                <img src="ATV BACKGROUND/ATV10.jpg" onclick="openfullimg(this.src)">
+                <img src="ATV BACKGROUND/ATV2.jpg" onclick="openfullimg(this.src)"> 
+                <img src="ATV BACKGROUND/ATV3.jpg" onclick="openfullimg(this.src)"> 
+                <img src="ATV BACKGROUND/ATV4.jpg" onclick="openfullimg(this.src)">
+            </div>
+            <div class="column2">
+                <img src="ATV BACKGROUND/ATV7.jpg" onclick="openfullimg(this.src)">
+                <img src="ATV BACKGROUND/ATV5.jpg" onclick="openfullimg(this.src)">
+                <img src="ATV BACKGROUND/ATV6.jpg" onclick="openfullimg(this.src)">
+                <img src="ATV BACKGROUND/ATV9.jpg" onclick="openfullimg(this.src)">
+                <img src="ATV BACKGROUNd/ATV11.jpg" onclick="openfullimg(this.src)">
+            </div> 
+            <div class="column3">
+                <img src="ATV BACKGROUNd/ATV8.jpg" onclick="openfullimg(this.src)">
+                <img src="ATV BACKGROUND/motocross-2500935_1280.jpg" onclick="openfullimg(this.src)">
+                <img src="ATV BACKGROUND/quad-2262332_1280.jpg" onclick="openfullimg(this.src)">
+                <img src="ATV BACKGROUND/quad-race-2501937_1280.jpg" onclick="openfullimg(this.src)">
+                <img src="ATV BACKGROUND/moto1.jpg" onclick="openfullimg(this.src)">
+            </div>  
+        </div>
+        <a href="userDashboard">
+        <Button type="button"> Back </Button>
+        </a>
+    </div>
+
+       </div>
+       <script>
+        // Function to set a cookie
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+    
+        // Function to check if the user has already accepted cookies
+        function checkCookieConsent() {
+            const cookies = document.cookie;
+            if (cookies.includes('cookieConsent=allowed')) {
+                // User has accepted cookies, hide the cookie notification
+                const cookieDiv = document.querySelector('.card');
+                cookieDiv.style.display = 'none';
+            }
+        }
+    
+        // Function to hide the cookie notification with sliding animation
+        function hideCookieNotification() {
+            const cookieDiv = document.querySelector('.card');
+            cookieDiv.classList.add('slide-out');
+    
+            // Remove the cookie notification after the animation
+            cookieDiv.addEventListener('animationend', () => {
+                cookieDiv.style.display = 'none';
+            });
+        }
+    
+        // Event listener for the "Allow" button
+        document.querySelector('.acceptButton').addEventListener('click', () => {
+            // Set a cookie named 'cookieConsent' with value 'allowed' for 30 days
+            setCookie('cookieConsent', 'allowed', 30);
+            // You can add additional actions when the user allows cookies
+            console.log('Cookies allowed.');
+            hideCookieNotification(); // Hide the cookie notification with sliding animation
+        });
+    
+        // Event listener for the "Decline" button
+        document.querySelector('.declineButton').addEventListener('click', () => {
+            // You can add additional actions when the user declines cookies
+            console.log('Cookies declined.');
+            hideCookieNotification(); // Hide the cookie notification with sliding animation
+        });
+    
+        // Check for cookie consent when the page loads
+        window.addEventListener('load', checkCookieConsent);
+    </script>
+
+
+    <script>
+
+        var fullimgbox = document.getElementById("fullimgbox");
+        var fullimg = document.getElementById("fullimg");
+
+        function openfullimg(pic){
+            fullimgbox.style.display = "flex";
+            fullimg.src = pic;
+        }
+
+        function closeFullImg(){
+            fullimgbox.style.display = "none";
+        }
+        function dragLogo(event) {
+  let logo = event.target;
+  let initialX = event.clientX;
+  let initialY = event.clientY;
+  let logoX = logo.getBoundingClientRect().left;
+  let logoY = logo.getBoundingClientRect().top;
+
+  document.onmousemove = function (e) {
+    let offsetX = e.clientX - initialX;
+    let offsetY = e.clientY - initialY;
+    logo.style.left = logoX + offsetX + "px";
+    logo.style.top = logoY + offsetY + "px";
+  };
+
+  document.onmouseup = function () {
+    document.onmousemove = null;
+    document.onmouseup = null;
+  };
+}
+
+
+    </script>
+    
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

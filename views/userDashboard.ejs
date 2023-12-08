@@ -229,7 +229,7 @@
         <div class="backpicture" style="width:600px; position: relative;">
             <img src="ATV BACKGROUND/app.png" >
         </div>
-   <form action="/Customerprofile" method="post" id="profileForm" enctype="multipart/form-data"> 
+        <form action="/Customerprofile" method="post" id="profileForm" enctype="multipart/form-data" onsubmit="return validateEmail()">
         <div class="profileko" style="width: 100%; position: relative; right:0%;">
             <div class="head_profileko">
                 <div class="pictureprofile">
@@ -248,7 +248,7 @@
                 <h3>Gender</h3>
                     <input class="bodydetails" value="<%= Customer.gender %>" name="gender" type="text" id="cellphone" >
                 <h3>Gmail Address</h3>
-                    <input class="bodydetails" value="<%= Customer.Email %>" name="Gmail" type="text" id="gmail" >
+                <input class="bodydetails" value="<%= Customer.Email %>" name="Gmail" type="text" id="gmail">
                 <h3>Address</h3>
                 <input class="bodydetails" value="<%= Customer.STREET %>" name="Address1street" type="text"id="address" placeholder="Street" style="border-bottom:2px solid rgb(4, 4, 4); width: 90%;">
                 <input class="bodydetails" value="<%= Customer.BARANGAY %>" name="Address2brgy" type="text"id="address" placeholder="Barangay" style="border-bottom:2px solid rgb(4, 4, 4); width: 90%;">
@@ -332,6 +332,23 @@
                 
         </div>
     </div>
+    <script>
+      function validateEmail(event) {
+          var emailInput = document.getElementById('gmail');
+          var email = emailInput.value;
+  
+          if (!email.endsWith('@gmail.com')) {
+              alert('Invalid email address. Please enter an email ending with @gmail.com');
+              emailInput.style.borderColor = 'red';  // Add this line to highlight the input field
+              event.preventDefault();
+              return false;
+          } else {
+              // Reset the border color if the email is valid
+              emailInput.style.borderColor = '';
+              return true;
+          }
+      }
+  </script>
     <script>
         function togglePasswordVisibility() {
           const passwordField = document.getElementById('password');

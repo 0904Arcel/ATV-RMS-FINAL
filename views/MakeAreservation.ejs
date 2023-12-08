@@ -27,13 +27,14 @@
             display: none; /* It starts hidden */
         }
     </style>
+    
 </head>
 <body>
 
       
 
  <!--Para sa pag book--> <!--Para sa pag book-->  <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
- <form action="/saveReservation" method="post">
+ <form action="/saveReservation" method="post" id="reservationForm">
     <input type="hidden" name="Cust1Name" value="<%= Customer.Fname %>">
     <input type="hidden" name="Cust2Name" value="<%= Customer.Mname %>">
     <input type="hidden" name="Cust3Name" value="<%= Customer.Lname %>">
@@ -64,7 +65,8 @@
 
                         <div class="leftdate">
                             <h5 >Select Booking Date:</h5>
-                            <input class="bookingdate" type="date" id="ReserveDate" name="ReserveDate" min="" value="">
+                            <input class="bookingdate" type="date" id="reserveDate" name="ReserveDate" min="" value="">
+                           
                         </div>
                         <div class="center">
                             <p >Number of Guests: </p>
