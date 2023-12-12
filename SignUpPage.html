@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Baloo+Tamma+2&family=Black+Ops+One&family=Bungee+Inline&family=Fredericka+the+Great&family=Fredoka&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <style>
         body{
             margin: 0;
@@ -131,7 +133,7 @@
     
  
     <input type="hidden" name="otp">
-    <div class="main_signup" style="background-color: transparent; box-shadow:none; padding-left:100px; position:relative;">
+    <div class="main_signup" style="background-color: transparent; box-shadow:none; padding-left:100px; position:relative; margin-left:100px;">
         <img src="ATV BACKGROUND/Phone.png" style="  transform: skewY(-10deg);">
         <img src="ATV BACKGROUND/Sign up-cuate.png" style="position: absolute; left:180px; top:100px; width:30%; border-radius:20px;   transform: skewY(-10deg);">
         <img src="ATV BACKGROUND/atvgif2.gif"class="blinking-box" style="border:1px solid rgb(1, 255, 247);position: absolute; left:250px; bottom:50px; width:30%; border-radius:20px;  transform: skewY(-20deg); box-shadow:0 0 40px rgba(0, 234, 255, 0.775);">
@@ -140,16 +142,16 @@
         <img src="ATV BACKGROUND/TikTok.png" class="floating-image3" style="position: absolute;left:100px; bottom:20px; width:16%; transform: skewY(20deg);">
         <img src="ATVLOGO.png" class="floating-image4" style="position: absolute;left:350px; top:230px;width:20%;transform: skewY(-10deg); ">
     </div>
-    <div class="main_signup">
+    <div class="main_signup" style="width:50%;height:100%;">
 
-        <div class="signupna">
+        <div class="signupna" style="padding-top:10px; ">
             <h1 style="width: 100%; text-align: left; text-indent:100px; font-size:40px; font-family: 'Fredericka the Great', cursive; margin:0; padding-top:10px; margin-bottom:15px;"> 
-            <img src="ATVLOGO.png" style="width: 20%; height:auto; position:absolute; top:11px; left:10px;"> Sign Up</h1>
+            <img src="ATVLOGO.png" style="width: 17%; height:auto; position:absolute; top:18px; left:10px;"> Sign Up</h1>
             <hr>
             
         <div class="midsignup">
         <div class="inputs" >
-            <form onsubmit="return validateEmail()" action="/CustomerSignup" method="post">         
+          <form onsubmit="return validateEmail() && validateCaptcha()" action="/CustomerSignup" method="post">        
             <div class="inputbox_boxSignup" >
                 <h4>Full Name:</h4>
                 <div style="display:flex;">
@@ -196,19 +198,38 @@
                 <input type="text" name="Province" placeholder="Province" required style="width:47%;z-index:0; background-color:rgb(241, 241, 241);">
                 <input type="text" name="MonicipalityCity" placeholder="Monicipality/City" required style="width:47%;z-index:0; background-color:rgb(241, 241, 241);">
                 <input type="text" name="Country" placeholder="Country" required style="width:47%;z-index:0; background-color:rgb(241, 241, 241);">
-            </div>
+               
+              </div>
         </div>
         </div>
-        <div class="bottomsignup" style="z-index:3;">          
-                <input type="text" name="username" placeholder="User Name" required style="width: 40%; margin-top:10px;">
-                <input type="password" name="password" placeholder="Password" required style="width: 40%; margin-top:10px;">
+       
+        <div class="bottomsignup" style="z-index:3;">
+          <div class="D1" style="display: block; ">
+            <input type="text" name="username" placeholder="User Name" required style="width: 90%; margin-top:10px;">
+            <input type="password" name="password" placeholder="Password" required style="width: 90%; margin-top:10px;">
+          </div>        
+          <div class="D1" style="display: flex;">
+                <div class="g-recaptcha" data-sitekey="6LfISC8pAAAAAAfbeRlmaCUXXW2bsFfD2CIPOvZM"></div>
                 <button type="submit" class="btnsignup">
                     SignUp
                 </button>
+          </div>        
         </div>
     </form> 
         </div>
     </div>
+
+  <script>
+    function validateCaptcha() {
+        var response = grecaptcha.getResponse();
+        if (response.length === 0) {
+            alert('Please complete the reCAPTCHA verification.');
+            return false;
+        }
+        return true;
+    }
+</script>
+  
     <script>
       function validateEmail() {
           var emailInput = document.getElementById('gmailAddress');

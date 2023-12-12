@@ -15,6 +15,7 @@ const randomstring = require('randomstring');
 const app = express();
 const { ObjectId } = require('mongodb');
 
+
 // Generate a random secret of a specific length (e.g., 32 characters)
 const randomSecret = crypto.randomBytes(32).toString('hex');
 console.log(randomSecret);
@@ -79,6 +80,11 @@ app.get("/Customers", function(req, res) {
   const filePath = path.join(__dirname, "index.html");
   res.sendFile(filePath);
 });
+
+
+/*Gcash Gateway API*//*Gcash Gateway API*//*Gcash Gateway API*//*Gcash Gateway API*//*Gcash Gateway API*//*Gcash Gateway API*//*Gcash Gateway API*/
+
+
 
 /*Customer Signup*//*Customer Signup*//*Customer Signup*//*Customer Signup*//*Customer Signup*//*Customer Signup*//*Customer Signup*/
 
@@ -695,7 +701,7 @@ app.post("/saveReservation", async (req, res) => {
       // If the limit is reached, show an alert
       return res.send('<script>alert("Sorry, fully booked for the selected date and time slot."); window.location.href = "/MakeAreservation";</script>');
     }
-
+    const isoReserveDate = new Date(req.body.ReserveDate).toISOString();
     // If no existing reservation is found and there's space, proceed to create a new reservation
     const custReservation = await custReservationsI.create({
       customer: req.session.customerData._id,
@@ -704,7 +710,7 @@ app.post("/saveReservation", async (req, res) => {
       Sname: req.body.Cust3Name,
       tourName: req.body.TourName,
       tourPrice: req.body.TourPrice,
-      reservDate: req.body.ReserveDate,
+      reservDate: isoReserveDate,
       timeSlot: req.body.TimeSlot,
       status: req.body.Status,
       totalPerson: req.body.TotalPerson,
