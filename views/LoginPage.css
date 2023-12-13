@@ -1,0 +1,364 @@
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    
+}
+/* LOGIN */
+.main_login{
+    width: 100%;
+    height: 100vh;
+    z-index: 3;
+    background: transparent;
+    transition: 0.5s;
+}
+.main_login .ATVLOGO{
+
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 300px;
+    width: 500px;
+}
+.ATVLOGO img{
+    position: relative;
+    width: 410px;
+    height: 300px;
+}
+.logomo{
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    width: 370px;
+    height: 400px;
+    z-index: 2;
+}
+.shadow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index:1;
+    background: rgb(255,154,0);
+    background: linear-gradient(29deg, rgba(255,154,0,1) 10%, rgba(255,252,0,0.38139005602240894) 38%, rgba(255,222,0,0.20211834733893552) 100%, rgba(253,250,0,0.5802696078431373) 100%, rgba(255,209,0,0.2553396358543417) 100%);
+}
+.main_login .LOGIN{
+    width: 350px;
+    right: 0;
+    position: absolute;
+    height: 100%;
+    background-color: white;
+    top: 0px;
+    right: 0px;
+    margin: 0;
+    padding: 0;
+    padding-top: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.3s;
+    z-index: 3;
+}
+.toplogin hr{
+    width: 80%;
+    height: 3px;
+    background-color: whitesmoke;
+}
+.LOGIN .toplogin{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    top: 0px;
+}
+.LOGIN .logologin{
+    width: 140px;
+    height: 150px;
+    position: relative;
+    top: 8px;
+    left: 3px;
+    margin: 0;
+    padding: 0;
+}
+.LOGIN h1{
+    position: relative;
+    margin-top: -0px;
+    width: 100%;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 40px;
+    text-align: center;
+}
+.LOGIN .mid-login{
+    position: relative;
+    padding-top: 0px;
+    top: 220px;
+
+}
+.mid-login .inputbox_box{
+    width: 100%;
+    height: 50px;
+    position: relative;
+   
+}
+.mid-login .inputbox_box input{
+    font-family: 'Fredoka', sans-serif;
+    width: 70%;
+    height: 60%;
+    font-size: 15px;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    padding: 0px 10px 0px 10px;
+    border: 2px solid rgb(255, 230, 0);
+
+}
+.mid-login .inputbox_box .Icon{
+    position: absolute;
+    right: 60px;
+    margin-top: 8px;
+    width: 20px;
+    height: 20px;
+    background-color:transparent;
+}
+.mid-login .inputbox_box .Icon2 {
+  border: none;
+  font-size: 20px;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  right: 53px;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.mid-login .remember-forgot{
+    font-family: 'Fredoka', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.mid-login .remember-forgot a{
+    color: rgb(223, 119, 0);
+    text-decoration:none;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+}
+.mid-login .remember-forgot a:hover{
+    color: blue;
+}
+
+.mid-login .btn{
+    font-family: 'Black Ops One', cursive;
+    width: 230px;
+    height: 50px;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    transition: 0.5s;
+    background-color: rgb(255, 242, 55);
+}
+.mid-login .btn:hover{
+    box-shadow: 0 0 5px black;
+    letter-spacing: 3px;
+    font-size: 19px;
+    background-color: yellow;
+}
+.mid-login .Signup{
+    font-family: 'Fredoka', sans-serif;
+}
+.mid-login .Signup p a{
+    text-decoration: none;
+    text-decoration-style: none;
+    color: rgb(223, 119, 0);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+    margin-left: 5px;
+}
+.mid-login .Signup p a:hover{
+    color: blue;
+    
+}
+.LOGIN .loginofadmin_tourguide{
+    width: 100%;
+    margin: 0;
+    padding: 0%;
+    display: flex;
+    bottom: 0px;
+    position: absolute;
+    text-decoration: none;
+    background-color: rgb(252, 255, 71);
+    height: 19%;
+    padding-top: 5px;
+}
+.loginofadmin_tourguide .GotoWebsite{
+    width:100%;
+    height: 100%;
+    font-family: 'Fredoka', sans-serif;
+    margin: 0;
+    padding:0;
+    font-weight: bold;
+}
+.GotoWebsite a{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color:transparent;
+    height: 100%;
+}
+.GotoWebsite a span:hover{
+    color: transparent;
+    padding-left: 100px;
+    
+}
+.GotoWebsite a span{
+    font-size: 40px;
+    padding-top: 35px;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    padding-bottom: 20px;
+    transition: 1.4s ease;
+}
+.loginofadmin_tourguide .admin_signup{
+    width: 100%;
+    text-decoration: none;
+    text-decoration-style: none;
+    border-radius: 20px;
+    height: 70px;
+}
+.admin_signup:hover{
+    background-color: rgb(255, 207, 47);
+}
+.admin_signup a{
+    text-decoration: none;
+    text-decoration-style: none;
+    color: black;
+    font-family: 'Fredoka', sans-serif;
+}
+.admin_signup p{
+   width: 100%;
+}
+.admin_signup span{
+    position: relative;
+    color: rgb(200, 79, 35);
+    width: 30px;
+    top: 4px;
+    height: 30px;
+    justify-content: center; 
+}
+.back-video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+@media (min-aspect-ratio: 16/9){
+    .back-video{
+        width: 100%;
+        height: auto;
+      
+    }
+}
+@media (max-aspect-ratio: 16/9){
+    .back-video{
+        width: auto;
+        height: 100%;
+    }
+}
+/* SIGNUP */
+
+/* SIGNUP *//* SIGNUP *//* SIGNUP *//* SIGNUP *//* SIGNUP *//* SIGNUP *//* SIGNUP *//* SIGNUP */
+
+/* SIGNUP */
+.main_signup{
+    width: 35%;
+    height: 85%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.623);
+    display: flex;
+    float: left;
+    position: relative;
+    z-index: 3;
+    padding: 20px;
+    font-family: 'Fredoka', sans-serif;
+    
+}
+.main_signup .inputs{
+    
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: 'Fredoka', sans-serif;
+}
+
+.inputs .inputbox_boxSignup{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.334);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding: 10px;
+    text-transform: uppercase;
+}
+ 
+.inputbox_boxSignup select{
+    margin-top: 10px;
+    width: 20%;
+    height: 30px;
+    outline:none;
+    border: none;
+    box-shadow: 0 0 5px rgba(61, 61, 61, 0.398);
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Fredoka', sans-serif;
+}
+.inputbox_boxSignup h4{
+    margin: 0;
+    padding: 0%;
+}
+.main_signup .bottomsignup{
+    width: 100%;
+    display: flex;
+    height: 10%;
+}
+.btnsignup .D1{
+    width: 50%;
+    height: 100%;
+}
+
+.D1 .btnsignup{
+    width: 100px;
+    height: 80px;
+    border: none;
+    outline: none;
+    background-color: rgb(255, 217, 0);
+    border-radius: 10px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: bold;
+    transition: 0.6s ease;
+    margin-left:10px;
+}
+.D1 .btnsignup:hover{
+    background-color:rgb(255, 179, 0) ;
+    letter-spacing: px;
+    font-size: 16px;
+}
+
+
+
+  /* Plus Kay Tour Guide */
+
