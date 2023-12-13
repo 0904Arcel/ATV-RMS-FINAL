@@ -88,13 +88,13 @@
             sessionStorage.setItem('redirectionDone', 'true');
 
             // Redirect to the user dashboard
-            window.location.replace("LoginPage.html"); // Change this to the appropriate URL
+            window.location.replace("mobile.html"); // Change this to the appropriate URL
         }
 
         // Listen for the popstate event (triggered when the user navigates using the back button)
         window.addEventListener('popstate', function(event) {
             // Redirect back to LoginPage.html if the user is already on LoginPage.html
-            window.location.replace("LoginPage.html"); // Change this to the appropriate URL
+            window.location.replace("mobile.html"); // Change this to the appropriate URL
         });
     </script>
 
