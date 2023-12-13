@@ -110,20 +110,44 @@
             background-color: rgb(0, 119, 255);
             letter-spacing: 2px;
         }
+        @media only screen and (max-width: 759px){
+            .mainbody{
+                transform: translateX(5%);
+                transform: translateY(5%);
+                width: 80%;
+                display: block;
+                margin-bottom: 20px;
+            }
+            .mainbody .leftG{
+                width: 100%;
+                border-bottom: 1px solid grey;
+                margin-bottom: 10px;
+            }
+            .mainbody .rightG{
+                width: 100%;
+            }
+            .rightG .glogo{
+                width: 40%;
+                height: auto;
+            }
+            .leftG .gqrcode{
+                width: 60%;
+                height: auto;
+            }
+        }
     </style>
 </head>
 <body>
     
 <div class="mainbody">
-
     <div class="leftG">
-        <img src="ATV BACKGROUND/gcashQRC.png">
+        <img class="gqrcode" src="ATV BACKGROUND/gcashQRC.png">
         <h1>Scan It to Download The Gcash App</h1>
     </div>
     <div class="rightG">
         <div class="up">
             <p>Enter your Gcash number here; this is for confirmation that the user has made a payment in our system. If you don't have an account in Gcash, please scan the QR code on the left side.</p>
-            <img src="ATV BACKGROUND/Gcash.png">
+            <img class="glogo" src="ATV BACKGROUND/Gcash.png">
         </div>
         
         <div class="buttom">

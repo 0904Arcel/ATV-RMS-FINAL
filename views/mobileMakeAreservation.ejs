@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make A Reservation-ATV Rental</title>
+    <link rel="stylesheet" href="userdashboard.css">
+    <link rel="icon" href="LOGOATV.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Baloo+Tamma+2&family=Black+Ops+One&family=Bungee+Inline&family=Fredericka+the+Great&family=Fredoka&family=Lora&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Baloo+Tamma+2&family=Black+Ops+One&family=Bungee+Inline&family=Fredericka+the+Great&family=Fredoka&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <style>
+        .message-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f1f1f1;
+            padding: 20px;
+            border: 1px solid #d4d4d4;
+            text-align: center;
+            display: none; /* It starts hidden */
+        }
+        body{
+            margin: 0;
+            padding: 0;
+
+        }
+    </style>
+    
+</head>
+<body>
+
+      
+
+ <!--Para sa pag book--> <!--Para sa pag book-->  <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+ <form action="/saveReservation" method="post" id="reservationForm">
+    <input type="hidden" name="Cust1Name" value="<%= Customer.Fname %>">
+    <input type="hidden" name="Cust2Name" value="<%= Customer.Mname %>">
+    <input type="hidden" name="Cust3Name" value="<%= Customer.Lname %>">
+    <input type="hidden" name="Status" value="Pending">
+ <div class="Book_Nowbackground1" id="bookNowContainer1">
+        <button type="button"  class="closeButton" onclick="toggleBookNow1()" style="position: absolute; top:0px; right:0px;">
+            <span class="material-symbols-outlined"> cancel </span></button>
+        <div class="Book_Now" style="border-radius: 10px;">
+            <div class="bookingsection"  style="width:100%; border-radius: 10px;"  style="width:100%; border-radius: 10px;">
+                <div class="headbookingsection"style="width: 100%;">
+                   <h1><input type="hidden" name="TourName" value="Short Trail">Short Trail</h1>
+                </div>
+                <div class="bodybookingsection" style="width: 100%;">
+                    <div class="detailsbook" style="width: 100%; padding-bottom:0px; margin-bottom:0px;"> 
+                        <h5 style="font-size:13px;" >Discription</h5>
+                        <p style="font-size:13px;"> Perfect for first-timers to get a good feel on ATV riding. Experience mountain scenery while going through flat, concrete roads with a good amount of beginner offroading and creek crossing! This entire tour will be on ATVs (no hiking necessary)</p>
+                        <h5 style="font-size:13px;"><input type="hidden" name="TourPrice" value="1500">PHP 1500 / head</h5>
+                        <h5 style="font-size:13px;"><b>Duration:</b> <input type="hidden" name="Duration" value="1 -2 hours">1 -2 hours</h5>
+                        <h5 style="font-size:13px;" ><b>Size of a Group:</b> Min - 4  & Max - 7 </h5>
+                    </div>
+                    <div class="pickAdate" style="padding-top:0px; margin-top:0px;" style="padding-top:0px; margin-top:0px;">
+
+                        <div class="leftdate">
+                            <h5 style="font-size:13px;" > Booking Date:</h5>
+                            <input class="bookingdate" type="date" id="reserveDate" name="ReserveDate" min="" value="">
+                           
+                        </div>
+                        <div class="center">
+                            <p style="font-size:13px;">Pax: </p>
+                        <select class="IndividualNum" id="NumIndividual" name="TotalPerson" >
+                            <option value="" disabled selected>4</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                        </select>
+                        </div>
+                        <div class="right">
+                            <p style="font-size:13px;">Pick a Time: </p>
+                            <select class="TimeSlot" id="TimeSlot1" name="TimeSlot" >
+                                <option value="" disabled selected>Morning</option>
+                                <option value="Morning">Morning</option>
+                                <option value="Afternoon">Afternoon</option>
+                            </select>
+                        </div>
+                    </div>  
+                </div>
+                <div class="footerbookingsection">
+                    <div class="notemo">
+                    <p style="font-size:12px;">
+                        <b>Note!</b><br>
+                        Once you book or reserve your tour, we will immediately take notice of it. Be prepared to know what to bring, follow the rules, and make the payment on-site at ATV-Rental (Cash Only). Thank you and see you there!
+                        <br>
+                        <b>Location:</b> Sapinit Road, Barangay San Juan, Antipolo, Rizal.
+                    </p>
+                    </div>  
+                    <div class="buttonofbook">
+                        <div class="balotnya">
+                            <button type="submit"> <h4>BOOK NOW!</h4></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+ <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+ <form action="/saveReservation" method="post">
+    <input type="hidden" name="Cust1Name" value="<%= Customer.Fname %>">
+    <input type="hidden" name="Cust2Name" value="<%= Customer.Mname %>">
+    <input type="hidden" name="Cust3Name" value="<%= Customer.Lname %>">
+    <input type="hidden" name="Status" value="Pending">
+    <div class="Book_Nowbackground2" id="bookNowContainer2">
+    <button type="button" class="closeButton" onclick="toggleBookNow2()" style="position: absolute; top:0px; right:0px;">
+        <span class="material-symbols-outlined"> cancel </span></button>
+    <div class="Book_Now">
+
+        <div class="bookingsection"  style="width:100%; border-radius: 10px;">
+            <div class="headbookingsection">
+                <h1><input type="hidden" name="TourName" value="Long Trail">Long Trail</h1>
+            </div>
+            <div class="bodybookingsection">
+                <div class="detailsbook">
+                    <h5 style="font-size:13px;">Discription</h5><br>
+                    <p style="font-size:13px;"> A combination of our river trail + trekking to a beautiful hidden waterfall after a long exciting journey of rough offroad riding!</p>
+                    <h5 style="font-size:13px;"><input type="hidden" name="TourPrice" value="5500">PHP 5500 / head </h5>
+                    <h5 style="font-size:13px;"><b>Duration:</b> <input type="hidden" name="Duration" value="4-5 hours">4-5 hours</h5>
+                    <h5 style="font-size:13px;"><b>Size of a Group:</b> Min - 2  & Max - 7 </h5>
+                </div>
+                <div class="pickAdate" style="padding-top:0px; margin-top:0px;">
+                    <div class="leftdate">
+                        <h5 style="font-size:13px;">Booking Date:</h5>
+                        <input class="bookingdate" type="date" id="ReserveDate1" name="ReserveDate" min="" value="">
+                    </div>
+                    <div class="center">
+                        <p style="font-size:13px;">Pax: </p>
+                    <select class="IndividualNum" id="NumIndividual" name="TotalPerson" >
+                        <option value="" disabled selected>2</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                    </div>
+                    <div class="right">
+                        <p style="font-size:13px;">Pick a Time: </p>
+                        <select class="TimeSlot" id="TimeSlot1" name="TimeSlot">
+                            <option value="" disabled selected>Morning</option>
+                            <option value="Morning">Morning</option>
+                            <option value="Afternoon">Afternoon</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="footerbookingsection">
+                <div class="notemo">
+                <p  style="font-size:13px;">
+                    <b>Note!</b><br>
+                    Once you book or reserve your tour, we will immediately take notice of it. Be prepared to know what to bring, follow the rules, and make the payment on-site at ATV-Rental (Cash Only). Thank you and see you there!
+                    <br>
+                    <b>Location:</b> Sapinit Road, Barangay San Juan, Antipolo, Rizal.
+                </p>
+                </div>  
+                <div class="buttonofbook">
+                    <div class="balotnya">
+                        <button type="submit"> <h4>BOOK NOW!</h4></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+<!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+<form action="/saveReservation" method="post">
+    <input type="hidden" name="Cust1Name" value="<%= Customer.Fname %>">
+    <input type="hidden" name="Cust2Name" value="<%= Customer.Mname %>">
+    <input type="hidden" name="Cust3Name" value="<%= Customer.Lname %>">
+    <input type="hidden" name="Status" value="Pending">
+<div class="Book_Nowbackground3" id="bookNowContainer3">
+    <button type="button" class="closeButton" onclick="toggleBookNow3()" style="position: absolute; top:0px; right:0px;">
+        <span class="material-symbols-outlined"> cancel </span></button>
+    <div class="Book_Now">
+        <div class="bookingsection"  style="width:100%; border-radius: 10px;">
+            <div class="headbookingsection">
+                <h1><input type="hidden" name="TourName" value="Forest Trail">Forest Trail</h1>
+    
+            </div>
+            <div class="bodybookingsection">
+                <div class="detailsbook">
+                    <h5 style="font-size:13px;">Discription</h5><br>
+                    <p style="font-size:13px;"> Through our exclusive trail, you will experience luscious greenery with a fantastic view while going through rough and challenging roads! This is an all ATV ride throughout the tour!</p>
+                    <h5 style="font-size:13px;"><input type="hidden" name="TourPrice" value="2500">PHP 2500/ head</h5>
+                    <h5 style="font-size:13px;"><b>Duration:</b> <input type="hidden" name="Duration" value="2-3 hours">2-3 hours</h5>
+                    <h5 style="font-size:13px;"><b>Size of a Group:</b> Min - 2  & Max - 7 </h5>
+                </div>
+                <div class="pickAdate" style="padding-top:0px; margin-top:0px;">
+                    <div class="leftdate">
+                        <h5 style="font-size:13px;">Select Booking Date:</h5>
+                        <input class="bookingdate" type="date" id="ReserveDate2" name="ReserveDate" min="" value="">
+                    </div>
+                    <div class="center">
+                        <p style="font-size:13px;">Pax: </p>
+                    <select class="IndividualNum" id="NumIndividual" name="TotalPerson" >
+                        <option value="" disabled selected>2</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                    </div>
+                    <div class="right">
+                        <p  style="font-size:13px;">Pick a Time: </p>
+                        <select class="TimeSlot" id="TimeSlot1"  name="TimeSlot">
+                            <option value="" disabled selected>Morning</option>
+                            <option value="Morning">Morning</option>
+                            <option value="Afternoon">Afternoon</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="footerbookingsection">
+                <div class="notemo">
+                <p  style="font-size:13px;">
+                    <b>Note!</b><br>
+                    Once you book or reserve your tour, we will immediately take notice of it. Be prepared to know what to bring, follow the rules, and make the payment on-site at ATV-Rental (Cash Only). Thank you and see you there!
+                    <br>
+                    <b>Location:</b> Sapinit Road, Barangay San Juan, Antipolo, Rizal.
+                </p>
+                </div>  
+                <div class="buttonofbook">
+                    <div class="balotnya">
+                        <button type="submit"> <h4>BOOK NOW!</h4></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+<!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+<form action="/saveReservation" method="post">
+    <input type="hidden" name="Cust1Name" value="<%= Customer.Fname %>">
+    <input type="hidden" name="Cust2Name" value="<%= Customer.Mname %>">
+    <input type="hidden" name="Cust3Name" value="<%= Customer.Lname %>">
+    <input type="hidden" name="Status" value="Pending">
+<div class="Book_Nowbackground4" id="bookNowContainer4">
+    <button type="button" class="closeButton" onclick="toggleBookNow4()" style="position: absolute; top:0px; right:0px;">
+        <span class="material-symbols-outlined"> cancel </span></button>
+    <div class="Book_Now">
+        <div class="bookingsection"  style="width:100%; border-radius: 10px;">
+            <div class="headbookingsection">
+                <h1><input type="hidden" name="TourName" value="River Trail">River Trail</h1>
+            </div>
+            <div class="bodybookingsection">
+                <div class="detailsbook">
+                    <h5 style="font-size:13px;">Discription</h5>
+                    <p  style="font-size:13px;">Option 1 Experience our intermediate trail going through a mix of flat, concrete, bumpy roads leading to a beautiful river.</p>
+                    <p style="font-size:13px;">Option 2 This is the same as option 1, however, we have activities you can do when we arrive at the river. You can pick one (1) activity.</p>
+                    <h5 style="font-size:13px;"><input type="hidden" name="TourPrice" value="3700"> PHP 3700/ head </h5>
+                    <h5 style="font-size:13px;"><b>Duration:</b> <input type="hidden" name="Duration" value="3-4 hours">3-4 hours</h5>
+                    <h5 style="font-size:13px;"><b>Size of a Group:</b> Min - 2  & Max - 7 </h5>
+                </div>
+                <div class="pickAdate" style="padding-top:0px; margin-top:0px;">
+                    <div class="leftdate">
+                        <h5 style="font-size:13px;">Select Booking Date:</h5>
+                        <input class="bookingdate" type="date" id="ReserveDate3" name="ReserveDate" min="" value="">
+                    </div>
+                    <div class="center">
+                        <p style="font-size:13px;">Pax: </p>
+                    <select class="IndividualNum" id="NumIndividual" name="TotalPerson">
+                        <option value="" disabled selected>2</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                    </div>
+                    <div class="right">
+                        <p style="font-size:13px;">Pick a Time: </p>
+                        <select class="TimeSlot" id="TimeSlot1" name="TimeSlot">
+                            <option value="" disabled selected>Morning </option>
+                            <option value="Morning">Morning </option>
+                            <option value="Afternoon">Afternoon</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="footerbookingsection">
+                <div class="notemo">
+                <p style="font-size:13px;">
+                    <b>Note!</b><br>
+                    Once you book or reserve your tour, we will immediately take notice of it. Be prepared to know what to bring, follow the rules, and make the payment on-site at ATV-Rental (Cash Only). Thank you and see you there!
+                    <br>
+                    <b>Location:</b> Sapinit Road, Barangay San Juan, Antipolo, Rizal.
+                </p>
+                </div>  
+                <div class="buttonofbook">
+                    <div class="balotnya">
+                        <button type="submit"> <h4>BOOK NOW!</h4></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+<!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+<form action="/saveReservation" method="post">
+    <input type="hidden" name="Cust1Name" value="<%= Customer.Fname %>">
+    <input type="hidden" name="Cust2Name" value="<%= Customer.Mname %>">
+    <input type="hidden" name="Cust3Name" value="<%= Customer.Lname %>">
+    <input type="hidden" name="Status" value="Pending">
+<div class="Book_Nowbackground5" id="bookNowContainer5">
+    <button type="button" class="closeButton" onclick="toggleBookNow5()" style="position: absolute; top:0px; right:0px;">
+        <span class="material-symbols-outlined"> cancel </span></button>
+    <div class="Book_Now">
+
+        <div class="bookingsection"  style="width:100%; border-radius: 10px;">
+            <div class="headbookingsection">
+                <h1 style="font-size: 27px;"><input type="hidden" name="TourName" value="Campsite Day Tour Trail">Campsite Day Tour Trail</h1>
+            </div>
+            <div class="bodybookingsection">
+                <div class="detailsbook">
+                    <h5 style="font-size:13px;">Discription</h5><br>
+                    <p style="font-size:13px;"> One of our most challenging trails going up steep and bumpy hills while experiencing breathtaking views going to our famous campsite where you can take pictures in the newly developed viewing deck.</p>
+                    <h5 style="font-size:13px;"><input type="hidden" name="TourPrice" value="4000">PHP 4000/ head</h5>
+                    <h5 style="font-size:13px;"><b>Duration:</b> <input type="hidden" name="Duration" value="3-4 hours">3-4 hours</h5>
+                    <h5 style="font-size:13px;"><b>Size of a Group:</b> Min - 2  & Max - 7 </h5>
+                </div>
+                <div class="pickAdate" style="padding-top:0px; margin-top:0px;">
+                    <div class="leftdate">
+                        <h5 style="font-size:13px;">Select Booking Date:</h5>
+                        <input class="bookingdate" type="date" id="ReserveDate4" name="ReserveDate" min="" value="">
+                    </div>
+                    <div class="center">
+                        <p style="font-size:13px;">Pax: </p>
+                    <select class="IndividualNum" id="NumIndividual" name="TotalPerson">
+                        <option value="" disabled selected>2</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                    </div>
+                    <div class="right">
+                        <p style="font-size:13px;">Pick a Time: </p>
+                        <select class="TimeSlot" id="TimeSlot1"  name="TimeSlot">
+                            <option value="" disabled selected>Morning</option>
+                            <option value="Morning">Morning</option>
+                            <option value="Afternoon">Afternoon</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="footerbookingsection">
+                <div class="notemo">
+                <p style="font-size:13px;">
+                    <b>Note!</b><br>
+                    Once you book or reserve your tour, we will immediately take notice of it. Be prepared to know what to bring, follow the rules, and make the payment on-site at ATV-Rental (Cash Only). Thank you and see you there!
+                    <br>
+                    <b>Location:</b> Sapinit Road, Barangay San Juan, Antipolo, Rizal.
+                </p>
+                </div>  
+                <div class="buttonofbook">
+                    <div class="balotnya">
+                        <button type="submit"> <h4>BOOK NOW!</h4></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+<!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+<form action="/saveReservation" method="post">
+    <input type="hidden" name="Cust1Name" value="<%= Customer.Fname %>">
+    <input type="hidden" name="Cust2Name" value="<%= Customer.Mname %>">
+    <input type="hidden" name="Cust3Name" value="<%= Customer.Lname %>">
+    <input type="hidden" name="Status" value="Pending">
+<div class="Book_Nowbackground6" id="bookNowContainer6">
+    <button type="button" class="closeButton" onclick="toggleBookNow6()" style="position: absolute; top:0px; right:0px;">
+        <span class="material-symbols-outlined"> cancel </span></button>
+    <div class="Book_Now">
+        <div class="bookingsection"  style="width:100%; border-radius: 10px;">
+            <div class="headbookingsection">
+                <h1 style="font-size: 24px;"><input type="hidden" name="TourName" value="Campsite Overnight Trail">Campsite Overnight Trail</h1>
+                
+            </div>
+            <div class="bodybookingsection">
+                <div class="detailsbook">
+                    <h5 style="font-size:13px;">Discription</h5><br>
+                    <p style="font-size:13px;">Going through the same challenging trail as our campsite trail but you get to experience the breathtaking 360° view of what mother nature can offer overnight.</p>
+                    <h5 style="font-size:13px;"><input type="hidden" name="TourPrice" value="6500">PHP 6500/ head</h5>
+                    <h5 style="font-size:13px;"><b>Duration:</b> <input type="hidden" name="Duration" value="Overnight"> Overnight</h5>
+                    <h5 style="font-size:13px;"><b>Size of a Group:</b> Min - 2  & Max - 7 </h5>
+                </div>
+                <div class="pickAdate" style="padding-top:0px; margin-top:0px;">
+                    <div class="leftdate">
+                        <h5 style="font-size:13px;">Select Booking Date:</h5>
+                        <input class="bookingdate" type="date" id="ReserveDate5" name="ReserveDate" min="" value="">
+                    </div>
+                    <div class="center">
+                        <p style="font-size:13px;">Pax: </p>
+                    <select class="IndividualNum" id="NumIndividual" name="TotalPerson">
+                        <option value="" disabled selected>2</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                    </div>
+                    <div class="right">
+                        <p style="font-size:13px;">Pick a Time: </p>
+                        <select class="TimeSlot" id="TimeSlot1" name="TimeSlot">
+                            <option value="">Evening</option>
+                            <option value="Evening">Evening</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="footerbookingsection">
+                <div class="notemo">
+                <p style="font-size:13px;">
+                    <b>Note!</b><br>
+                    Once you book or reserve your tour, we will immediately take notice of it. Be prepared to know what to bring, follow the rules, and make the payment on-site at ATV-Rental (Cash Only). Thank you and see you there!
+                    <br>
+                    <b>Location:</b> Sapinit Road, Barangay San Juan, Antipolo, Rizal.
+                </p>
+                </div>  
+                <div class="buttonofbook">
+                    <div class="balotnya">
+                        <button type="submit"> <h4>BOOK NOW!</h4></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+<!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+<form action="/saveReservation" method="post">
+    <input type="hidden" name="Cust1Name" value="<%= Customer.Fname %>">
+    <input type="hidden" name="Cust2Name" value="<%= Customer.Mname %>">
+    <input type="hidden" name="Cust3Name" value="<%= Customer.Lname %>">
+    <input type="hidden" name="Status" value="Pending">
+<div class="Book_Nowbackground7" id="bookNowContainer7">
+    <button type="button" class="closeButton" onclick="toggleBookNow7()" style="position: absolute; top:0px; right:0px;">
+        <span class="material-symbols-outlined"> cancel </span></button>
+    <div class="Book_Now">
+        <div class="bookingsection"  style="width:100%; border-radius: 10px;">
+            <div class="headbookingsection">
+                <h1><input type="hidden" name="TourName" value="Jungle Trail">Jungle Trail</h1>
+            
+            </div>
+            <div class="bodybookingsection">
+                <div class="detailsbook">
+                    <h5 style="font-size:13px;">Discription</h5><br>
+                    <p style="font-size:13px;"> Your endurance will be tested on this trail as it is almost a full day of riding the ATV through beautiful, scenic, bumpy roads and then having to trek for 30 minutes to find and swim in a hidden waterfall.
+                        Includes Lunch Food, Light Snacks and refreshments.
+                        </p>
+                        <h5 style="font-size:13px;"><input type="hidden" name="TourPrice" value="6500">PHP 6500/ head</h5>
+                        <h5 style="font-size:13px;"><b>Duration:</b> <input type="hidden" name="Duration" value="8 hours"> 8 hours</h5>
+                    <h5 style="font-size:13px;"><b>Size of a Group:</b> Min - 2  & Max - 7 </h5>
+                </div>
+                <div class="pickAdate" style="padding-top:0px; margin-top:0px;">
+                    <div class="leftdate">
+                        <h5 style="font-size:13px;">Select Booking Date:</h5>
+                        <input class="bookingdate" type="date" id="ReserveDate6" name="ReserveDate" min="" value="">
+                    </div>
+                    <div class="center">
+                        <p style="font-size:13px;">Pax: </p>
+                    <select class="IndividualNum" id="NumIndividual" name="TotalPerson">
+                        <option value="" disabled selected>2</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                    </div>
+                    <div class="right">
+                        <p style="font-size:13px;">Pick a Time: </p>
+                        <select class="TimeSlot" id="TimeSlot1" name="TimeSlot">
+                            <option value="" disabled selected>Morning</option>
+                            <option value="Morning">Morning</option>
+                            <option value="Afternoon">Afternoon</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="footerbookingsection">
+                <div class="notemo">
+                <p style="font-size:13px;">
+                    <b>Note!</b><br>
+                    Once you book or reserve your tour, we will immediately take notice of it. Be prepared to know what to bring, follow the rules, and make the payment on-site at ATV-Rental (Cash Only). Thank you and see you there!
+                    <br>
+                    <b>Location:</b> Sapinit Road, Barangay San Juan, Antipolo, Rizal.
+                </p>
+                </div>  
+                <div class="buttonofbook">
+                    <div class="balotnya">
+                        <button type="submit"> <h4>BOOK NOW!</h4></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+<!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+<form action="/saveReservation" method="post">
+    <input type="hidden" name="Cust1Name" value="<%= Customer.Fname %>">
+    <input type="hidden" name="Cust2Name" value="<%= Customer.Mname %>">
+    <input type="hidden" name="Cust3Name" value="<%= Customer.Lname %>">
+    <input type="hidden" name="Status" value="Pending">
+<div class="Book_Nowbackground8" id="bookNowContainer8">
+    <button type="button" class="closeButton" onclick="toggleBookNow8()" style="position: absolute; top:0px; right:0px;">
+        <span class="material-symbols-outlined"> cancel </span></button>
+    <div class="Book_Now">
+
+        <div class="bookingsection"  style="width:100%; border-radius: 10px;">
+            <div class="headbookingsection">
+                <h1 style="font-size: 27px;"><input type="hidden" name="TourName" value="Campsite Day Tour Trail">Campsite Day Tour Trail</h1>
+            </div>
+            <div class="bodybookingsection">
+                <div class="detailsbook">
+                    <h5 style="font-size:13px;">Discription</h5><br>
+                    <p style="font-size:13px;"> Hold on tight on this bumpy ride because we're using a custom 4x4 vehicle going through muddy roads leading to our exclusive campsite where you can take scenic photos of the 360° view on the newly developed viewing deck.</p>
+                    <h5 style="font-size:13px;"><input type="hidden" name="TourPrice" value="4500">PHP 4500/ head</h5>
+                    <h5 style="font-size:13px;"><b>Duration:</b> <input type="hidden" name="Duration" value="4 hour"> 4 hour</h5>
+                    <h5 style="font-size:13px;"><b>Size of a Group:</b> Min - 2  & Max - 7 </h5>
+                </div>
+                <div class="pickAdate" style="padding-top:0px; margin-top:0px;">
+                    <div class="leftdate">
+                        <h5 style="font-size:13px;">Select Booking Date:</h5>
+                        <input class="bookingdate" type="date" id="ReserveDate7" name="ReserveDate" min="" value="">
+                    </div>
+                    <div class="center">
+                        <p style="font-size:13px;">Pax: </p>
+                    <select class="IndividualNum" id="NumIndividual" name="TotalPerson">
+                        <option value="" disabled selected>2</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                    </div>
+                    <div class="right">
+                        <p style="font-size:13px;">Pick a Time: </p>
+                        <select class="TimeSlot" id="TimeSlot1" name="TimeSlot">
+                            <option value="" disabled selected>Morning</option>
+                            <option value="Morning">Morning</option>
+                            
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="footerbookingsection">
+                <div class="notemo">
+                <p style="font-size:13px;">
+                    <b>Note!</b><br>
+                    Once you book or reserve your tour, we will immediately take notice of it. Be prepared to know what to bring, follow the rules, and make the payment on-site at ATV-Rental (Cash Only). Thank you and see you there!
+                    <br>
+                    <b>Location:</b> Sapinit Road, Barangay San Juan, Antipolo, Rizal.
+                </p>
+                </div>  
+                <div class="buttonofbook">
+                    <div class="balotnya">
+                        <button type="submit"> <h4>BOOK NOW!</h4></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+<!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+<form action="/saveReservation" method="post">
+    <input type="hidden" name="Cust1Name" value="<%= Customer.Fname %>">
+    <input type="hidden" name="Cust2Name" value="<%= Customer.Mname %>">
+    <input type="hidden" name="Cust3Name" value="<%= Customer.Lname %>">
+    <input type="hidden" name="Status" value="Pending">
+<div class="Book_Nowbackground9" id="bookNowContainer9">
+    <button type="button" class="closeButton" onclick="toggleBookNow9()" style="position: absolute; top:0px; right:0px;">
+        <span class="material-symbols-outlined"> cancel </span></button>
+    <div class="Book_Now">
+
+        <div class="bookingsection"  style="width:100%; border-radius: 10px;">
+            <div class="headbookingsection">
+                <h1 style="font-size: 29px;"><input type="hidden" name="TourName" value="Waterfalls Trail">Waterfalls Trail</h1>
+               
+            </div>
+            <div class="bodybookingsection">
+                <div class="detailsbook">
+                    <h5 style="font-size:13px;">Discription</h5><br>
+                    <p style="font-size:13px;">This trail will go through bumpy and muddy roads while crossing multiple rivers going to the majestic hidden waterfalls within the forest!</p>
+                    <h5 style="font-size:13px;"><input type="hidden" name="TourPrice" value="5000">PHP 5000/ head<</h5>
+                    <h5 style="font-size:13px;"><b>Duration:</b> <input type="hidden" name="Duration" value="4-6 hours"> 4-6 hours</h5>
+                    <h5 style="font-size:13px;"><b>Size of a Group:</b> Min - 2  & Max - 7 </h5>
+                </div>
+                <div class="pickAdate" style="padding-top:0px; margin-top:0px;">
+                    <div class="leftdate">
+                        <h5 style="font-size:13px;">Select Booking Date:</h5>
+                        <input class="bookingdate" type="date" id="ReserveDate8" name="ReserveDate" min="" value="">
+                    </div>
+                    <div class="center">
+                        <p style="font-size:13px;">Pax: </p>
+                    <select class="IndividualNum" id="NumIndividual" name="TotalPerson">
+                        <option value="" disabled selected>2</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                    </div>
+                    <div class="right">
+                        <p style="font-size:13px;">Pick a Time: </p>
+                        <select class="TimeSlot" id="TimeSlot1" name="TimeSlot">
+                            <option value="" disabled selected>Morning</option>
+                            <option value="Morning<">Morning</option>
+                            <option value="Afternoon">Afternoon</option>
+                            
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="footerbookingsection">
+                <div class="notemo">
+                <p style="font-size:13px;">
+                    <b>Note!</b><br>
+                    Once you book or reserve your tour, we will immediately take notice of it. Be prepared to know what to bring, follow the rules, and make the payment on-site at ATV-Rental (Cash Only). Thank you and see you there!
+                    <br>
+                    <b>Location:</b> Sapinit Road, Barangay San Juan, Antipolo, Rizal.
+                </p>
+                </div>  
+                <div class="buttonofbook">
+                    <div class="balotnya">
+                        <button type="submit"> <h4>BOOK NOW!</h4></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+<!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+<form action="/saveReservation" method="post">
+    <input type="hidden" name="Cust1Name" value="<%= Customer.Fname %>">
+    <input type="hidden" name="Cust2Name" value="<%= Customer.Mname %>">
+    <input type="hidden" name="Cust3Name" value="<%= Customer.Lname %>">
+    <input type="hidden" name="Status" value="Pending">
+<div class="Book_Nowbackground10" id="bookNowContainer10">
+    <button type="button" class="closeButton" onclick="toggleBookNow10()" style="position: absolute; top:0px; right:0px;">
+        <span class="material-symbols-outlined"> cancel </span></button>
+    <div class="Book_Now">
+
+        <div class="bookingsection"  style="width:100%; border-radius: 10px;">
+            <div class="headbookingsection">
+                <h1 style="font-size: 24px;"><input type="hidden" name="TourName" value="Overnight Camping + Waterfalls Trail">Overnight Camping + <br> Waterfalls Trail</h1>
+              
+            </div>
+            <div class="bodybookingsection">
+                <div class="detailsbook">
+                    <h5 style="font-size:13px;">Discription</h5><br>
+                    <p style="font-size:13px;"> Going through the same route as our waterfalls trail, you will also enjoy the breathtaking view of the campsite scattered with manicured flowers and a magnificent sea of clouds overnight.</p>
+                    <h5 style="font-size:13px;"><input type="hidden" name="TourPrice" value="6500<">PHP 6500/ head<</h5>
+                    <h5 style="font-size:13px;"><b>Duration:</b> <input type="hidden" name="Duration" value="Overnight"> Overnight</h5>
+                    <h5 style="font-size:13px;"><b>Size of a Group:</b> Min - 2  & Max - 7 </h5>
+                </div>
+                <div class="pickAdate" style="padding-top:0px; margin-top:0px;">
+                    <div class="leftdate">
+                        <h5 style="font-size:13px;">Select Booking Date:</h5>
+                        <input class="bookingdate" type="date" id="ReserveDate9" name="ReserveDate" min="" value="">
+                    </div>
+                    <div class="center">
+                        <p style="font-size:13px;">Pax: </p>
+                    <select class="IndividualNum" id="NumIndividual" name="TotalPerson">
+                        <option value="" disabled selected>2</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                    </div>
+                    <div class="right">
+                        <p style="font-size:13px;">Pick a Time: </p>
+                        <select class="TimeSlot" id="TimeSlot1" name="TimeSlot">
+                            <option value="">Evening</option>
+                            <option value="Evening">Evening</option>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="footerbookingsection">
+                <div class="notemo">
+                <p style="font-size:13px;">
+                    <b>Note!</b><br>
+                    Once you book or reserve your tour, we will immediately take notice of it. Be prepared to know what to bring, follow the rules, and make the payment on-site at ATV-Rental (Cash Only). Thank you and see you there!
+                    <br>
+                    <b>Location:</b> Sapinit Road, Barangay San Juan, Antipolo, Rizal.
+                </p>
+                </div>  
+                <div class="buttonofbook">
+                    <div class="balotnya">
+                        <button type="submit"> <h4>BOOK NOW!</h4></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book--> <!--Para sa pag book-->
+    
+    <div class="mainbody" style="width: 100%; height:100%;">
+      
+        <div class="makeareservation">
+            <div class="choosetours" style="border-radius: 10px; margin-top:10px;">
+                <h2 style="font-size: 24px;">Confirm Your Trails</h2>
+                <div class="yourtours" name="Choose_Tours" id="ChooseTours1">
+                    <div class="Tours" value="Tour1" id="toursmo" >
+                            <div class="imagetours">
+                                <img src="ATV BACKGROUND/moto1.jpg" id="imageoftours">
+                            </div>
+                            <div class="tourdetails">
+                                <h3 name="TourName"  onclick="toggleBookNow1()" onmouseenter="showWordFollower(event)" onmouseleave="hideWordFollower()">Short Trail</h3>
+                                <h4 name="TourPrice" class="TourPrice" id="TourPrice1">PHP 1500 / head</h4>
+                                <h4 name="Duration" class="Duration" id="Duration1">Dur: 1 -2 hours</h4>
+                                <h4 class="MinPax" id="ATV1">Min 4 & Max 7</h4>
+                                <a href="">
+                                    <span class="material-symbols-outlined" >add</span>
+                                </a>
+                            </div>
+                    </div>
+                    <div class="Tours" value="Tour2" id="toursmo" >
+                        
+                        <div class="imagetours">
+                            <img src="ATV BACKGROUND/ATV1.jpg">
+                        </div>
+                        <div class="tourdetails">
+                            <h3 name="TourName" onclick="toggleBookNow2()" onmouseenter="showWordFollower(event)" onmouseleave="hideWordFollower()">Long Trail</h3>
+                            <h4 name="TourPrice" class="TourPrice" id="TourPrice1">PHP 5500 / head</h4>
+                            <h4 name="Duration" class="Duration" id="Duration1">Dur: 4-5 hours</h4>
+                            <h4 class="ATV" id="ATV1">Min 2 & Max 7</h4>
+                            <a href="">
+                                <span class="material-symbols-outlined" >add</span>
+                            </a>
+                        </div> 
+                    </div>
+                    <div class="Tours" value="Tour3" >
+                        
+                        <div class="imagetours">
+                        <img src="ATV BACKGROUND/ATV10.jpg">
+                        </div>
+                        <div class="tourdetails">
+                            <h3 name="TourName" onclick="toggleBookNow3()" onmouseenter="showWordFollower(event)" onmouseleave="hideWordFollower()">Forest Trail</h3>
+                            <h4 name="TourPrice" class="TourPrice" id="TourPrice1">PHP 2500/ head</h4>
+                            <h4 name="Duration" class="Duration" id="Duration1">Dur: 2-3 hours</h4>
+                            <h4 class="ATV" id="ATV1">Min 2 & Max 7</h4>
+                            <a href="">
+                                <span class="material-symbols-outlined" >add</span>
+                            </a>
+                        </div> 
+                    </div>
+                    <div class="Tours" value="Tour1" >
+                        
+                        <div class="imagetours">
+                            <img src="ATV BACKGROUND/ATV11.jpg">
+                        </div>
+                        <div class="tourdetails">
+                            <h3 name="TourName" onclick="toggleBookNow4()" onmouseenter="showWordFollower(event)" onmouseleave="hideWordFollower()">River Trail</h3>
+                            <h4 name="TourPrice" class="TourPrice" id="TourPrice1">PHP 3500/ head</h4>
+                            <h4 name="Duration" class="Duration" id="Duration1">Dur: 3-4 hours</h4>
+                            <h4 class="ATV" id="ATV1">Min 2 & Max 7</h4>
+                            <a href="">
+                                <span class="material-symbols-outlined" >add</span>
+                            </a>
+                        </div> 
+                    </div>
+                    <div class="Tours" value="Tour2" >
+                       
+                        <div class="imagetours">
+                            <img src="ATV BACKGROUND/quad-race-2501937_1280.jpg">
+                        </div>
+                        <div class="tourdetails">
+                            <h3 name="TourName" onclick="toggleBookNow5()" onmouseenter="showWordFollower(event)" onmouseleave="hideWordFollower()">Campsite Day <br>Tour Trail</h3>
+                            <h4 name="TourPrice" class="TourPrice" id="TourPrice1">PHP 4000/ head</h4>
+                            <h4 name="Duration" class="Duration" id="Duration1">Dur: 3-4 hours</h4>
+                            <h4 class="ATV" id="Min Pax: 2">Min 2 & Max 7</h4>
+                            <a href="">
+                                <span class="material-symbols-outlined" >add</span>
+                            </a>
+                        </div> 
+                    </div>
+                    <div class="Tours" value="Tour3" >
+                       
+                        <div class="imagetours">
+                            <img src="ATV BACKGROUND/ATV6.jpg">
+                        </div>
+                        <div class="tourdetails">
+                            <h3 name="TourName" onclick="toggleBookNow6()" onmouseenter="showWordFollower(event)" onmouseleave="hideWordFollower()">Campsite Overnight<br> Trail</h3>
+                            <h4 name="TourPrice" class="TourPrice" id="TourPrice1">PHP 6500/ head</h4>
+                            <h4 name="Duration" class="Duration" id="Duration1">Dur: overnight</h4>
+                            <h4 class="ATV" id="ATV1">Min 2 & Max 7</h4>
+                            <a href="">
+                                <span class="material-symbols-outlined" >add</span>
+                            </a>
+                        </div> 
+                    </div>
+                    <div class="Tours" value="Tour1" >
+                      
+                        <div class="imagetours">
+                            <img src="ATV BACKGROUND/ATV4.jpg">
+                        </div>
+                        <div class="tourdetails">
+                            <h3 name="TourName" onclick="toggleBookNow7()" onmouseenter="showWordFollower(event)" onmouseleave="hideWordFollower()">Jungle Trail</h3>
+                            <h4 name="TourPrice" class="TourPrice" id="TourPrice1">PHP 6500/ head</h4>
+                            <h4 name="Duration" class="Duration" id="Duration1">Dur: 8 hours</h4>
+                            <h4 class="ATV" id="ATV1">Min 2 & Max 7</h4>
+                            <a href="">
+                                <span class="material-symbols-outlined" >add</span>
+                            </a>
+                        </div> 
+                    </div>
+                    <div class="Tours" value="Tour2" >
+                        
+                        <div class="imagetours">
+                            <img src="ATV BACKGROUND/ATV9.jpg">
+                        </div>
+                        <div class="tourdetails">
+                            <h3 name="TourName" onclick="toggleBookNow8()" onmouseenter="showWordFollower(event)" onmouseleave="hideWordFollower()">Campsite Day <br>Tour Trail</h3>
+                            <h4 name="TourPrice" class="TourPrice" id="TourPrice1">PHP 4500/ head</h4>
+                            <h4 name="Duration"class="Duration" id="Duration1">Dur: 4 hours</h4>
+                            <h4 class="ATV" id="ATV1">Min 2 & Max 7</h4>
+                            <a href="">
+                                <span class="material-symbols-outlined" >add</span>
+                            </a>
+                        </div> 
+                    </div>
+                    <div class="Tours" value="Tour3" >
+                       
+                        <div class="imagetours">
+                            <img src="ATV BACKGROUND/ATV5.jpg">
+                        </div>
+                        <div class="tourdetails">
+                            <h3 name="TourName" onclick="toggleBookNow9()" onmouseenter="showWordFollower(event)" onmouseleave="hideWordFollower()">Waterfalls <br>Trail</h3>
+                            <h4 name="TourPrice" class="TourPrice" id="TourPrice1">PHP 5000/ head</h4>
+                            <h4 name="Duration" class="Duration" id="Duration1">Dur: 4-6 hours</h4>
+                            <h4 class="ATV" id="ATV1">Min 2 & Max 7</h4>
+                            <a href="">
+                                <span class="material-symbols-outlined" >add</span>
+                            </a>
+                        </div> 
+                    </div>
+                    <div class="Tours" value="Tour2" >
+                        
+                        <div class="imagetours">
+                            <img src="ATV BACKGROUND/ATV2.jpg">
+                        </div>
+                        <div class="tourdetails">
+                            <h3 name="TourName" onclick="toggleBookNow10()" onmouseenter="showWordFollower(event)" onmouseleave="hideWordFollower()">Overnight Camping<br> Waterfalls Trail</h3>
+                            <h4 name="TourPrice" class="TourPrice" id="TourPrice1">PHP 6500/ head</h4>
+                            <h4 name="Duration" class="Duration" id="Duration1">Dur: Overnight</h4>
+                            <h4 class="ATV" id="ATV1">Min 2 & Max 7</h4>
+                            <a href="">
+                                <span class="material-symbols-outlined" >add</span>
+                            </a>
+                        </div> 
+                    </div>
+                    <div class="Tours" value="Tour2" style="background-color:white;">
+ 
+                            <h3 style="Padding-top:150px; color:black; ">Tours Comming Soon!</h3>
+
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    <div class="editprofile" id="editME">
+        <div class="profileme" style="left: 50%; right:0%;  width:75%; height:80%;">
+            <div class="closeEdit" id="editME" onclick="toggleEdit1()">
+                <span class="material-symbols-outlined">
+                    close
+                    </span>
+            </div>
+            <div class="backpicture" style="width:600px; position: relative;">
+                <img src="ATV BACKGROUND/app.png" >
+            </div>
+            <form action="/Customerprofile" method="post" id="profileForm" enctype="multipart/form-data"> 
+            <div class="profileko" style="width: 100%; position: relative; right:0%;">
+                <div class="head_profileko">
+                    <div class="pictureprofile">
+                        <img src="ATV BACKGROUND/Monster2.jpg" class="picturemo" id="uploadedImage" name="profileData" >
+                       
+                    </div>
+                    <div style="display: flex; float: left; width:100%; height:auto; ">
+                    <input style="width: 33%; border-bottom:2px solid rgb(4, 4, 4); Text-align:right;" class="nameko" placeholder="First Name" value="<%= Customer.Fname %>" name="Cust1Name" type="text" id="name" >
+                    <input style="width: 33%; border-bottom:2px solid rgb(4, 4, 4); Text-align:center;" class="nameko" placeholder="Mid Name" value="<%= Customer.Mname %>" name="Cust2Name" type="text" id="name" >
+                    <input style="width: 33%; border-bottom:2px solid rgb(4, 4, 4); Text-align:left;" class="nameko" placeholder="Last Name" value="<%= Customer.Lname %>" name="Cust3Name" type="text" id="name" >   
+                    </div>
+                </div>  
+                <div class="body_profileko">
+                    <h3>Cellphone No.</h3>
+                        <input class="bodydetails" value="<%= Customer.Phone %>" name="CpNum" type="text" id="cellphone" >
+                    <h3>Gender</h3>
+                        <input class="bodydetails" value="<%= Customer.gender %>" name="gender" type="text" id="cellphone" >
+                    <h3>Gmail Address</h3>
+                        <input class="bodydetails" value="<%= Customer.Email %>" name="Gmail" type="text" id="gmail" >
+                    <h3>Address</h3>
+                    <input class="bodydetails" value="<%= Customer.STREET %>" name="Address1street" type="text"id="address" placeholder="Street" style="border-bottom:2px solid rgb(4, 4, 4);">
+                    <input class="bodydetails" value="<%= Customer.BARANGAY %>" name="Address2brgy" type="text"id="address" placeholder="Barangay" style="border-bottom:2px solid rgb(4, 4, 4);">
+                    <input class="bodydetails" value="<%= Customer.PROVINCE %>" name="Address3pro" type="text"id="address" placeholder="Province" style="border-bottom:2px solid rgb(4, 4, 4);">
+                    <input class="bodydetails" value="<%= Customer.MUNICITY %>" name="Address5municity" type="text"id="address" placeholder="Municipality/City" style="border-bottom:2px solid rgb(4, 4, 4);">
+                    <input class="bodydetails" value="<%= Customer.COUNTRY %>" name="Address4country" type="text"id="address" placeholder="Country" style="border-bottom:2px solid rgb(4, 4, 4);">
+                    <h3>Username</h3>
+                        <input class="bodydetails" value="<%= Customer.Username %>" name="username" type="text" id="username" >
+                        <div class="inputbox_box">
+                            <h3>Password</h3>
+                            <input class="bodydetails" value="<%= Customer.Password %>" name="password" type="password" id="password" style="text-align: center;">
+                            <button onclick="togglePasswordVisibility()" type="button" class="Icon2" id="eye-off"> <ion-icon name="eye-off-outline"></ion-icon></button>
+                            <button onclick="togglePasswordVisibility()" type="button" class="Icon2" id="eye" style="display:none;"> <ion-icon name="eye-outline"></ion-icon></button>
+                        </div>
+                </div>
+                <div class="footer_profileko" onclick = "toggleEdit1()">
+                    <button type="submit">Save</button>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+        
+        
+ <script>
+ 
+function isSunday(date) {
+    const day = new Date(date).getDay();
+    return day === 0; // 0 corresponds to Sunday
+  }
+  
+  function isHoliday(date) {
+    // List of holidays in the Philippines (you can customize this)
+    const holidays = ['2023-12-25', '2023-12-30'];
+  
+    return holidays.includes(date);
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const today = new Date();
+    const currentDate = today.toISOString().split('T')[0];
+  
+    // Set the minimum date for the date picker to the current date
+    document.getElementById('ReserveDate').setAttribute('min', currentDate);
+  
+    // Disable Sundays and holidays
+    const dateInput = document.getElementById('ReserveDate');
+    dateInput.addEventListener('input', () => {
+      const selectedDate = dateInput.value;
+      
+      if (isSunday(selectedDate) || isHoliday(selectedDate)) {
+        alert('ATV tours are not available on Sundays or holidays.');
+        dateInput.value = ''; // Reset the date
+      }
+    });
+  });
+  
+ </script>
+
+
+ <script>
+ 
+    function isSunday(date) {
+        const day = new Date(date).getDay();
+        return day === 0; // 0 corresponds to Sunday
+      }
+      
+      function isHoliday(date) {
+        // List of holidays in the Philippines (you can customize this)
+        const holidays = ['2023-12-25', '2023-12-30'];
+      
+        return holidays.includes(date);
+      }
+      
+      document.addEventListener('DOMContentLoaded', () => {
+        const today = new Date();
+        const currentDate = today.toISOString().split('T')[0];
+      
+        // Set the minimum date for the date picker to the current date
+        document.getElementById('ReserveDate1').setAttribute('min', currentDate);
+      
+        // Disable Sundays and holidays
+        const dateInput = document.getElementById('ReserveDate1');
+        dateInput.addEventListener('input', () => {
+          const selectedDate = dateInput.value;
+          
+          if (isSunday(selectedDate) || isHoliday(selectedDate)) {
+            alert('ATV tours are not available on Sundays or holidays.');
+            dateInput.value = ''; // Reset the date
+          }
+        });
+      });
+      
+     </script>
+     <script>
+ 
+        function isSunday(date) {
+            const day = new Date(date).getDay();
+            return day === 0; // 0 corresponds to Sunday
+          }
+          
+          function isHoliday(date) {
+            // List of holidays in the Philippines (you can customize this)
+            const holidays = ['2023-12-25', '2023-12-30'];
+          
+            return holidays.includes(date);
+          }
+          
+          document.addEventListener('DOMContentLoaded', () => {
+            const today = new Date();
+            const currentDate = today.toISOString().split('T')[0];
+          
+            // Set the minimum date for the date picker to the current date
+            document.getElementById('ReserveDate2').setAttribute('min', currentDate);
+          
+            // Disable Sundays and holidays
+            const dateInput = document.getElementById('ReserveDate2');
+            dateInput.addEventListener('input', () => {
+              const selectedDate = dateInput.value;
+              
+              if (isSunday(selectedDate) || isHoliday(selectedDate)) {
+                alert('ATV tours are not available on Sundays or holidays.');
+                dateInput.value = ''; // Reset the date
+              }
+            });
+          });
+          
+         </script>
+         <script>
+ 
+            function isSunday(date) {
+                const day = new Date(date).getDay();
+                return day === 0; // 0 corresponds to Sunday
+              }
+              
+              function isHoliday(date) {
+                // List of holidays in the Philippines (you can customize this)
+                const holidays = ['2023-12-25', '2023-12-30'];
+              
+                return holidays.includes(date);
+              }
+              
+              document.addEventListener('DOMContentLoaded', () => {
+                const today = new Date();
+                const currentDate = today.toISOString().split('T')[0];
+              
+                // Set the minimum date for the date picker to the current date
+                document.getElementById('ReserveDate3').setAttribute('min', currentDate);
+              
+                // Disable Sundays and holidays
+                const dateInput = document.getElementById('ReserveDate3');
+                dateInput.addEventListener('input', () => {
+                  const selectedDate = dateInput.value;
+                  
+                  if (isSunday(selectedDate) || isHoliday(selectedDate)) {
+                    alert('ATV tours are not available on Sundays or holidays.');
+                    dateInput.value = ''; // Reset the date
+                  }
+                });
+              });
+              
+             </script>
+             <script>
+ 
+                function isSunday(date) {
+                    const day = new Date(date).getDay();
+                    return day === 0; // 0 corresponds to Sunday
+                  }
+                  
+                  function isHoliday(date) {
+                    // List of holidays in the Philippines (you can customize this)
+                    const holidays = ['2023-12-25', '2023-12-30'];
+                  
+                    return holidays.includes(date);
+                  }
+                  
+                  document.addEventListener('DOMContentLoaded', () => {
+                    const today = new Date();
+                    const currentDate = today.toISOString().split('T')[0];
+                  
+                    // Set the minimum date for the date picker to the current date
+                    document.getElementById('ReserveDate4').setAttribute('min', currentDate);
+                  
+                    // Disable Sundays and holidays
+                    const dateInput = document.getElementById('ReserveDate4');
+                    dateInput.addEventListener('input', () => {
+                      const selectedDate = dateInput.value;
+                      
+                      if (isSunday(selectedDate) || isHoliday(selectedDate)) {
+                        alert('ATV tours are not available on Sundays or holidays.');
+                        dateInput.value = ''; // Reset the date
+                      }
+                    });
+                  });
+                  
+                 </script>
+                 <script>
+ 
+                    function isSunday(date) {
+                        const day = new Date(date).getDay();
+                        return day === 0; // 0 corresponds to Sunday
+                      }
+                      
+                      function isHoliday(date) {
+                        // List of holidays in the Philippines (you can customize this)
+                        const holidays = ['2023-12-25', '2023-12-30'];
+                      
+                        return holidays.includes(date);
+                      }
+                      
+                      document.addEventListener('DOMContentLoaded', () => {
+                        const today = new Date();
+                        const currentDate = today.toISOString().split('T')[0];
+                      
+                        // Set the minimum date for the date picker to the current date
+                        document.getElementById('ReserveDate5').setAttribute('min', currentDate);
+                      
+                        // Disable Sundays and holidays
+                        const dateInput = document.getElementById('ReserveDate5');
+                        dateInput.addEventListener('input', () => {
+                          const selectedDate = dateInput.value;
+                          
+                          if (isSunday(selectedDate) || isHoliday(selectedDate)) {
+                            alert('ATV tours are not available on Sundays or holidays.');
+                            dateInput.value = ''; // Reset the date
+                          }
+                        });
+                      });
+                      
+                     </script>
+
+                     <script>
+ 
+                        function isSunday(date) {
+                            const day = new Date(date).getDay();
+                            return day === 0; // 0 corresponds to Sunday
+                          }
+                          
+                          function isHoliday(date) {
+                            // List of holidays in the Philippines (you can customize this)
+                            const holidays = ['2023-12-25', '2023-12-30'];
+                          
+                            return holidays.includes(date);
+                          }
+                          
+                          document.addEventListener('DOMContentLoaded', () => {
+                            const today = new Date();
+                            const currentDate = today.toISOString().split('T')[0];
+                          
+                            // Set the minimum date for the date picker to the current date
+                            document.getElementById('ReserveDate6').setAttribute('min', currentDate);
+                          
+                            // Disable Sundays and holidays
+                            const dateInput = document.getElementById('ReserveDate6');
+                            dateInput.addEventListener('input', () => {
+                              const selectedDate = dateInput.value;
+                              
+                              if (isSunday(selectedDate) || isHoliday(selectedDate)) {
+                                alert('ATV tours are not available on Sundays or holidays.');
+                                dateInput.value = ''; // Reset the date
+                              }
+                            });
+                          });
+                          
+                         </script>
+                         <script>
+ 
+                            function isSunday(date) {
+                                const day = new Date(date).getDay();
+                                return day === 0; // 0 corresponds to Sunday
+                              }
+                              
+                              function isHoliday(date) {
+                                // List of holidays in the Philippines (you can customize this)
+                                const holidays = ['2023-12-25', '2023-12-30'];
+                              
+                                return holidays.includes(date);
+                              }
+                              
+                              document.addEventListener('DOMContentLoaded', () => {
+                                const today = new Date();
+                                const currentDate = today.toISOString().split('T')[0];
+                              
+                                // Set the minimum date for the date picker to the current date
+                                document.getElementById('ReserveDate7').setAttribute('min', currentDate);
+                              
+                                // Disable Sundays and holidays
+                                const dateInput = document.getElementById('ReserveDate7');
+                                dateInput.addEventListener('input', () => {
+                                  const selectedDate = dateInput.value;
+                                  
+                                  if (isSunday(selectedDate) || isHoliday(selectedDate)) {
+                                    alert('ATV tours are not available on Sundays or holidays.');
+                                    dateInput.value = ''; // Reset the date
+                                  }
+                                });
+                              });
+                              
+                             </script>
+                             <script>
+ 
+                                function isSunday(date) {
+                                    const day = new Date(date).getDay();
+                                    return day === 0; // 0 corresponds to Sunday
+                                  }
+                                  
+                                  function isHoliday(date) {
+                                    // List of holidays in the Philippines (you can customize this)
+                                    const holidays = ['2023-12-25', '2023-12-30'];
+                                  
+                                    return holidays.includes(date);
+                                  }
+                                  
+                                  document.addEventListener('DOMContentLoaded', () => {
+                                    const today = new Date();
+                                    const currentDate = today.toISOString().split('T')[0];
+                                  
+                                    // Set the minimum date for the date picker to the current date
+                                    document.getElementById('ReserveDate8').setAttribute('min', currentDate);
+                                  
+                                    // Disable Sundays and holidays
+                                    const dateInput = document.getElementById('ReserveDate8');
+                                    dateInput.addEventListener('input', () => {
+                                      const selectedDate = dateInput.value;
+                                      
+                                      if (isSunday(selectedDate) || isHoliday(selectedDate)) {
+                                        alert('ATV tours are not available on Sundays or holidays.');
+                                        dateInput.value = ''; // Reset the date
+                                      }
+                                    });
+                                  });
+                                  
+                                 </script>
+                                 <script>
+ 
+                                    function isSunday(date) {
+                                        const day = new Date(date).getDay();
+                                        return day === 0; // 0 corresponds to Sunday
+                                      }
+                                      
+                                      function isHoliday(date) {
+                                        // List of holidays in the Philippines (you can customize this)
+                                        const holidays = ['2023-12-25', '2023-12-30'];
+                                      
+                                        return holidays.includes(date);
+                                      }
+                                      
+                                      document.addEventListener('DOMContentLoaded', () => {
+                                        const today = new Date();
+                                        const currentDate = today.toISOString().split('T')[0];
+                                      
+                                        // Set the minimum date for the date picker to the current date
+                                        document.getElementById('ReserveDate9').setAttribute('min', currentDate);
+                                      
+                                        // Disable Sundays and holidays
+                                        const dateInput = document.getElementById('ReserveDate9');
+                                        dateInput.addEventListener('input', () => {
+                                          const selectedDate = dateInput.value;
+                                          
+                                          if (isSunday(selectedDate) || isHoliday(selectedDate)) {
+                                            alert('ATV tours are not available on Sundays or holidays.');
+                                            dateInput.value = ''; // Reset the date
+                                          }
+                                        });
+                                      });
+                                      
+                                     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script>
+            function togglePasswordVisibility() {
+              const passwordField = document.getElementById('password');
+              const eyeIcon = document.getElementById('eye');
+              const eyeOffIcon = document.getElementById('eye-off');
+              
+              if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                eyeIcon.style.display = 'block';
+                eyeOffIcon.style.display = 'none';
+              } else {
+                passwordField.type = 'password';
+                eyeIcon.style.display = 'none';
+                eyeOffIcon.style.display = 'block';
+              }
+            }
+        </script>
+<script>
+ function downloadATVLogo() {
+const atvLogoImage = document.querySelector(".atvLogo");
+const atvLogoDataURL = atvLogoImage.src;
+
+const downloadATVLogoLink = document.getElementById("downloadATVLogoLink");
+downloadATVLogoLink.href = atvLogoDataURL;
+}
+
+</script>
+    <script>
+        // Get the word follower element
+  const wordFollower = document.createElement('div');
+  wordFollower.id = 'word-follower';
+  wordFollower.textContent = 'Book Now!';
+  document.body.appendChild(wordFollower);
+
+  // Function to show the word follower and position it at the cursor
+  function showWordFollower(event) {
+    wordFollower.style.display = 'block';
+    wordFollower.style.left = event.clientX + 'px';
+    wordFollower.style.top = event.clientY + 'px';
+  }
+
+  // Function to hide the word follower
+  function hideWordFollower() {
+    wordFollower.style.display = 'none';
+  }
+        function updateDateTime() {
+    const dateElement = document.getElementById('date');
+    const timeElement = document.getElementById('time');
+
+    const currentDate = new Date();
+
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateString = currentDate.toLocaleDateString(undefined, options);
+
+    const timeString = currentDate.toLocaleTimeString();
+
+    dateElement.textContent = dateString;
+    timeElement.textContent = timeString;
+}
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+</script>
+<script>
+  // Function to toggle the visibility of the "Book Now" div
+  function toggleBookNow1() {
+    var bookNowContainer = document.getElementById("bookNowContainer1");
+    if (bookNowContainer1.style.display === "none") {
+      bookNowContainer1.style.display = "block";
+    } else {
+      bookNowContainer1.style.display = "none";
+    }
+  }
+</script>
+<script>
+    // Function to toggle the visibility of the "Book Now" div
+    function toggleBookNow2() {
+      var bookNowContainer = document.getElementById("bookNowContainer2");
+      if (bookNowContainer2.style.display === "none") {
+        bookNowContainer2.style.display = "block";
+      } else {
+        bookNowContainer2.style.display = "none";
+      }
+    }
+</script>
+<script>
+    // Function to toggle the visibility of the "Book Now" div
+    function toggleBookNow3() {
+      var bookNowContainer = document.getElementById("bookNowContainer3");
+      if (bookNowContainer3.style.display === "none") {
+        bookNowContainer3.style.display = "block";
+      } else {
+        bookNowContainer3.style.display = "none";
+      }
+    }
+</script>
+<script>
+    // Function to toggle the visibility of the "Book Now" div
+    function toggleBookNow4() {
+      var bookNowContainer = document.getElementById("bookNowContainer4");
+      if (bookNowContainer4.style.display === "none") {
+        bookNowContainer4.style.display = "block";
+      } else {
+        bookNowContainer4.style.display = "none";
+      }
+    }
+</script>
+<script>
+    // Function to toggle the visibility of the "Book Now" div
+    function toggleBookNow5() {
+      var bookNowContainer = document.getElementById("bookNowContainer5");
+      if (bookNowContainer5.style.display === "none") {
+        bookNowContainer5.style.display = "block";
+      } else {
+        bookNowContainer5.style.display = "none";
+      }
+    }
+</script>
+<script>
+    // Function to toggle the visibility of the "Book Now" div
+    function toggleBookNow6() {
+      var bookNowContainer = document.getElementById("bookNowContainer6");
+      if (bookNowContainer6.style.display === "none") {
+        bookNowContainer6.style.display = "block";
+      } else {
+        bookNowContainer6.style.display = "none";
+      }
+    }
+</script>
+<script>
+    // Function to toggle the visibility of the "Book Now" div
+    function toggleBookNow7() {
+      var bookNowContainer = document.getElementById("bookNowContainer7");
+      if (bookNowContainer7.style.display === "none") {
+        bookNowContainer7.style.display = "block";
+      } else {
+        bookNowContainer7.style.display = "none";
+      }
+    }
+</script>
+<script>
+    // Function to toggle the visibility of the "Book Now" div
+    function toggleBookNow8() {
+      var bookNowContainer = document.getElementById("bookNowContainer8");
+      if (bookNowContainer8.style.display === "none") {
+        bookNowContainer8.style.display = "block";
+      } else {
+        bookNowContainer8.style.display = "none";
+      }
+    }
+</script>
+<script>
+    // Function to toggle the visibility of the "Book Now" div
+    function toggleBookNow9() {
+      var bookNowContainer = document.getElementById("bookNowContainer9");
+      if (bookNowContainer9.style.display === "none") {
+        bookNowContainer9.style.display = "block";
+      } else {
+        bookNowContainer9.style.display = "none";
+      }
+    }
+</script>
+<script>
+    // Function to toggle the visibility of the "Book Now" div
+    function toggleBookNow10() {
+      var bookNowContainer = document.getElementById("bookNowContainer10");
+      if (bookNowContainer10.style.display === "none") {
+        bookNowContainer10.style.display = "block";
+      } else {
+        bookNowContainer10.style.display = "none";
+      }
+    }
+</script>
+<script>
+
+    function toggleEdit1() {
+          var editME= document.getElementById("editME");
+          if (editME.style.display === "none") {
+            editME.style.display = "block";
+          } else {
+            editME.style.display = "none";
+          }
+        }
+    
+    </script>
+<script>
+            // Get the word follower element
+const wordFollower = document.createElement('div');
+wordFollower.id = 'word-follower';
+wordFollower.textContent = 'Edit me!';
+document.body.appendChild(wordFollower);
+
+// Function to show the word follower and position it at the cursor
+function showWordFollower(event) {
+wordFollower.style.display = 'block';
+wordFollower.style.left = event.clientX + 'px';
+wordFollower.style.top = event.clientY + 'px';
+}
+
+// Function to hide the word follower
+function hideWordFollower() {
+wordFollower.style.display = 'none';
+}
+</script>
+
+<script>
+    function updateDateTime() {
+const dateElement = document.getElementById('date');
+const timeElement = document.getElementById('time');
+
+const currentDate = new Date();
+
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+const dateString = currentDate.toLocaleDateString(undefined, options);
+
+const timeString = currentDate.toLocaleTimeString();
+
+dateElement.textContent = dateString;
+timeElement.textContent = timeString;
+}
+setInterval(updateDateTime, 1000);
+updateDateTime();
+
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const input = document.getElementById("picture");
+  const img = document.getElementById("uploadedImage");
+  const img2 = document.getElementById("picturekopo");
+
+  input.addEventListener("change", function(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function() {
+      img.src = reader.result;
+      img2.src = reader.result;
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  });
+});
+
+</script>
+<script>
+function saveProfile() {
+const name = document.getElementById("name").value;
+const cellphone = document.getElementById("cellphone").value;
+const gmail = document.getElementById("gmail").value;
+const address = document.getElementById("address").value;
+const username = document.getElementById("username").value;
+
+document.querySelector(".Name").innerText = name;
+
+
+
+
+// Here you can update other parts of the profile as well if needed, such as the image or other details.
+
+// Toggle back to the original view after saving
+toggleEdit();
+}
+
+function toggleEdit() {
+// Code to toggle between the profile view and the edit view (your existing implementation)
+}
+
+</script>
+
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

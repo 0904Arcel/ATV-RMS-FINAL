@@ -240,6 +240,72 @@ app.get('/WelcomePage', (req, res) => {
     res.status(500).send('Error: No customer data found in session');
   }
 });
+/* Customer Mobile Login *//* Customer Mobile Login *//* Customer Mobile Login *//* Customer Mobile Login *//* Customer Mobile Login */
+app.post('/login2', async (request, response) => {
+  try {
+    const { Username, Password } = request.body;
+    const Customer = db.collection('Customer');
+
+    Customer.findOne({ Username: Username }, async (err, customer) => {
+      if (!customer) {
+        return response.redirect("/LoginPage.html?error=invalid");
+      }
+
+      if (customer.Password === Password) {
+        console.log("Login successfully");
+
+        const CustomerData = {
+          _id: customer._id,
+          Fname: customer.FName,
+          Mname: customer.MName,
+          Lname: customer.Sname,
+          name: customer.FName + " " + customer.MName + " " + customer.Sname,
+          email: customer.Email,
+          gender: customer.Gender,
+          age: customer.age,
+          STREET: customer.Address.Street,
+          BARANGAY: customer.Address.Barangay,
+          PROVINCE: customer.Address.Province,
+          MUNICITY: customer.Address.MuniCity,
+          COUNTRY: customer.Address.Country,
+          Address: customer.Address.Street + " " + customer.Address.Barangay + " " + customer.Address.Province + " " + customer.Address.MuniCity + " " + customer.Address.Country,
+          Phone: customer.Phone,
+          Email: customer.Email,
+          Username: customer.Username,
+          Password: customer.Password,
+        };
+
+        // Find custReservation for the logged-in customer
+        let custReservation = await db.collection('custReservations').findOne({ customer: customer._id });
+
+        // If no reservation found, set to an empty object
+        if (!custReservation) {
+          custReservation = {};
+        }
+
+        // Set custReservationData in the session
+        request.session.custReservationData = custReservation || null;
+
+        // Set CustomerData in the session
+        request.session.customerData = CustomerData;
+        console.log('CustomerData:', CustomerData);
+
+        // Set Customer_id in the session as well
+        request.session.Customer_id = customer._id; 
+        console.log('Customer ID:', customer._id);
+
+        response.render('mobileMakeAreservation', { Customer: CustomerData, custReservationsI: custReservation });
+        
+      } else {
+        return response.redirect("/mobileLogin.html?error=invalid");
+      }
+    });
+  } catch (error) {
+    console.log("Error:", error);
+    response.status(500).send("An error occurred: " + error.message);
+  }
+});
+
 
 
 

@@ -42,7 +42,7 @@
             height: 200px;
             margin-top: 40px;
             display: flex;
-            
+
         }
         .totalValue .Total{
             margin-right: 20px;
@@ -185,8 +185,8 @@
         .Name2 b{
             color: rgb(0, 40, 114);
         }
-        .header .logopayment{
-            width: 10%;
+        .top .logopayment{
+            max-width: 10%;
             height: auto;
             padding-top: 10px;
         }
@@ -278,6 +278,115 @@
             justify-content: center;
 
         }
+        @media only screen and (max-width: 759px){
+            .logopayment{
+            display: none;
+            
+        }
+        .top h1{
+            width:100%;
+            text-indent: 0px;
+            font-size: 25px;
+            text-align: left;
+            
+        }
+        .header .top{
+            padding-left: 0px;
+        }
+        .header .reservation{
+           height: 100px;
+           overflow:auto;
+          width: 100%;
+          position: relative;
+          display: block;
+        }
+        .header{
+            width:100%;
+            position: relative;
+            height: 300px;
+        }
+        .reservation .Name2{
+            border:none;
+            border-bottom: 1px solid grey;
+            border-radius: 0px;
+        }
+        .mainbody .inbody{
+            width: 100%;
+            height: auto;
+        }
+        .inbody h2{
+            width: 100%;
+            text-indent: 10px;
+        }
+        .inbody p{
+            width: 90%;
+            text-align: left;
+            padding-left: 10px;
+            text-indent: 50px;
+            text-align: justify;
+            font-size: 16px;
+        }
+        .inbody{
+            width: 100%;
+            width: 100%;
+        }
+        .Total2{
+            width: 80%;
+            margin-right: 20px;
+            padding-left: 30px;
+        }
+     
+        .Total2 label .radio{
+            width: 20px;
+            font-size: 13px;
+            margin:none;
+        }
+        .Total2 label{
+            text-align: left;
+            margin: 2px;
+            padding: 5px;
+
+        }
+        .Total2 p{
+            font-size: 14px;
+        }
+        .mainbody .totalValue{
+            display: block;
+        }
+        .totalValue .Total{
+            width: 90%;
+            margin: 20px;
+        }
+        .mainbody{
+            height: 250vh;
+        }
+        .mainbody .footer{
+            position: absolute;
+            bottom: 0px;
+        }
+        .pax input{
+            height: 30px;
+            width: 45%;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            text-indent: 10px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 0 5px rgba(84, 84, 84, 0.507);
+            margin-left: 10px;
+            float: left;
+            display: grid;
+        }
+        .inbody .pax{
+            position: relative;
+            width: 100%;
+            height: auto;
+            background-color: white;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-bottom:1px solid grey;
+        }
+        }
     </style>
 </head>
 <body>
@@ -290,11 +399,11 @@
             </div>
 
     <div class="reservation">
-            <h3 class="Name2" name="TourName"  class="h1MCR"><b>TRAILS:&nbsp;&nbsp;&nbsp;</b><%= custReservationsI.tourName %></h3>
-            <h3 class="Name2" name="TourPrice"><b>Tour Price:&nbsp;&nbsp;&nbsp;</b><%= custReservationsI.tourPrice %></h3>
-            <h3 class="Name2" name="Duration"><b>Duration:&nbsp;&nbsp;&nbsp;</b><%= custReservationsI.duration %></h3>
-            <h3 class="Name2" name="TotalPerson"> <b>Number of Guests:&nbsp;&nbsp;&nbsp;</b><%= custReservationsI.totalPerson %></h3>
-            <h3 class="Name2" name="TimeSlot"> <b>TimeSlot:&nbsp;&nbsp;&nbsp;</b><%= custReservationsI.timeSlot %></h3>
+            <h3 class="Name2" name="TourName"  class="h1MCR"><b>TRAILS:&nbsp;&nbsp;&nbsp;</b><br><%= custReservationsI.tourName %></h3>
+            <h3 class="Name2" name="TourPrice"><b>Tour Price:&nbsp;&nbsp;&nbsp;</b><br><%= custReservationsI.tourPrice %></h3>
+            <h3 class="Name2" name="Duration"><b>Duration:&nbsp;&nbsp;&nbsp;</b><br><%= custReservationsI.duration %></h3>
+            <h3 class="Name2" name="TotalPerson"> <b>Number of Guests:&nbsp;&nbsp;&nbsp;</b><br><%= custReservationsI.totalPerson %></h3>
+            <h3 class="Name2" name="TimeSlot"> <b>TimeSlot:&nbsp;&nbsp;&nbsp;</b><br><%= custReservationsI.timeSlot %></h3>
             <% let inputValue = ''; %>
 
             <% if (custReservationsI.reservDate) { %>
@@ -349,13 +458,13 @@
             <div class="Total2">
                 <p><b>Note:</b>You don't need to pay the full amount online; it's up to you how much you want to put down. We offer a 50%, 75%, and 100% down payment option to reserve a slot for our ATV Tour. Just make sure to have your Gcash account ready to make the down payment. You can complete the payment on the day of your tour. Keep safe, everyone! See you!</p>
                 <label>
-                    <input type="radio" name="downPayment" value="0.50" onchange="updateTotalAmount()"> 50%
+                    <input class="radio" type="radio" name="downPayment" value="0.50" onchange="updateTotalAmount()"> 50%
                 </label>
                 <label>
-                    <input type="radio" name="downPayment" value="0.75" onchange="updateTotalAmount()"> 75%
+                    <input class="radio" type="radio" name="downPayment" value="0.75" onchange="updateTotalAmount()"> 75%
                 </label>
                 <label>
-                    <input type="radio" name="downPayment" value="1.00" onchange="updateTotalAmount()"> 100%
+                    <input class="radio" type="radio" name="downPayment" value="1.00" onchange="updateTotalAmount()"> 100%
                 </label>
             </div>
             <div class="Total">

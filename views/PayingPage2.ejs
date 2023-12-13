@@ -54,7 +54,6 @@
         .mainBody .rightdiv{
             width: 50%;
             position:relative;
-
             padding: 0%;
             margin: 0%;
         }
@@ -75,10 +74,11 @@
         }
         .rightdiv h1{
             font-family: 'Fredoka', sans-serif;
-            
+            width: 100%;
         }
         .rightdiv p{
             font-family: 'Fredoka', sans-serif;
+            width: 100%;
         }
         form h3{
             font-family: 'Fredoka', sans-serif;
@@ -106,7 +106,27 @@
             letter-spacing: 2px;
            
         }
+        @media only screen and (max-width: 759px){
+            .leftdiv{
+                display: none;
+            }
+        .mainBody .rightdiv{
+            width:100%;
+        }
+        .mainBody{
+            padding: 10px;
+            width: 80%;
+            transform: translateX(20%);
+            transform: translateY(20%);
+        }
 
+        .rightdiv h3{
+            width: 100%;
+            text-align: left;
+            padding-left: 30px;
+            font-size: 15px;
+        }
+        }
     </style>
 </head>
 <body>
