@@ -66,28 +66,7 @@
 
     </div>
 
-    <script>
-        // Check if the user is already logged in (adjust this logic accordingly)
-        const isLoggedIn = /* Logic to check if the user is logged in */ true;
-
-        // Check if redirection has already occurred during this session
-        const redirectionDone = sessionStorage.getItem('redirectionDone');
-
-        // If the user is logged in and redirection hasn't occurred, prevent redirection from the back button
-        if (isLoggedIn && !redirectionDone) {
-            // Set the flag in sessionStorage to prevent further redirection during this session
-            sessionStorage.setItem('redirectionDone', 'true');
-
-            // Redirect to the user dashboard
-            window.location.replace("LoginPage.html"); // Change this to the appropriate URL
-        }
-
-        // Listen for the popstate event (triggered when the user navigates using the back button)
-        window.addEventListener('popstate', function(event) {
-            // Redirect back to LoginPage.html if the user is already on LoginPage.html
-            window.location.replace("LoginPage.html"); // Change this to the appropriate URL
-        });
-    </script>
+   
 
 
       
