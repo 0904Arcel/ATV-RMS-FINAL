@@ -244,11 +244,11 @@
             </div>  
             <div class="body_profileko">
                 <h3>Cellphone No.</h3>
-                    <input class="bodydetails" value="<%= Customer.Phone %>" name="CpNum" type="text" id="cellphone" >
+                    <input class="bodydetails" value="<%= Customer.Phone %>" name="CpNum" type="text" maxlength="6" id="cellphone" pattern="09\d{9}" >
                 <h3>Gender</h3>
                     <input class="bodydetails" value="<%= Customer.gender %>" name="gender" type="text" id="cellphone" >
                 <h3>Gmail Address</h3>
-                <input class="bodydetails" value="<%= Customer.Email %>" name="Gmail" type="text" id="gmail">
+                <input class="bodydetails" value="<%= Customer.Email %>" name="Gmail" type="text"  id="gmail" pattern=".+@gmail\.com$">
                 <h3>Address</h3>
                 <input class="bodydetails" value="<%= Customer.STREET %>" name="Address1street" type="text"id="address" placeholder="Street" style="border-bottom:2px solid rgb(4, 4, 4); width: 90%;">
                 <input class="bodydetails" value="<%= Customer.BARANGAY %>" name="Address2brgy" type="text"id="address" placeholder="Barangay" style="border-bottom:2px solid rgb(4, 4, 4); width: 90%;">

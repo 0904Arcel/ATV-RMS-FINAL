@@ -182,7 +182,7 @@
                 <span class="material-symbols-outlined" style="margin-right:10px; padding-top:5px; color:rgb(159, 96, 2);">
                     smartphone
                     </span>
-                <input type="text" name="cellphone" placeholder="ex. 09123456789" required>
+                    <input type="text" id="cellphone" placeholder="ex. 09562285022" pattern="09\d{9}" maxlength="11" required>
                 <span class="material-symbols-outlined" style="margin-right:10px; padding-top:5px; color:rgb(159, 96, 2);">
                     mail
                     </span>
@@ -218,7 +218,8 @@
     </form> 
         </div>
     </div>
-
+  
+      
   <script>
     function validateCaptcha() {
         var response = grecaptcha.getResponse();

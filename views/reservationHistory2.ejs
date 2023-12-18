@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History-ATV Rental</title>
+    <link rel="stylesheet" href="userdashboard.css">
+    <link rel="icon" href="LOGOATV.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Baloo+Tamma+2&family=Black+Ops+One&family=Bungee+Inline&family=Fredericka+the+Great&family=Fredoka&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <style>
+   
+    .mainbody{
+      width: 100%;
+      height: 100%;
+    }
+    
+    @media only screen and (max-width: 759px){
+
+      .ScheduleTable{
+        display:block;
+      }
+
+    }
+    b{
+      color: rgb(0, 115, 255);
+    }
+  </style>
+  </head>
+<body>
+   
+    <div class="mainbody">
+
+        <div class="myreservations" style="margin-top: 40px; margin-bottom: 20px;">
+          <div class="tophis" style="display: flex;">
+            <h2 style="width: 85%;">My Reservations</h2>
+          </div>
+            
+            <div class="reservationdetail">
+              <table class="ScheduleTable"  >
+                <p><b>Name of Tour:</b><%= custReservationsI.tourName %></p>
+                <p><b>Tour Price:</b><%= custReservationsI.tourPrice %></p>
+                <p><b>Duration:</b><%= custReservationsI.duration %></p>
+                <p><b>Total of Individual:</b><%= custReservationsI.totalPerson %></p>
+                <p><b>Time Slot:</b><%= custReservationsI.timeSlot %></p>
+                <p><b>Status:</b><%= custReservationsI.status %></p>
+                <p><b>Booking Date:</b>              <% if (custReservationsI.reservDate instanceof Date) { %>
+                  <%= custReservationsI.reservDate.toISOString().split('T')[0] %>
+                <% } else if (custReservationsI.reservDate) { %>
+                  <%= (new Date(custReservationsI.reservDate)).toISOString().split('T')[0] %>
+                <% } else { %>
+                  No Date Available
+                <% } %></p>
+                <p><b>Initial Payment:</b><%= custReservationsI.InitialPayment %></p>
+                <p><b>Balance:</b><%= custReservationsI.Balance %></p>
+                <p><b>Total Amount:</b><%= custReservationsI.TotalPayment %></p>
+              </table >
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="myreservations" style="margin-top: 10px; margin-bottom: 200px;">
+            <div class="tophis" style="display: flex;">
+              <h2 style="width: 85%;">Pax Info</h2>
+            </div>
+              
+              <div class="reservationdetail">
+                    <table class="ScheduleTable"  >
+                  
+                        <% if  (custReservationsI.PaxInfo && Array.isArray(custReservationsI.PaxInfo) && custReservationsI.PaxInfo.length > 0) { %>
+                          <% custReservationsI.PaxInfo.forEach(function(pax) { %>
+                            <p><b>Pax Name:</b><%= pax.PaxFname %> <%= pax.PaxMname %> <%= pax.PaxSname %></p>
+                            <p><b>Pax Age:</b><%= pax.PaxAge %></p>
+                            <p><b>Pax Contact No:</b><%= pax.PaxPhoneNo %></p>
+                            <p><b>Pax Gmail:</b><%= pax.PaxEmail %></p>
+                            <hr>
+                          <% }); %>
+                      <% } else { %>
+                          <tr>
+                              <td style="color:black;" colspan="4">No Pax Information Available</td>
+                          </tr>
+                      <% } %>
+                   
+                    </table >
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+    </div>
+    
+    
+  </div>
+  <script>
+    function togglePasswordVisibility() {
+      const passwordField = document.getElementById('password');
+      const eyeIcon = document.getElementById('eye');
+      const eyeOffIcon = document.getElementById('eye-off');
+      
+      if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+        eyeIcon.style.display = 'block';
+        eyeOffIcon.style.display = 'none';
+      } else {
+        passwordField.type = 'password';
+        eyeIcon.style.display = 'none';
+        eyeOffIcon.style.display = 'block';
+      }
+    }
+</script>
+  <script>
+    async function deleteReservation(reservationId) {
+        try {
+            const response = await fetch(`/deleteReservation/${reservationId}`, {
+                method: 'DELETE'
+            });
+
+            if (response.ok) {
+                // Delete was successful, remove the reservation row
+                const reservationRow = document.getElementById(`reservationRow_${reservationId}`);
+                if (reservationRow) {
+                    reservationRow.remove();
+                }
+            } else {
+                console.error('Failed to delete reservation');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+  <script>
+    // Get the word follower element
+const wordFollower = document.createElement('div');
+wordFollower.id = 'word-follower';
+wordFollower.textContent = 'Click to Download';
+document.body.appendChild(wordFollower);
+
+// Function to show the word follower and position it at the cursor
+function showWordFollower(event) {
+wordFollower.style.display = 'block';
+wordFollower.style.left = event.clientX + 'px';
+wordFollower.style.top = event.clientY + 'px';
+}
+
+// Function to hide the word follower
+function hideWordFollower() {
+wordFollower.style.display = 'none';
+}
+</script>
+<script>
+function downloadATVLogo() {
+const atvLogoImage = document.querySelector(".atvLogo");
+const atvLogoDataURL = atvLogoImage.src;
+
+const downloadATVLogoLink = document.getElementById("downloadATVLogoLink");
+downloadATVLogoLink.href = atvLogoDataURL;
+}
+
+</script>
+    <script>
+        function updateDateTime() {
+    const dateElement = document.getElementById('date');
+    const timeElement = document.getElementById('time');
+
+    const currentDate = new Date();
+
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateString = currentDate.toLocaleDateString(undefined, options);
+
+    const timeString = currentDate.toLocaleTimeString();
+
+    dateElement.textContent = dateString;
+    timeElement.textContent = timeString;
+}
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+
+    </script>
+    <script>
+
+      function toggleEdit1() {
+            var editME= document.getElementById("editME");
+            if (editME.style.display === "none") {
+              editME.style.display = "block";
+            } else {
+              editME.style.display = "none";
+            }
+          }
+      
+      </script>
+  <script>
+              // Get the word follower element
+const wordFollower = document.createElement('div');
+wordFollower.id = 'word-follower';
+wordFollower.textContent = 'Edit me!';
+document.body.appendChild(wordFollower);
+
+// Function to show the word follower and position it at the cursor
+function showWordFollower(event) {
+  wordFollower.style.display = 'block';
+  wordFollower.style.left = event.clientX + 'px';
+  wordFollower.style.top = event.clientY + 'px';
+}
+
+// Function to hide the word follower
+function hideWordFollower() {
+  wordFollower.style.display = 'none';
+}
+  </script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+    const input = document.getElementById("picture");
+    const img = document.getElementById("uploadedImage");
+    const img2 = document.getElementById("picturekopo");
+
+    input.addEventListener("change", function(event) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+
+      reader.onload = function() {
+        img.src = reader.result;
+        img2.src = reader.result;
+      };
+
+      if (file) {
+        reader.readAsDataURL(file);
+      }
+    });
+  });
+
+</script>
+<script>
+function saveProfile() {
+const name = document.getElementById("name").value;
+const cellphone = document.getElementById("cellphone").value;
+const gmail = document.getElementById("gmail").value;
+const address = document.getElementById("address").value;
+const username = document.getElementById("username").value;
+
+document.querySelector(".Name").innerText = name;
+
+
+
+
+// Here you can update other parts of the profile as well if needed, such as the image or other details.
+
+// Toggle back to the original view after saving
+toggleEdit();
+}
+
+function toggleEdit() {
+// Code to toggle between the profile view and the edit view (your existing implementation)
+}
+
+</script>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-ATV Rental</title>
+    <link rel="stylesheet" type="text/css" href="LoginPage.css">
+    <link rel="icon" href="LOGOATV.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Baloo+Tamma+2&family=Black+Ops+One&family=Bungee+Inline&family=Fredericka+the+Great&family=Fredoka&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+<style>
+    body{
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+    @media only screen and (max-width: 759px){
+        .main_login .ATVLOGO{
+        display: none;
+    }
+    }
+    @media only screen and (max-width: 790px){
+        .main_login .LOGIN{
+            width: 100%;
+        }
+    }
+    
+</style>
+</head>
+<body>
+
+    <div class="main_login">
+        <div class="LOGIN">
+            <div class="toplogin">
+                    <img src="LOGOATV.png" class="logologin" style="width:60%; padding-bottom:20px;">
+                <h1>Confirm User</h1>
+                <hr>
+            </div>
+    <form action="/login2" method="post">
+        <div class="mid-login">
+            <div class="inputbox_box">
+                <input type="text" name="Username" placeholder="Username" required>
+                <ion-icon name="person-circle-outline" class="Icon"></ion-icon>
+            </div>
+            <div class="inputbox_box">
+                <input type="password" id="password" name="Password" placeholder="Password" required>
+                <button onclick="togglePasswordVisibility()" type="button" class="Icon2" id="eye-off"> <ion-icon name="eye-off-outline"></ion-icon></button>
+                <button onclick="togglePasswordVisibility()" type="button" class="Icon2" id="eye" style="display:none;"> <ion-icon name="eye-outline"></ion-icon></button>
+              </div>
+    
+            <button type="submit" class="btn">
+                Login
+            </button>
+    </form>
+            
+        </div>
+           
+        </div>
+
+    </div>
+
+    <script>
+        // Check if the user is already logged in (adjust this logic accordingly)
+        const isLoggedIn = /* Logic to check if the user is logged in */ true;
+
+        // Check if redirection has already occurred during this session
+        const redirectionDone = sessionStorage.getItem('redirectionDone');
+
+        // If the user is logged in and redirection hasn't occurred, prevent redirection from the back button
+        if (isLoggedIn && !redirectionDone) {
+            // Set the flag in sessionStorage to prevent further redirection during this session
+            sessionStorage.setItem('redirectionDone', 'true');
+
+            // Redirect to the user dashboard
+            window.location.replace("LoginPage.html"); // Change this to the appropriate URL
+        }
+
+        // Listen for the popstate event (triggered when the user navigates using the back button)
+        window.addEventListener('popstate', function(event) {
+            // Redirect back to LoginPage.html if the user is already on LoginPage.html
+            window.location.replace("LoginPage.html"); // Change this to the appropriate URL
+        });
+    </script>
+
+
+      
+    <script>
+        // Function to set username in localStorage
+        function setUsernameInLocalStorage(username) {
+            localStorage.setItem('rememberedUsername', username);
+        }
+
+        // Function to get username from localStorage
+        function getRememberedUsername() {
+            return localStorage.getItem('rememberedUsername');
+        }
+
+        // Check if there's a remembered username and populate the field
+        const rememberedUsername = getRememberedUsername();
+        if (rememberedUsername) {
+            const usernameInput = document.querySelector('input[name="Username"]');
+            if (usernameInput) {
+                usernameInput.value = rememberedUsername;
+            }
+        }
+
+        // Event listener for the checkbox
+        const rememberMeCheckbox = document.getElementById('rememberMeCheckbox');
+        if (rememberMeCheckbox) {
+            rememberMeCheckbox.addEventListener('change', () => {
+                const username = document.querySelector('input[name="Username"]').value;
+                if (rememberMeCheckbox.checked) {
+                    setUsernameInLocalStorage(username);
+                } else {
+                    localStorage.removeItem('rememberedUsername');
+                }
+            });
+        }
+    </script>
+
+    <script>
+        function togglePasswordVisibility() {
+          const passwordField = document.getElementById('password');
+          const eyeIcon = document.getElementById('eye');
+          const eyeOffIcon = document.getElementById('eye-off');
+          
+          if (passwordField.type === 'password') {
+            passwordField.type = 'text';
+            eyeIcon.style.display = 'block';
+            eyeOffIcon.style.display = 'none';
+          } else {
+            passwordField.type = 'password';
+            eyeIcon.style.display = 'none';
+            eyeOffIcon.style.display = 'block';
+          }
+        }
+    </script>
+
+    <script>
+        // Check for the "error" query parameter in the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const errorMessage = urlParams.get('error');
+      
+        if (errorMessage === 'invalid') {
+          // Show an error message to the user
+          const errorNotification = document.createElement('div');
+          errorNotification.textContent = "Invalid credentials. Please try again.";
+          errorNotification.style.color = 'red';
+          // Add the error message just above the inputbox_box
+          const inputBox = document.querySelector('.inputbox_box'); // Adjust the selector as needed
+          inputBox.parentNode.insertBefore(errorNotification, inputBox);
+        }
+      </script>
+      
+ 
+</body>
+<script></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

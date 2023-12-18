@@ -146,7 +146,7 @@
     <div id="right1" class="right">
         <h1>Forgot Password</h1>
         <p>Enter Your Email, so we can send you a reset code of your account. Check in your Gmail Account and copy the given code.</p>
-        <input type="text" id="emailInput" name="email" placeholder="Enter Your Email" required><br>
+        <input type="text" id="emailInput" name="email" placeholder="Enter Your Email" required pattern=".+@gmail\.com$"><br>
         <button class="btn" onclick="sendResetCode()">Send Reset code</button> 
         <h5>Back to <a href="LoginPage.html">Login.</a></h5>
     </div>

@@ -705,7 +705,7 @@ app.post('/processPayment2', async (req, res) => {
     await custReservationsI.findByIdAndUpdate(custReservationData._id, { gCashNum });
 
     // Redirect to userDashboard after the update
-    res.redirect('/userDashboard');
+    res.redirect('/reservationHistory2');
   } catch (error) {
     console.error('Error processing payment:', error.message);
     res.status(500).send('Error processing payment');
@@ -767,7 +767,7 @@ app.post("/saveReservation", async (req, res) => {
       // If the limit is reached, show an alert
       return res.send('<script>alert("Sorry, fully booked for the selected date and time slot."); window.location.href = "/MakeAreservation";</script>');
     }
-    const isoReserveDate = new Date(req.body.ReserveDate).toISOString();
+    const isoReserveDate = new Date(req.body.ReserveDate).toISOString().slice(0, -5) + 'Z';
     // If no existing reservation is found and there's space, proceed to create a new reservation
     const custReservation = await custReservationsI.create({
       customer: req.session.customerData._id,
@@ -803,7 +803,7 @@ app.post("/saveReservation", async (req, res) => {
     // If you want to display a success alert, you can add the following line:
     // return res.send('<script>alert("Booking successful!");</script>');
 
-    return res.send('<script>alert("Booking successful!"); window.location.href = "/PayingPage";</script>');
+    return res.send('<script>alert("Procceed to Payment Process!"); window.location.href = "/PayingPage";</script>');
   } catch (error) {
     console.error('Error saving reservation:', error);
     return res.status(500).send('Error saving reservation: ' + error.message);
@@ -917,6 +917,26 @@ app.get('/reservationHistory', (req, res) => {
   res.status(500).send('Error: No customer data found in session');
 }
 });
+/* reservationHistory2 *//* reservationHistory2 *//* reservationHistory2 *//* reservationHistory2 *//* reservationHistory *//* reservationHistory *//* reservationHistory */
+
+app.get('/reservationHistory2', (req, res) => {
+  // Check if the user is authenticated and has a valid session
+  if (req.session.customerData && req.session.customerData._id && req.session.custReservationData) {
+   try {
+     const customerData = req.session.customerData;
+     const custReservationData = req.session.custReservationData;
+ 
+     // Render the reservationHistory2 page using the customerData
+     res.render('reservationHistory2', { Customer: customerData, custReservationsI: custReservationData});
+   } catch (error) {
+     console.error('Error rendering reservationHistory page:', error);
+     res.status(500).send('Error rendering reservationHistory2 page');
+   }
+ } else {
+   // Handle the case where there is no valid customer data in session
+   res.status(500).send('Error: No customer data found in session');
+ }
+ });
 /* DeletereservationHistory *//* DeletereservationHistory *//* DeletereservationHistory *//* DeletereservationHistory *//* DeletereservationHistory */
 
 app.delete('/deleteReservation/:reservationId', async (req, res) => {
@@ -1332,7 +1352,7 @@ app.post('/changePassword', async (req, res) => {
 
 /* Tourguide Submit Resume *//* Tourguide Submit Resume *//* Tourguide Submit Resume *//* Tourguide Submit Resume *//* Tourguide Submit Resume */
 
-app.post("/SubmitResume", (req, res) => {
+app.post("/SubmitResume", upload.single('resume'), async (req, res) => {
 
   var firstname = req.body.firstname.toUpperCase();
   var middlename = req.body.middlename.toUpperCase();
@@ -1340,7 +1360,7 @@ app.post("/SubmitResume", (req, res) => {
   var email = req.body.email;
   var phone = req.body.phone;
   var Address = req.body.Address;
-  var resume = req.body.resume;
+  var resume = req.file.buffer; 
   const accountCreationDate = new Date();
 
   
@@ -1351,7 +1371,7 @@ app.post("/SubmitResume", (req, res) => {
     "phone": phone,
     "email": email,
     "address": Address,
-    "resume": resume,
+    "resume": new Binary(resume),
     "submissionDate": accountCreationDate,
   };
 
